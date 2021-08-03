@@ -5,7 +5,8 @@ function items() {
   return (
     <MainLayout>
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto max-w-screen-xl">
+        <div className="container px-5 py-12 mx-auto max-w-screen-xl">
+          <h3 className="text-3xl mb-4">All Items</h3>
           <div className="flex flex-wrap -m-4">
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a className="block relative h-48 rounded overflow-hidden">
