@@ -1,16 +1,36 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.btn-yellow {
+  @apply inline-flex items-center bg-yellow-500 border-0 py-2 px-4 m-0 focus:outline-none hover:bg-yellow-800 rounded-sm font-semibold mt-4 md:mt-0 text-gray-700;
 }
 
-* {
-  box-sizing: border-box;
+.btn-gray {
+  @apply inline-flex items-center bg-gray-200 border-0 py-2 px-4 m-0 focus:outline-none hover:bg-gray-300 rounded-sm font-semibold mt-4 md:mt-0 text-gray-700;
+}
+
+.btn-yellow-forms {
+  @apply bg-yellow-500 text-gray-700 text-sm font-bold uppercase px-6 py-3 rounded-sm hover:bg-yellow-800 shadow-sm outline-none focus:outline-none mr-1 mb-1 w-full;
+}
+
+.input-styles {
+  @apply border border-gray-300 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded-sm text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent w-full;
+}
+
+.btn-login-register {
+  @apply bg-white text-gray-800 px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs;
+}
+
+.bg-register {
+  background-image: url('/public/registerbg.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
