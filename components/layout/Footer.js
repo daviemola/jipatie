@@ -19,16 +19,16 @@ function Footer() {
           Copyright &copy;{new Date().getFullYear()}
         </p>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-          <a className="text-gray-500">
+          <a className="text-gray-600 hover:text-yellow-700 cursor-pointer">
             <FaFacebookSquare className="text-2xl" />
           </a>
-          <a className="ml-3 text-gray-500">
+          <a className="ml-3 text-gray-600 hover:text-yellow-700 cursor-pointer">
             <FaTwitterSquare className="text-2xl" />
           </a>
-          <a className="ml-3 text-gray-500">
+          <a className="ml-3 text-gray-600 hover:text-yellow-700 cursor-pointer">
             <FaInstagramSquare className="text-2xl" />
           </a>
-          <a className="ml-3 text-gray-500">
+          <a className="ml-3 text-gray-600 hover:text-yellow-700 cursor-pointer">
             <FaLinkedin className="text-2xl" />
           </a>
         </span>

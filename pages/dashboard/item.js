@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { FaHeart } from 'react-icons/fa'
-import MainLayout from '../components/layout/MainLayout'
+import MainLayout from '../../components/layout/MainLayout'
 
 function item() {
   return (

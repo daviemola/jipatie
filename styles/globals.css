@@ -13,6 +13,10 @@ footer {
   @apply inline-flex items-center bg-yellow-500 border-0 py-2 px-4 m-0 focus:outline-none hover:bg-yellow-800 rounded-sm font-semibold mt-4 md:mt-0 text-gray-700;
 }
 
+.btn-give {
+  @apply inline-flex items-center bg-yellow-300 border-0 py-2 pl-2 pr-3 focus:outline-none hover:bg-yellow-600 rounded-sm font-bold md:mt-1 text-gray-700 uppercase text-sm;
+}
+
 .btn-gray {
   @apply inline-flex items-center bg-gray-200 border-0 py-2 px-4 m-0 focus:outline-none hover:bg-gray-300 rounded-sm font-semibold mt-4 md:mt-0 text-gray-700;
 }
