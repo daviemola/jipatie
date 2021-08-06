@@ -40,7 +40,7 @@ function MainMenu() {
         >
           <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
             <li className="nav-item">
-              <Link href="/dashboard/add">
+              <Link href="/dashboard/give">
                 <a className="btn-give">
                   <HiPlus className="text-2xl" />
                   Give an Item
@@ -64,15 +64,12 @@ function MainMenu() {
             <li className="nav-item">
               <Link href="/">
                 <a className="px-3 py-2 flex items-center hover:opacity-75 hover:text-yellow-500">
-                  Semeone
+                  David
+                  <FaUserCircle className="ml-2 text-2xl inline-block" />
                 </a>
               </Link>
             </li>
-            <li className="nav-item">
-              <a className="px-3 py-2 flex items-center hover:opacity-75 cursor-pointer">
-                <FaUserCircle className="ml-2 text-2xl inline-block" />
-              </a>
-            </li>
+            <li className="nav-item"></li>
           </ul>
         </div>
       </div>
