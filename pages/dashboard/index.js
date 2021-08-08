@@ -16,10 +16,10 @@ function index() {
       <section className="text-gray-600 body-font overflow-hidden">
         <div className="container px-3 py-6 mx-auto max-w-screen-xl">
           <div className="container mx-auto px-4 sm:px-8 max-w-3xl">
-            <div className="py-0">
-              <h1 className="text-3xl py-0 font-bold text-gray-700">
-                Dashboard
-              </h1>
+            <h1 className="text-3xl py-2 mb-3 font-bold text-gray-700">
+              Dashboard
+            </h1>
+            <div className="px-7 pt-4 border border-gray-200">
               <h2 className="text-xl py-3 font-bold text-gray-700">Giving</h2>
               <div className="-mx-4 sm:-mx-8 pt-2 sm:px-8 py-4 overflow-x-auto">
                 <div className="inline-block min-w-full rounded-sm overflow-hidden">
@@ -218,7 +218,7 @@ function index() {
                 </div>
               </div>
             </div>
-            <div className="py-2">
+            <div className="p-7 my-5 border border-gray-200">
               <h2 className="text-xl py-3 font-bold text-gray-700">
                 Recieving
               </h2>
