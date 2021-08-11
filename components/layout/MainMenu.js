@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import { FaBars, FaSearch, FaUserCircle } from 'react-icons/fa'
 import { HiPlus } from 'react-icons/hi'
+import Search from '../all-items/Search'
 
 function MainMenu() {
   const [menuOpen, setMenuOpen] = React.useState(false)
@@ -21,17 +22,7 @@ function MainMenu() {
             <FaBars />
           </button>
         </div>
-        <div className="pt-2 relative mx-auto text-gray-600 hidden md:block">
-          <input
-            className="border border-gray-30  bg-white h-10 px-5 pr-16 ml-10 rounded-sm text-sm focus:outline-none"
-            type="search"
-            name="search"
-            placeholder="Search Items"
-          />
-          <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
-            <FaSearch className="text-yellow-700" />
-          </button>
-        </div>
+        <Search />
 
         <div
           className={

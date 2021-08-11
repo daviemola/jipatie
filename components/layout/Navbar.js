@@ -8,9 +8,11 @@ const Navbar = () => {
           <span className="text-xl font-mono font-bold">JIPATIE</span>
         </a>
         <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-          <a className="mr-5 hover:text-yellow-300 cursor-pointer">
-            How it works?
-          </a>
+          <Link href="/dashboard">
+            <a className="mr-5 hover:text-yellow-300 cursor-pointer">
+              How it works?
+            </a>
+          </Link>
           <a className="mr-5 hover:text-yellow-300 cursor-pointer">About Us</a>
           <a className="mr-5 hover:text-yellow-300 cursor-pointer">
             Contact Us
