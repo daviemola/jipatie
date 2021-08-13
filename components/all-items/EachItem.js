@@ -6,7 +6,7 @@ import { GrLinkNext } from 'react-icons/gr'
 function EachItem({ item }) {
   return (
     <div className="xl:w-1/4 md:w-1/2 lg:w-1/4 p-4">
-      <div className="border border-gray-200 rounded-sm md:border-white lg:border-gray-200">
+      <div className="border bg-white border-gray-200 rounded-sm md:border-white lg:border-gray-200">
         <Image
           alt="ecommerce"
           className="object-cover object-center w-full h-full block"

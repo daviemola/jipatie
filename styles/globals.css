@@ -30,7 +30,7 @@ footer {
 }
 
 .btn-yellow-forms {
-  @apply bg-yellow-400 text-gray-700 text-sm font-bold uppercase px-6 py-3 rounded-sm hover:bg-yellow-500 shadow-sm outline-none focus:outline-none mr-1 mb-1 w-full;
+  @apply bg-yellow-600 text-white text-sm font-bold uppercase px-6 py-3 rounded-sm hover:bg-yellow-700 shadow-sm outline-none focus:outline-none mr-1 mb-1 w-full;
 }
 
 .input-styles {
@@ -38,7 +38,7 @@ footer {
 }
 
 .btn-login-register {
-  @apply bg-white text-gray-800 px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase border border-gray-200 hover:shadow-md inline-flex items-center font-bold text-xs;
+  @apply text-gray-800 rounded-sm text-sm outline-none w-full px-6 py-3 bg-blue-300 focus:outline-none mr-1 mb-1 uppercase border border-gray-200 hover:bg-blue-400 inline-flex items-center font-bold justify-center;
 }
 
 .bg-register {

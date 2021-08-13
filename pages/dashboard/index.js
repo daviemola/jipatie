@@ -3,8 +3,10 @@ import Wrapper from '@/components/dashboard/Wrapper'
 import Head from 'next/head'
 import MainLayout from '../../components/layout/MainLayout'
 import Recieving from '@/components/dashboard/Recieving'
+import { parseCookies } from '@/helpers/index'
+import { API_URL } from '@/config/index'
 
-export default function Dashboard() {
+export default function Dashboard(items) {
   return (
     <MainLayout>
       <Head>
@@ -13,9 +15,35 @@ export default function Dashboard() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Wrapper title="Dashboard">
-        <Giving />
-        <Recieving />
+        <Giving items={items} />
+        {/* <Recieving /> */}
       </Wrapper>
     </MainLayout>
   )
+}
+
+export async function getServerSideProps({ req }) {
+  const { token } = parseCookies(req)
+
+  if (!token) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    }
+  }
+
+  const res = await fetch(`${API_URL}/items/me`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+  const items = await res.json()
+  return {
+    props: {
+      items,
+    },
+  }
 }

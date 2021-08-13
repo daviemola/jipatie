@@ -1,11 +1,17 @@
 import Link from 'next/link'
-import React from 'react'
+// import { useRouter } from 'next/router'
+import React, { useContext } from 'react'
 import { FaBars, FaSearch, FaUserCircle } from 'react-icons/fa'
-import { HiPlus } from 'react-icons/hi'
+import { HiPlus, HiLogout } from 'react-icons/hi'
 import Search from '../all-items/Search'
+import AuthContext from '@/context/AuthContext'
 
 function MainMenu() {
   const [menuOpen, setMenuOpen] = React.useState(false)
+  const { user, logout } = useContext(AuthContext)
+
+  // const router = useRouter()
+
   return (
     <header className="text-white body-font bg-gray-700">
       <div className="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center max-w-screen-xl">
@@ -52,15 +58,19 @@ function MainMenu() {
                 </a>
               </Link>
             </li>
-            <li className="nav-item">
-              <Link href="/">
-                <a className="px-3 py-2 flex items-center hover:opacity-75 hover:text-yellow-500">
-                  David
-                  <FaUserCircle className="ml-2 text-2xl inline-block" />
-                </a>
-              </Link>
+            <li className="nav-item flex flex-row  md:border-l md:border-gray-400">
+              <p className="px-3 py-2 text-yellow-300">{`Hello ${
+                user &&
+                user.username.charAt(0).toUpperCase() + user.username.slice(1)
+              }`}</p>
+              <button
+                className="px-3 py-1 flex items-center hover:text-yellow-600"
+                onClick={() => logout()}
+              >
+                <HiLogout className="text-3xl py-2" />
+                Logout
+              </button>
             </li>
-            <li className="nav-item"></li>
           </ul>
         </div>
       </div>

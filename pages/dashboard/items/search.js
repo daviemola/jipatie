@@ -5,6 +5,7 @@ import Wrapper from '@/components/all-items/Wrapper'
 import { API_URL } from '@/config/index'
 import EachItem from '@/components/all-items/EachItem'
 import qs from 'qs'
+import { parseCookies } from 'helpers'
 
 export default function SearchPage({ items }) {
   const router = useRouter()
@@ -32,7 +33,18 @@ export default function SearchPage({ items }) {
   )
 }
 
-export async function getServerSideProps({ query: { term } }) {
+export async function getServerSideProps({ query: { term }, req }) {
+  const { token } = parseCookies(req)
+
+  if (!token) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    }
+  }
+
   const query = qs.stringify({
     _where: {
       _or: [
@@ -45,7 +57,12 @@ export async function getServerSideProps({ query: { term } }) {
     },
   })
 
-  const res = await fetch(`${API_URL}/items?${query}`)
+  const res = await fetch(`${API_URL}/items?${query}`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
   const items = await res.json()
   return {
     props: {

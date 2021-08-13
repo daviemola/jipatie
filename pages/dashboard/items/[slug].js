@@ -2,6 +2,7 @@ import Head from 'next/head'
 import MainLayout from '@/components/layout/MainLayout'
 import { API_URL } from '@/config/index'
 import EachItem from '@/components/each-item/EachItem'
+import { parseCookies } from 'helpers'
 
 function item({ item }) {
   return (
@@ -16,8 +17,24 @@ function item({ item }) {
   )
 }
 
-export async function getServerSideProps({ query: { slug } }) {
-  const res = await fetch(`${API_URL}/items?slug=${slug}`)
+export async function getServerSideProps({ query: { slug }, req }) {
+  const { token } = parseCookies(req)
+
+  if (!token) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    }
+  }
+
+  const res = await fetch(`${API_URL}/items?slug=${slug}`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
   const item = await res.json()
   return {
     props: {

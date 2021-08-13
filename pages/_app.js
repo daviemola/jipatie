@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import 'tailwindcss/tailwind.css'
 import ProgressBar from '@badrap/bar-of-progress'
 import Router from 'next/router'
+import { AuthProvider } from '@/context/AuthContext'
 
 const progress = new ProgressBar({
   size: 2,
@@ -15,7 +16,11 @@ Router.events.on('routeChangeComplete', progress.finish)
 Router.events.on('routeChangeError', progress.finish)
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <AuthProvider>
+      <Component {...pageProps} />
+    </AuthProvider>
+  )
 }
 
 export default MyApp
