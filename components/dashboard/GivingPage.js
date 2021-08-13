@@ -4,10 +4,36 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FiTrash, FiTool } from 'react-icons/fi'
 import { GrLinkPrevious } from 'react-icons/gr'
+import { API_URL } from '@/config/index'
+import toast, { Toaster } from 'react-hot-toast'
+import { useRouter } from 'next/router'
 
-export default function GivingPage({ items }) {
+export default function GivingPage({ items, token }) {
+  const router = useRouter()
+  //
+  const deleteItem = async (id) => {
+    if (confirm('Are you sure?')) {
+      const res = await fetch(`${API_URL}/items/${id}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        toast.error(data.message)
+      } else {
+        toast.success('Delete successful')
+        router.reload()
+      }
+    }
+  }
+
   return (
     <div>
+      <Toaster />
       <div className="p-8 bg-white border border-gray-200">
         <Link href="/dashboard">
           <a className="flex flex-row font-bold text-gray-500">
@@ -50,7 +76,11 @@ export default function GivingPage({ items }) {
                             <a href="#" className="block relative">
                               <Image
                                 alt="profil"
-                                src={item.photo.formats.thumbnail.url}
+                                src={
+                                  item.photo
+                                    ? item.photo.formats.thumbnail.url
+                                    : '/000000.png'
+                                }
                                 width={40}
                                 height={40}
                                 className="mx-auto object-cover h-10 w-10 "
@@ -105,9 +135,13 @@ export default function GivingPage({ items }) {
                       </td>
                       <td className="px-4 py-3 border-b border-gray-200 bg-white text-sm">
                         <div className="flex flex-row">
-                          <div className="flex flex-row text-gray-800 mr-4">
+                          <a
+                            href="#"
+                            className="flex flex-row text-gray-800 mr-4"
+                            onClick={() => deleteItem(item.id)}
+                          >
                             <FiTrash className="mt-1 mr-1" /> Delete
-                          </div>
+                          </a>
                           <Link href={`/dashboard/items/edit/${item.id}`}>
                             <a>
                               <div className="flex flex-row text-gray-800">

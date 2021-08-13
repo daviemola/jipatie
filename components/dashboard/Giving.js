@@ -35,7 +35,12 @@ export default function Giving({ items }) {
                           <a href="#" className="block relative">
                             <Image
                               alt="profile"
-                              src={item.photo.formats.thumbnail.url}
+                              // src="/000000.jpg"
+                              src={
+                                item.photo
+                                  ? item.photo.formats.thumbnail.url
+                                  : '/000000.png'
+                              }
                               width={40}
                               height={40}
                               className="mx-auto object-cover h-10 w-10 rounded-md"
