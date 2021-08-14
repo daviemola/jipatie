@@ -34,34 +34,37 @@ export default function GivingPage({ items, token }) {
   return (
     <div>
       <Toaster />
+      <Link href="/dashboard">
+        <a className="flex flex-row text-sm text-gray-700">
+          <GrLinkPrevious className="mt-1 mr-2 mb-3" />
+          Go Back
+        </a>
+      </Link>
       <div className="p-8 bg-white border border-gray-200">
-        <Link href="/dashboard">
-          <a className="flex flex-row font-bold text-gray-500">
-            <GrLinkPrevious className="mt-1 mr-2 mb-3" />
-            Go Back
-          </a>
-        </Link>
-        <h2 className="text-xl py-3 font-bold text-gray-700">
+        <h2 className="text-xl font-semibold text-gray-600">
           Items you are giving
         </h2>
         <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
           <div className="inline-block min-w-full rounded-sm overflow-hidden">
-            <table className="min-w-full leading-normal">
+            <table className="min-w-full">
               <thead>
-                <tr className="tracking-wider text-left text-sm text-gray-600 bg-gray-100">
-                  <th scope="col" className="px-5 py-3">
+                <tr className="uppercase text-xs text-gray-400 text-left bg-gray-100">
+                  <th scope="col" className="pl-3 py-3 font-semibold">
                     Item name
                   </th>
-                  <th scope="col" className="px-5 py-3">
+                  <th scope="col" className="pl-4 py-3 font-semibold">
                     Category
                   </th>
-                  <th scope="col" className="px-5 py-3">
+                  <th scope="col" className="pl-4 py-3 font-semibold">
                     Dates
                   </th>
-                  <th scope="col" className="px-5 py-3">
+                  <th scope="col" className="pl-4 py-3 font-semibold">
                     Status
                   </th>
-                  <th scope="col" className="px-5 py-3">
+                  <th
+                    scope="col"
+                    className="px-4 py-3 font-semibold text-center"
+                  >
                     Actions
                   </th>
                 </tr>
@@ -69,46 +72,28 @@ export default function GivingPage({ items, token }) {
               <tbody>
                 {items &&
                   items.map((item) => (
-                    <tr key={item.id}>
-                      <td className="px-4 py-3 border-b border-gray-200 bg-white text-sm">
-                        <div className="flex items-center">
-                          <div className="flex-shrink-0">
-                            <a href="#" className="block relative">
-                              <Image
-                                alt="profil"
-                                src={
-                                  item.photo
-                                    ? item.photo.formats.thumbnail.url
-                                    : '/000000.png'
-                                }
-                                width={40}
-                                height={40}
-                                className="mx-auto object-cover h-10 w-10 "
-                              />
-                            </a>
-                          </div>
-                          <div className="ml-3">
-                            <p className="text-gray-900 whitespace-no-wrap">
-                              {item.name}
-                            </p>
-                          </div>
+                    <tr
+                      key={item.id}
+                      className="text-xs text-gray-800 border-gray-200 bg-white font-normal"
+                    >
+                      <td className="pl-3 py-3 border-b">
+                        <div className="ml-0">
+                          <p>{item.name}</p>
                         </div>
                       </td>
-                      <td className="px-4 py-3 border-b border-gray-200 bg-white text-sm">
-                        <p className="text-gray-900 whitespace-no-wrap">
-                          {item.category && item.category.name}
-                        </p>
+                      <td className="px-4 py-3 border-b">
+                        <p>{item.category && item.category.name}</p>
                       </td>
-                      <td className="px-4 py-3 border-b border-gray-200 bg-white text-sm">
-                        <p className="text-gray-900 whitespace-no-wrap">
+                      <td className="px-4 py-3 border-b">
+                        <p>
                           {`${new Date(item.created_at).toLocaleDateString(
                             'en-US',
                           )}`}
                         </p>
                       </td>
-                      <td className="px-4 py-3 border-b border-gray-200 bg-white text-sm">
+                      <td className="px-4 py-3 border-b">
                         {item.active ? (
-                          <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                          <span className="relative inline-block px-3 py-1 font-medium text-green-900 leading-tight">
                             <span
                               aria-hidden="true"
                               className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
@@ -116,7 +101,7 @@ export default function GivingPage({ items, token }) {
                             <span className="relative">active</span>
                           </span>
                         ) : item.delivered ? (
-                          <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                          <span className="relative inline-block px-3 py-1 font-medium text-green-900 leading-tight">
                             <span
                               aria-hidden="true"
                               className="absolute inset-0 bg-yellow-200 opacity-50 rounded-full"
@@ -124,7 +109,7 @@ export default function GivingPage({ items, token }) {
                             <span className="relative">delivered</span>
                           </span>
                         ) : (
-                          <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                          <span className="relative inline-block px-3 py-1 font-medium text-green-900 leading-tight">
                             <span
                               aria-hidden="true"
                               className="absolute inset-0 bg-red-300 opacity-50 rounded-full"
@@ -133,19 +118,20 @@ export default function GivingPage({ items, token }) {
                           </span>
                         )}
                       </td>
-                      <td className="px-4 py-3 border-b border-gray-200 bg-white text-sm">
+                      <td className="px-4 py-3 border-b">
                         <div className="flex flex-row">
                           <a
                             href="#"
                             className="flex flex-row text-gray-800 mr-4"
                             onClick={() => deleteItem(item.id)}
                           >
-                            <FiTrash className="mt-1 mr-1" /> Delete
+                            <FiTrash className="text-sm mr-1" /> Delete
                           </a>
                           <Link href={`/dashboard/items/edit/${item.id}`}>
                             <a>
                               <div className="flex flex-row text-gray-800">
-                                <FiTool className="mt-1 mr-1" /> Edit
+                                <FiTool className="text-sm mr-1" />
+                                <span>Edit</span>
                               </div>
                             </a>
                           </Link>

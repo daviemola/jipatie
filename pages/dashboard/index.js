@@ -6,7 +6,9 @@ import Recieving from '@/components/dashboard/Recieving'
 import { parseCookies } from '@/helpers/index'
 import { API_URL } from '@/config/index'
 
-export default function Dashboard(items) {
+export default function Dashboard({ items, requests }) {
+  let itemList = items.slice(0, 3)
+  let reqList = requests.slice(0, 3)
   return (
     <MainLayout>
       <Head>
@@ -15,8 +17,8 @@ export default function Dashboard(items) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Wrapper title="Dashboard">
-        <Giving items={items} />
-        {/* <Recieving /> */}
+        <Giving items={itemList} />
+        <Recieving requests={reqList} />
       </Wrapper>
     </MainLayout>
   )
@@ -34,16 +36,29 @@ export async function getServerSideProps({ req }) {
     }
   }
 
-  const res = await fetch(`${API_URL}/items/me`, {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  })
-  const items = await res.json()
+  const [itemsRes, requestsRes] = await Promise.all([
+    fetch(`${API_URL}/items/me?_limit=3`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }),
+    fetch(`${API_URL}/requests/me`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }),
+  ])
+  const [items, requests] = await Promise.all([
+    itemsRes.json(),
+    requestsRes.json(),
+  ])
+
   return {
     props: {
       items,
+      requests,
     },
   }
 }

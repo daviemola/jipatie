@@ -26,32 +26,32 @@ export default function LoginPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Toaster />
-      <section className="absolute w-full h-full sm:bg-gray-100">
+      <section className="absolute w-full h-full sm:bg-gray-100 font-medium text-sm sm:mt-0 mt-20">
         <div className="sm:container mx-auto px-4 h-full">
           <div className="sm:flex content-center items-center justify-center h-full">
-            <div className="w-full lg:w-4/12 sm:px-4">
-              <div className="relative sm:flex flex-col min-w-0 break-words w-full mb-6 sm:rounded-sm bg-white sm:border sm:border-gray-300">
-                <div className="rounded-t mb-0 px-4 sm:px-6 pt-6">
+            <div className="w-full sm:w-8/12 md:w-7/12 lg:w-5/12 xl:w-2/7 sm:px-4">
+              <div className="relative sm:flex flex-col min-w-0 break-words w-full mb-6 sm:rounded-sm bg-white sm:border sm:border-gray-300 sm:py-4">
+                <div className="rounded-t mb-0 px-4 sm:px-7">
                   <div className="flex flex-wrap my-4">
                     <div className="w-1/2">
-                      <div className="ml-0 sm:ml-4  text-2xl">
+                      <div className="ml-0 text-xl">
                         <h2 className="text-gray-600 font-semibold">Login</h2>
                       </div>
                     </div>
                     <div className="w-1/2 text-right">
                       <Link href="/register">
-                        <a className="text-gray-600 font-bold mr-0 sm:mr-5">
+                        <a className="text-gray-600 font-base mr-0">
                           <small>Create an account</small>
                         </a>
                       </Link>
                     </div>
                   </div>
                 </div>
-                <div className="flex-auto px-4 lg:px-10 py-3">
+                <div className="flex-auto px-4 sm:px-7 py-3">
                   <form onSubmit={handleSubmit}>
                     <div className="relative w-full mb-3">
                       <label
-                        className="block  text-gray-700 font-semibold mb-2"
+                        className="block text-gray-600 mb-2"
                         htmlFor="grid-password"
                       >
                         Email
@@ -59,7 +59,7 @@ export default function LoginPage() {
                       <input
                         type="email"
                         className="input-styles"
-                        placeholder="Email"
+                        placeholder="Your Email address"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         style={{ transition: 'all .15s ease' }}
@@ -68,7 +68,7 @@ export default function LoginPage() {
 
                     <div className="relative w-full mb-3">
                       <label
-                        className="block text-gray-700 font-semibold mb-2"
+                        className="block text-gray-600 mb-2"
                         htmlFor="grid-password"
                       >
                         Password
@@ -76,7 +76,7 @@ export default function LoginPage() {
                       <input
                         type="password"
                         className="input-styles"
-                        placeholder="Password"
+                        placeholder="Your Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         style={{ transition: 'all .15s ease' }}
@@ -92,11 +92,11 @@ export default function LoginPage() {
                       </button>
                     </div>
                   </form>
-                  <div className="text-gray-500 text-center my-2 font-semibold">
+                  <div className="text-gray-500 text-center my-1">
                     <small>OR</small>
                   </div>
                   <button
-                    className="btn-login-register mb-8"
+                    className="btn-login-register mb-4"
                     type="button"
                     style={{ transition: 'all .15s ease' }}
                   >

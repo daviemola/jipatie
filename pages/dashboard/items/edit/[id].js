@@ -66,7 +66,7 @@ export default function AddItemPage({ token, item }) {
       </Head>
       <Toaster position="top-center" reverseOrder={false} />
       <section className="text-gray-600 body-font relative">
-        <div className="container px-5 py-10 mx-auto">
+        <div className="container px-5 py-10 mx-auto bg-white">
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <ImageUpload item={item} token={token} />
             <div className="flex flex-col w-full my-2">

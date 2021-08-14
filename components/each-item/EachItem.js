@@ -5,7 +5,7 @@ import { IoIosStar, IoMdStarHalf, IoMdStarOutline } from 'react-icons/io'
 
 function EachItem({ item }) {
   return (
-    <section className="text-gray-600 bg-white body-font overflow-hidden">
+    <section className="text-gray-600 bg-white w-full h-full">
       <div className="container px-5 py-10 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <Image
