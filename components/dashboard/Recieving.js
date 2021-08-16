@@ -2,7 +2,6 @@ import Link from 'next/link'
 import { GrLinkNext } from 'react-icons/gr'
 
 export default function Recieving({ requests }) {
-  console.log(requests)
   return (
     <div className="px-7 pt-4 border border-gray-200 bg-white mt-5">
       <h2 className="text-xl py-2 mb-3 font-semibold text-gray-600">
@@ -17,7 +16,7 @@ export default function Recieving({ requests }) {
                   Item
                 </th>
                 <th scope="col" className="pl-3 py-3 font-semibold">
-                  Submitted on
+                  Submitted
                 </th>
                 <th scope="col" className="pl-3 py-3 font-semibold rounded-sm">
                   status
@@ -64,7 +63,7 @@ export default function Recieving({ requests }) {
                           ></span>
                           <span className="relative">delivered</span>
                         </span>
-                      ) : (
+                      ) : item.created_at ? (
                         <span className="relative inline-block px-3 py-1 text-blue-900 leading-tight">
                           <span
                             aria-hidden="true"
@@ -72,21 +71,29 @@ export default function Recieving({ requests }) {
                           ></span>
                           <span className="relative">submitted</span>
                         </span>
+                      ) : (
+                        <span className="relative inline-block px-3 py-1 text-blue-900 leading-tight">
+                          <span
+                            aria-hidden="true"
+                            className="absolute inset-0 bg-blue-300 opacity-50 rounded-full"
+                          ></span>
+                          <span className="relative">not accepted</span>
+                        </span>
                       )}
                     </td>
                   </tr>
                 ))}
             </tbody>
           </table>
-          <div className="bg-white py-5">
-            <Link href="/dashboard/giving">
-              <a className="btn-gray">
-                view more
-                <GrLinkNext className="text-sm mt-1 ml-2" />
-              </a>
-            </Link>
-          </div>
         </div>
+      </div>
+      <div className="bg-white pb-5">
+        <Link href="/dashboard/requests">
+          <a className="btn-gray">
+            view more
+            <GrLinkNext className="text-sm mt-1 ml-2" />
+          </a>
+        </Link>
       </div>
     </div>
   )

@@ -17,7 +17,7 @@ export default function Giving({ items }) {
                   Category
                 </th>
                 <th scope="col" className="pl-3 py-3 font-semibold">
-                  Created at
+                  Created
                 </th>
                 <th scope="col" className="pl-3 py-3 font-semibold rounded-sm">
                   status
@@ -83,15 +83,15 @@ export default function Giving({ items }) {
                 ))}
             </tbody>
           </table>
-          <div className="bg-white py-5">
-            <Link href="/dashboard/giving">
-              <a className="btn-gray">
-                view more
-                <GrLinkNext className="text-sm mt-1 ml-2" />
-              </a>
-            </Link>
-          </div>
         </div>
+      </div>
+      <div className="bg-white pb-5">
+        <Link href="/dashboard/giving">
+          <a className="btn-gray">
+            view more
+            <GrLinkNext className="text-sm mt-1 ml-2" />
+          </a>
+        </Link>
       </div>
     </div>
   )

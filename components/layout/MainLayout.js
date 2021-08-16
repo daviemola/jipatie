@@ -1,10 +1,10 @@
 import Footer from './Footer'
-import MainMenu from './MainMenu'
+import MainNav from './MainNav'
 
 const MainLayout = ({ children }) => {
   return (
     <div className="bg-gray-100">
-      <MainMenu />
+      <MainNav />
       {children}
       <Footer />
     </div>

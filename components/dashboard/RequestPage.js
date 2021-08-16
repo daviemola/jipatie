@@ -8,7 +8,7 @@ import { API_URL } from '@/config/index'
 import toast, { Toaster } from 'react-hot-toast'
 import { useRouter } from 'next/router'
 
-export default function GivingPage({ items, token }) {
+export default function RequestPage({ items, token }) {
   const router = useRouter()
   //
   const deleteItem = async (id) => {
@@ -41,9 +41,7 @@ export default function GivingPage({ items, token }) {
         </a>
       </Link>
       <div className="p-8 bg-white border border-gray-200">
-        <h2 className="text-xl font-semibold text-gray-600">
-          Items you are giving
-        </h2>
+        <h2 className="text-xl font-semibold text-gray-600">Items requested</h2>
         <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
           <div className="inline-block min-w-full rounded-sm overflow-hidden">
             <table className="min-w-full">
@@ -53,18 +51,12 @@ export default function GivingPage({ items, token }) {
                     Item
                   </th>
                   <th scope="col" className="pl-4 py-3 font-semibold">
-                    Category
-                  </th>
-                  <th scope="col" className="pl-4 py-3 font-semibold">
                     Dates
                   </th>
                   <th scope="col" className="pl-4 py-3 font-semibold">
                     Status
                   </th>
-                  <th
-                    scope="col"
-                    className="px-4 py-3 font-semibold text-center"
-                  >
+                  <th scope="col" className="px-4 py-3 font-semibold">
                     Actions
                   </th>
                 </tr>
@@ -78,11 +70,8 @@ export default function GivingPage({ items, token }) {
                     >
                       <td className="pl-3 py-3 border-b">
                         <div className="ml-0">
-                          <p>{item.name}</p>
+                          <p>{item.item.name}</p>
                         </div>
-                      </td>
-                      <td className="px-4 py-3 border-b">
-                        <p>{item.category && item.category.name}</p>
                       </td>
                       <td className="px-4 py-3 border-b">
                         <p>
@@ -92,29 +81,37 @@ export default function GivingPage({ items, token }) {
                         </p>
                       </td>
                       <td className="px-4 py-3 border-b">
-                        {item.active ? (
-                          <span className="relative inline-block px-3 py-1 font-medium text-green-900 leading-tight">
+                        {item.accepted ? (
+                          <span className="relative inline-block px-3 py-1 text-green-900 leading-tight">
                             <span
                               aria-hidden="true"
                               className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
                             ></span>
-                            <span className="relative">active</span>
+                            <span className="relative">accepted</span>
                           </span>
                         ) : item.delivered ? (
-                          <span className="relative inline-block px-3 py-1 font-medium text-green-900 leading-tight">
+                          <span className="relative inline-block px-3 py-1 text-green-900 leading-tight">
                             <span
                               aria-hidden="true"
                               className="absolute inset-0 bg-yellow-200 opacity-50 rounded-full"
                             ></span>
                             <span className="relative">delivered</span>
                           </span>
-                        ) : (
-                          <span className="relative inline-block px-3 py-1 font-medium text-green-900 leading-tight">
+                        ) : item.created_at ? (
+                          <span className="relative inline-block px-3 py-1 text-blue-900 leading-tight">
                             <span
                               aria-hidden="true"
-                              className="absolute inset-0 bg-red-300 opacity-50 rounded-full"
+                              className="absolute inset-0 bg-blue-300 opacity-50 rounded-full"
                             ></span>
-                            <span className="relative">not active</span>
+                            <span className="relative">submitted</span>
+                          </span>
+                        ) : (
+                          <span className="relative inline-block px-3 py-1 text-blue-900 leading-tight">
+                            <span
+                              aria-hidden="true"
+                              className="absolute inset-0 bg-blue-300 opacity-50 rounded-full"
+                            ></span>
+                            <span className="relative">not accepted</span>
                           </span>
                         )}
                       </td>

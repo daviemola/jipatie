@@ -1,5 +1,5 @@
 import Link from 'next/link'
-// import { useRouter } from 'next/router'
+import Image from 'next/image'
 import React, { useContext } from 'react'
 import { FaBars, FaSearch, FaUserCircle } from 'react-icons/fa'
 import { HiPlus, HiLogout } from 'react-icons/hi'
@@ -15,10 +15,15 @@ function MainMenu() {
   return (
     <header className="text-white body-font bg-gray-700">
       <div className="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center max-w-screen-xl">
-        <div className="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start">
+        <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
           <Link href="/">
-            <a className="flex items-center text-yellow-500 md:mb-0">
-              <span className="text-xl font-mono font-bold">JIPATIE</span>
+            <a className="text-white md:mb-0 tracking-widest flex flex-row items-center ">
+              <span className="pr-3 mt-2">
+                <Image src="/logo.png" alt="logo" width={45} height={45} />
+              </span>
+              <span className=" font-semibold text-lg text-gray-100">
+                JIPATIE
+              </span>
             </a>
           </Link>
           <button

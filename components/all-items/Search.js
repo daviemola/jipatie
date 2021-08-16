@@ -18,7 +18,7 @@ export default function Search() {
     <div className="pt-2 relative mx-auto text-gray-600 hidden md:block">
       <form onSubmit={handleSubmit}>
         <input
-          className="border border-gray-30  bg-white h-10 px-5 pr-16 ml-10 rounded-sm text-sm focus:outline-none"
+          className="border border-gray-50  bg-white h-9 px-4 pr-16 ml-4 rounded-sm text-sm focus:outline-none"
           type="search"
           name="search"
           value={term}
