@@ -5,7 +5,7 @@ import { IoIosStar, IoMdStarHalf, IoMdStarOutline } from 'react-icons/io'
 
 function EachItem({ item }) {
   return (
-    <section className="text-gray-600 bg-white w-full h-full">
+    <section className="text-gray-600 bg-white w-full h-full py-10">
       <div className="container px-5 py-10 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <Image
@@ -16,10 +16,10 @@ function EachItem({ item }) {
             height={400}
           />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-            <h2 className="text-sm title-font text-gray-500 tracking-widest uppercase">
+            <h2 className="text-sm text-gray-500 tracking-widest uppercase font-medium">
               {item.category ? item.category.name : 'general'}
             </h2>
-            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
+            <h1 className="text-gray-700 text-2xl font-semibold mb-1">
               {item.name}
             </h1>
             <div className="flex mb-4">
@@ -42,9 +42,15 @@ function EachItem({ item }) {
                 <span className="mr-2 text-md font-semibold">Est. value:</span>
                 {`Ksh ${item.value}`}
               </div>
-              <div className="flex ml-6 items-center border-l-2 border-gray-200 space-x-2s">
+              <div className="flex ml-3 items-center border-l-2 border-gray-200 space-x-2s">
                 <span className="mx-3 font-semibold">Size:</span>
                 {item.size}
+              </div>
+            </div>
+            <div className="flex mt-3 items-center pb-5 border-b-2 border-gray-100 mb-5">
+              <div className="flex ">
+                <span className="mr-2 text-md font-semibold">Offered by:</span>
+                {`${item.user.username}`}
               </div>
             </div>
             <div className="flex">

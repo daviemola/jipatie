@@ -65,17 +65,17 @@ export default function AddItemPage({ token }) {
       </Head>
       <Toaster position="top-center" reverseOrder={false} />
       <section className="text-gray-600 body-font relative">
-        <div className="container px-5 py-10 mx-auto">
-          <div className="flex flex-col text-center w-full mb-12">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-              Give an Item
-            </h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              You will be required to pay 50 ksh. This is for the maintenance of
-              the website and for keeping this project going. Thank you.
-            </p>
-          </div>
-          <div className="lg:w-1/2 md:w-2/3 mx-auto">
+        <div className="container px-5 py-10 mx-auto bg-white">
+          <div className="lg:w-1/2 md:w-2/3 mx-auto sm:border border-gray-200 sm:p-10">
+            <div className="flex flex-col text-center w-full mb-12">
+              <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+                Give an Item
+              </h1>
+              <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+                You will be required to pay 50 ksh. This is for the maintenance
+                of the website and for keeping this project going. Thank you.
+              </p>
+            </div>
             <form onSubmit={handleSubmit}>
               <div className="flex flex-wrap -m-2">
                 <div className="p-2 w-1/2">
@@ -258,6 +258,7 @@ export default function AddItemPage({ token }) {
                       id="message"
                       name="description"
                       className="input-give"
+                      rows="3"
                       value={values.description}
                       onChange={handleInputChange}
                     ></textarea>

@@ -67,11 +67,11 @@ export default function AddItemPage({ token, item }) {
       <Toaster position="top-center" reverseOrder={false} />
       <section className="text-gray-600 body-font relative">
         <div className="container px-5 py-10 mx-auto bg-white">
-          <div className="lg:w-1/2 md:w-2/3 mx-auto">
+          <div className="lg:w-1/2 md:w-2/3 mx-auto sm:border border-gray-200 sm:p-10">
             <ImageUpload item={item} token={token} />
             <div className="flex flex-col w-full my-2">
-              <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-                Edit an Item
+              <h1 className="sm:text-2xl text-xl font-semibold mt-3 mb-1 text-gray-600">
+                Edit Item
               </h1>
             </div>
             <form onSubmit={handleSubmit}>
@@ -256,6 +256,7 @@ export default function AddItemPage({ token, item }) {
                       id="message"
                       name="description"
                       className="input-give"
+                      rows="4"
                       value={values.description}
                       onChange={handleInputChange}
                     ></textarea>
