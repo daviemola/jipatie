@@ -10,7 +10,6 @@ import { useRouter } from 'next/router'
 
 export default function GivingPage({ items, token }) {
   const router = useRouter()
-  //
   const deleteItem = async (id) => {
     if (confirm('Are you sure?')) {
       const res = await fetch(`${API_URL}/items/${id}`, {
@@ -127,7 +126,7 @@ export default function GivingPage({ items, token }) {
                           >
                             <FiTrash className="text-sm mr-1" /> Delete
                           </a>
-                          <Link href={`/dashboard/items/edit/${item.id}`}>
+                          <Link href={`/dashboard/items/edit/${item.slug}`}>
                             <a>
                               <div className="flex flex-row text-gray-800">
                                 <FiTool className="text-sm mr-1" />

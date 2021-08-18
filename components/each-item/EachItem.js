@@ -1,9 +1,23 @@
+import { useContext } from 'react'
 import Image from 'next/image'
-import { FaHeart } from 'react-icons/fa'
+import Link from 'next/link'
+import { FaHeart, FaPenAlt, FaPencilAlt } from 'react-icons/fa'
 import { HiLocationMarker } from 'react-icons/hi'
 import { IoIosStar, IoMdStarHalf, IoMdStarOutline } from 'react-icons/io'
+import AuthContext from '@/context/AuthContext'
 
 function EachItem({ item }) {
+  const { user } = useContext(AuthContext)
+
+  let isRequested
+  item.requests.map((req) => {
+    if (req.requested_by === user?.id) {
+      isRequested = true
+    } else {
+      isRequested = false
+    }
+  })
+
   return (
     <section className="text-gray-600 bg-white w-full h-full py-10">
       <div className="container px-5 py-10 mx-auto">
@@ -60,12 +74,39 @@ function EachItem({ item }) {
                 </span>
                 {item.location}
               </span>
-              <button className="uppercase flex ml-auto text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded-sm">
-                Apply
-              </button>
-              <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
-                <FaHeart />
-              </button>
+              {isRequested ? (
+                <div className="flex ml-auto ">
+                  <button
+                    disabled
+                    className="uppercase text-gray-600 font-semibold bg-gray-200 border-0 py-2 px-6 rounded-sm cursor-not-allowed"
+                  >
+                    Request submitted
+                  </button>
+                  <button className="rounded-full w-10 h-10 bg-yellow-300 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                    <FaPencilAlt />
+                  </button>
+                </div>
+              ) : user?.id !== item.user.id ? (
+                <Link href={`/dashboard/items/request/${item.slug}`}>
+                  <a className="uppercase flex ml-auto text-gray-600 font-semibold bg-yellow-400 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-300 rounded-sm">
+                    Send request
+                  </a>
+                </Link>
+              ) : (
+                <div className="flex ml-auto ">
+                  <Link href={`/dashboard/items/${item.slug}/requests`}>
+                    <a className="uppercase text-gray-700 font-semibold bg-gray-200 border-0 py-2 px-6 rounded-sm hover:bg-gray-300">
+                      View requests
+                    </a>
+                  </Link>
+
+                  <Link href={`/dashboard/items/edit/${item.slug}`}>
+                    <a className="rounded-full w-10 h-10 bg-yellow-300 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                      <FaPencilAlt />
+                    </a>
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>

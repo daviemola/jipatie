@@ -13,7 +13,7 @@ export default function RequestPage({ items, token }) {
   //
   const deleteItem = async (id) => {
     if (confirm('Are you sure?')) {
-      const res = await fetch(`${API_URL}/items/${id}`, {
+      const res = await fetch(`${API_URL}/requests/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -26,7 +26,9 @@ export default function RequestPage({ items, token }) {
         toast.error(data.message)
       } else {
         toast.success('Delete successful')
-        router.reload()
+        setTimeout(function () {
+          router.reload()
+        }, 3000)
       }
     }
   }
@@ -124,7 +126,9 @@ export default function RequestPage({ items, token }) {
                           >
                             <FiTrash className="text-sm mr-1" /> Delete
                           </a>
-                          <Link href={`/dashboard/items/edit/${item.id}`}>
+                          <Link
+                            href={`/dashboard/items/${item.item.slug}/request/${item.id}`}
+                          >
                             <a>
                               <div className="flex flex-row text-gray-800">
                                 <FiTool className="text-sm mr-1" />

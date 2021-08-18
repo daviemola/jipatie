@@ -4,8 +4,10 @@ import Wrapper from '@/components/all-items/Wrapper'
 import { API_URL } from '@/config/index'
 import EachItem from '@/components/all-items/EachItem'
 import { parseCookies } from '@/helpers/index'
+import { PER_PAGE } from '@/config/index'
+import Pagination from '@/components/layout/Pagination'
 
-export default function items({ items }) {
+export default function items({ items, page, total }) {
   return (
     <MainLayout>
       <Head>
@@ -17,11 +19,12 @@ export default function items({ items }) {
         {items.length !== 0 &&
           items.map((item) => <EachItem key={item.id} item={item} />)}
       </Wrapper>
+      <Pagination page={page} total={total} />
     </MainLayout>
   )
 }
 
-export async function getServerSideProps({ req }) {
+export async function getServerSideProps({ req, query: { page = 1 } }) {
   const { token } = parseCookies(req)
 
   if (!token) {
@@ -33,17 +36,33 @@ export async function getServerSideProps({ req }) {
     }
   }
 
-  const res = await fetch(`${API_URL}/items?_sort=created_at:ASC`, {
+  const start = +page === 1 ? 0 : (+page - 1) * PER_PAGE
+
+  // Fetch total/count
+  const totalRes = await fetch(`${API_URL}/items/count`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
     },
   })
+  const total = await totalRes.json()
+
+  const res = await fetch(
+    `${API_URL}/items?_sort=created_at:desc&_limit=${PER_PAGE}&_start=${start}`,
+    {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  )
   const items = await res.json()
 
   return {
     props: {
       items,
+      page: +page,
+      total,
     },
   }
 }

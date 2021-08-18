@@ -296,6 +296,15 @@ export async function getServerSideProps({ req, params: { id } }) {
     },
   })
 
+  if (res.status === 404) {
+    return {
+      redirect: {
+        destination: '/dashboard',
+        permanent: false,
+      },
+    }
+  }
+
   const item = await res.json()
 
   return {

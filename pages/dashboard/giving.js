@@ -23,7 +23,7 @@ export default function Givingpage({ items, token }) {
   )
 }
 
-export async function getServerSideProps({ req }) {
+export async function getServerSideProps({ req, query: { page = 1 } }) {
   const { token } = parseCookies(req)
 
   if (!token) {
@@ -34,6 +34,17 @@ export async function getServerSideProps({ req }) {
       },
     }
   }
+
+  const start = +page === 1 ? 0 : (+page - 1) * PER_PAGE
+
+  // // Fetch total/count
+  // const totalRes = await fetch(`${API_URL}/requests/count`, {
+  //   method: 'GET',
+  //   headers: {
+  //     Authorization: `Bearer ${token}`,
+  //   },
+  // })
+  // const total = await totalRes.json()
 
   const res = await fetch(`${API_URL}/items/me`, {
     method: 'GET',
