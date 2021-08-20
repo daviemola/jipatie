@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import { FaSave } from 'react-icons/fa'
 import MainLayout from '@/components/layout/MainLayout'
 import { API_URL } from '@/config/index'
 import toast, { Toaster } from 'react-hot-toast'
 import { parseCookies } from '@/helpers/index'
+import Link from 'next/link'
 
 export default function RequestPage({ item, request, token }) {
   const [values, setValues] = useState({
@@ -27,14 +27,17 @@ export default function RequestPage({ item, request, token }) {
       return
     }
 
-    const res = await fetch(`${API_URL}/requests/${request.id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+    const res = await fetch(
+      `${API_URL}/requests/${request.id}/${request.item.user}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(values),
       },
-      body: JSON.stringify(values),
-    })
+    )
 
     const data = await res.json()
 
@@ -65,7 +68,7 @@ export default function RequestPage({ item, request, token }) {
         <div className="container px-5 py-10 mx-auto bg-white">
           <div className="lg:w-1/2 md:w-2/3 mx-auto sm:border border-gray-200 sm:p-10">
             <h1 className="uppercase font-semibold text-xl mb-3 text-center">
-              Edit a Request for:
+              Edit this Request
             </h1>
             <h1 className="mb-2 font-semibold text-gray-600 uppercase text-lg ">{`${item.name}`}</h1>
             <p>{item.description}</p>
@@ -93,10 +96,17 @@ export default function RequestPage({ item, request, token }) {
                   ></textarea>
                 </div>
               </div>
-              <div className="py-2 m-3 w-full">
-                <button className="submit-btn" type="submit">
-                  <FaSave className="mt-1 mr-2" />
-                  SUBMIT REQUEST
+              <div className="w-full mt-7">
+                <Link href="#">
+                  <a className="text-gray-600 border border-gray-200 py-3 w-full px-5 mr-2 rounded-sm">
+                    Cancel
+                  </a>
+                </Link>
+                <button
+                  className="text-gray-600 font-semibold bg-yellow-400 py-3 px-5 rounded-sm"
+                  type="submit"
+                >
+                  Submit Request
                 </button>
               </div>
             </form>

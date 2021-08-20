@@ -2,11 +2,12 @@ import AuthContext from '@/context/AuthContext'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useState, useContext, useEffect } from 'react'
-import { FaSave } from 'react-icons/fa'
+import { FaTelegramPlane } from 'react-icons/fa'
 import MainLayout from '@/components/layout/MainLayout'
 import { API_URL } from '@/config/index'
 import toast, { Toaster } from 'react-hot-toast'
 import { parseCookies } from '@/helpers/index'
+import Link from 'next/link'
 
 export default function RequestPage({ item, token }) {
   const { user } = useContext(AuthContext)
@@ -80,20 +81,21 @@ export default function RequestPage({ item, token }) {
       </Head>
       <Toaster position="top-center" reverseOrder={false} />
       <section className="text-gray-600 body-font relative">
-        <div className="container px-5 py-10 mx-auto bg-white">
-          <div className="lg:w-1/2 md:w-2/3 mx-auto sm:border border-gray-200 sm:p-10">
-            <h1 className="uppercase font-semibold text-xl mb-3 text-center">
+        <div className="container px-5 py-5 mx-auto bg-white">
+          <div className="lg:w-1/2 md:w-2/3 mx-auto sm:p-10">
+            {/* <h1 className="uppercase font-semibold text-xl mb-3 text-center">
               Send a Request for:
-            </h1>
+            </h1> */}
             <h1 className="mb-2 font-semibold text-gray-600 uppercase text-lg ">{`${item.name}`}</h1>
             <p>{item.description}</p>
             <p className="my-2 text-sm font-semibold text-gray-500">{`By ${item.user.username}`}</p>
-            <div className="pt-5 font-semibold uppercase">
-              Fill the below form.
-            </div>
-            <form onSubmit={handleSubmit}>
-              <div className="py-3 w-full">
-                <div className="relative">
+            <div className="pt-5 font-semibold uppercase">Submit a request</div>
+            <form
+              onSubmit={handleSubmit}
+              className="border-t-2 border-gray-300"
+            >
+              <div className="pt-3 w-full">
+                <div className="relative pt-3">
                   <label
                     htmlFor="message"
                     className="leading-7 text-sm text-gray-600 font-semibold"
@@ -110,11 +112,72 @@ export default function RequestPage({ item, token }) {
                     onChange={handleInputChange}
                   ></textarea>
                 </div>
+                <div className="sm:flex sm:gap-2">
+                  <div className="relative pt-3 sm:w-1/2">
+                    <label
+                      htmlFor="name"
+                      className="leading-7 text-sm text-gray-600 font-semibold"
+                    >
+                      Phone Number*
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="+25412345678"
+                      // value={values.name}
+                      onChange={handleInputChange}
+                      className="input-give"
+                    />
+                  </div>
+                  <div className="relative pt-3 sm:w-1/2">
+                    <label
+                      htmlFor="name"
+                      className="leading-7 text-sm text-gray-600 font-semibold"
+                    >
+                      Alternative Phone Number*
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="+25412345678"
+                      // value={values.name}
+                      onChange={handleInputChange}
+                      className="input-give"
+                    />
+                  </div>
+                </div>
+                <div className="relative pt-3">
+                  <label
+                    htmlFor="name"
+                    className="leading-7 text-sm text-gray-600 font-semibold"
+                  >
+                    Address*
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Suggest a meetup location"
+                    // value={values.name}
+                    onChange={handleInputChange}
+                    className="input-give"
+                  />
+                </div>
               </div>
-              <div className="py-2 m-3 w-full">
-                <button className="submit-btn" type="submit">
-                  <FaSave className="mt-1 mr-2" />
-                  SUBMIT REQUEST
+              <div className="py-2">
+                N/B: Once submitted, wait for the item owner to accept. You will
+                be notified.
+              </div>
+              <div className="w-full mt-7">
+                <Link href="#">
+                  <a className="text-gray-600 border border-gray-200 py-3 w-full px-5 mr-2 rounded-sm">
+                    Cancel
+                  </a>
+                </Link>
+                <button
+                  className="text-gray-600 font-semibold bg-yellow-400 py-3 px-5 rounded-sm"
+                  type="submit"
+                >
+                  Submit Request
                 </button>
               </div>
             </form>

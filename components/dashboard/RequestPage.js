@@ -127,7 +127,7 @@ export default function RequestPage({ items, token }) {
                             <FiTrash className="text-sm mr-1" /> Delete
                           </a>
                           <Link
-                            href={`/dashboard/items/${item.item.slug}/request/${item.id}`}
+                            href={`/dashboard/items/${item.item.slug}/request/${item.id}/edit`}
                           >
                             <a>
                               <div className="flex flex-row text-gray-800">

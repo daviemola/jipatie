@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import { FaSave } from 'react-icons/fa'
 import MainLayout from '@/components/layout/MainLayout'
 import { API_URL } from '@/config/index'
 import toast, { Toaster } from 'react-hot-toast'
 import { parseCookies } from '@/helpers/index'
+import Link from 'next/link'
 
 export default function AddItemPage({ token }) {
   const [values, setValues] = useState({
@@ -65,16 +65,12 @@ export default function AddItemPage({ token }) {
       </Head>
       <Toaster position="top-center" reverseOrder={false} />
       <section className="text-gray-600 body-font relative">
-        <div className="container px-5 py-10 mx-auto bg-white">
-          <div className="lg:w-1/2 md:w-2/3 mx-auto sm:border border-gray-200 sm:p-10">
-            <div className="flex flex-col text-center w-full mb-12">
-              <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+        <div className="container px-5 py-5 mx-auto bg-white">
+          <div className="lg:w-1/2 md:w-2/3 mx-auto sm:px-10">
+            <div className="flex flex-col w-full mb-3">
+              <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">
                 Give an Item
               </h1>
-              <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-                You will be required to pay 50 ksh. This is for the maintenance
-                of the website and for keeping this project going. Thank you.
-              </p>
             </div>
             <form onSubmit={handleSubmit}>
               <div className="flex flex-wrap -m-2">
@@ -264,10 +260,17 @@ export default function AddItemPage({ token }) {
                     ></textarea>
                   </div>
                 </div>
-                <div className="p-2 m-3 w-full">
-                  <button className="submit-btn" type="submit">
-                    <FaSave className="mt-1 mr-2" />
-                    SUBMIT ENTRIES
+                <div className="w-full mt-5 p-2">
+                  <Link href="#">
+                    <a className="text-gray-600 border border-gray-200 py-3 w-full px-5 mr-2 rounded-sm">
+                      Cancel
+                    </a>
+                  </Link>
+                  <button
+                    className="text-gray-600 font-semibold bg-yellow-400 py-3 px-5 rounded-sm"
+                    type="submit"
+                  >
+                    Submit this Item
                   </button>
                 </div>
               </div>

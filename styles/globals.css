@@ -12,15 +12,15 @@ footer {
 }
 
 .submit-btn {
-  @apply flex mx-auto text-gray-700 bg-yellow-400 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded-sm font-semibold text-lg;
+  @apply flex mx-auto text-gray-100 bg-gray-500 border-0 py-2 px-8 focus:outline-none hover:bg-gray-600 rounded-sm font-normal text-lg;
 }
 
 .btn-yellow {
-  @apply inline-flex items-center bg-yellow-500 border-0 py-2 px-4 m-0 focus:outline-none hover:bg-yellow-800 rounded-sm font-semibold mt-4 md:mt-0 text-gray-700;
+  @apply inline-flex items-center bg-gray-500 border-0 py-2 px-4 m-0 focus:outline-none hover:bg-yellow-800 rounded-sm font-semibold mt-4 md:mt-0 text-gray-700;
 }
 
 .btn-give {
-  @apply inline-flex items-center bg-yellow-300 border-0 py-2 pl-2 pr-3  mr-1 focus:outline-none hover:bg-yellow-600 rounded-sm font-bold md:mt-0 text-gray-700 uppercase text-sm;
+  @apply inline-flex items-center bg-gray-300 border-0 py-2 pl-2 pr-3  mr-1 focus:outline-none hover:bg-yellow-600 rounded-sm font-bold md:mt-0 text-gray-700 uppercase text-sm;
 }
 
 .input-give {
@@ -32,7 +32,7 @@ footer {
 }
 
 .btn-yellow-forms {
-  @apply bg-yellow-600 text-white text-sm font-normal px-6 py-3 rounded-sm hover:bg-yellow-700 shadow-sm outline-none focus:outline-none mr-1 mb-1 w-full;
+  @apply bg-gray-600 text-yellow-400 text-sm font-normal px-6 py-3 rounded-sm hover:bg-gray-700 shadow-sm outline-none focus:outline-none mr-1 mb-1 w-full;
 }
 
 .input-styles {

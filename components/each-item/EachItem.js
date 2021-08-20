@@ -9,14 +9,10 @@ import AuthContext from '@/context/AuthContext'
 function EachItem({ item }) {
   const { user } = useContext(AuthContext)
 
-  let isRequested
-  item.requests.map((req) => {
-    if (req.requested_by === user?.id) {
-      isRequested = true
-    } else {
-      isRequested = false
-    }
-  })
+  const foundRequest = item.requests.find(
+    (item) => item.requested_by === user?.id,
+  )
+  console.log(foundRequest)
 
   return (
     <section className="text-gray-600 bg-white w-full h-full py-10">
@@ -74,7 +70,7 @@ function EachItem({ item }) {
                 </span>
                 {item.location}
               </span>
-              {isRequested ? (
+              {foundRequest ? (
                 <div className="flex ml-auto ">
                   <button
                     disabled
@@ -86,26 +82,33 @@ function EachItem({ item }) {
                     <FaPencilAlt />
                   </button>
                 </div>
-              ) : user?.id !== item.user.id ? (
-                <Link href={`/dashboard/items/request/${item.slug}`}>
-                  <a className="uppercase flex ml-auto text-gray-600 font-semibold bg-yellow-400 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-300 rounded-sm">
-                    Send request
-                  </a>
-                </Link>
-              ) : (
+              ) : user?.id === item.user.id ? (
                 <div className="flex ml-auto ">
-                  <Link href={`/dashboard/items/${item.slug}/requests`}>
+                  <Link
+                    href={
+                      item.requests.length !== 0
+                        ? `/dashboard/items/${item.slug}/requests`
+                        : '#'
+                    }
+                  >
                     <a className="uppercase text-gray-700 font-semibold bg-gray-200 border-0 py-2 px-6 rounded-sm hover:bg-gray-300">
-                      View requests
+                      {item.requests.length !== 0
+                        ? `View Requests`
+                        : 'No requests'}
                     </a>
                   </Link>
-
                   <Link href={`/dashboard/items/edit/${item.slug}`}>
                     <a className="rounded-full w-10 h-10 bg-yellow-300 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                       <FaPencilAlt />
                     </a>
                   </Link>
                 </div>
+              ) : (
+                <Link href={`/dashboard/items/request/${item.slug}`}>
+                  <a className="uppercase flex ml-auto text-gray-600 font-semibold bg-yellow-400 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-300 rounded-sm">
+                    Send request
+                  </a>
+                </Link>
               )}
             </div>
           </div>

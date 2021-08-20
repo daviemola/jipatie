@@ -15,18 +15,20 @@ export default function Search() {
   }
 
   return (
-    <div className="pt-2 relative mx-auto text-gray-600 hidden md:block">
-      <form onSubmit={handleSubmit}>
+    <div className="pt-1 relative mx-auto text-gray-600 hidden md:block">
+      <form onSubmit={handleSubmit} autoComplete="off">
         <input
-          className="border border-gray-50  bg-white h-9 px-4 pr-16 ml-4 rounded-sm text-sm focus:outline-none"
-          type="search"
+          className="bg-gray-800 h-10 bg-opacity-50 px-4 pr-16 ml-4 rounded-sm text-sm focus:outline-none placeholder-gray-50 focus:bg-gray-700 focus:text-gray-50"
           name="search"
           value={term}
           placeholder="Search Items"
           onChange={(e) => setTerm(e.target.value)}
         />
-        <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
-          <FaSearch className="text-yellow-700" />
+        <button
+          type="submit"
+          className="absolute right-0 top-0 mt-4 mr-4 flex flex-col items-center"
+        >
+          <FaSearch className="text-yellow-500" />
         </button>
       </form>
     </div>
