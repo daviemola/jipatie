@@ -1,7 +1,11 @@
 import Link from 'next/link'
+import dayjs from 'dayjs'
+import * as relativeTime from 'dayjs/plugin/relativeTime'
 
 export default function ItemRequests({ request }) {
-  console.log(request)
+  dayjs.extend(relativeTime)
+
+  // console.log(request)
   return (
     <div>
       {request?.map((req) => (
@@ -15,9 +19,7 @@ export default function ItemRequests({ request }) {
                 {req.requested_by?.username}
               </p>
               <h1>{req.description}</h1>
-              <p className="py-2">
-                {new Date(req.created_at).toLocaleString()}
-              </p>
+              <p className="py-2">{dayjs(req.created_at).fromNow()}</p>
             </a>
           </Link>
         </div>

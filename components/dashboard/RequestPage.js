@@ -1,14 +1,23 @@
 import React from 'react'
 import Pagination from '../layout/Pagination'
-import Image from 'next/image'
 import Link from 'next/link'
-import { FiTrash, FiTool } from 'react-icons/fi'
-import { GrLinkPrevious } from 'react-icons/gr'
+import {
+  FiTrash,
+  FiTool,
+  FiCheckSquare,
+  FiXSquare,
+  FiSettings,
+  FiTrash2,
+} from 'react-icons/fi'
 import { API_URL } from '@/config/index'
 import toast, { Toaster } from 'react-hot-toast'
 import { useRouter } from 'next/router'
+import dayjs from 'dayjs'
+import * as relativeTime from 'dayjs/plugin/relativeTime'
 
 export default function RequestPage({ items, token }) {
+  dayjs.extend(relativeTime)
+  dayjs.locale('en')
   const router = useRouter()
   //
   const deleteItem = async (id) => {
@@ -34,118 +43,68 @@ export default function RequestPage({ items, token }) {
   }
 
   return (
-    <div>
+    <>
       <Toaster />
-      <Link href="/dashboard">
-        <a className="flex flex-row text-sm text-gray-700">
-          <GrLinkPrevious className="mt-1 mr-2 mb-3" />
-          Go Back
-        </a>
-      </Link>
-      <div className="p-8 bg-white border border-gray-200">
-        <h2 className="text-xl font-semibold text-gray-600">Items requested</h2>
-        <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-          <div className="inline-block min-w-full rounded-sm overflow-hidden">
-            <table className="min-w-full">
-              <thead>
-                <tr className="uppercase text-xs text-gray-400 text-left bg-gray-100">
-                  <th scope="col" className="pl-3 py-3 font-semibold">
-                    Item
-                  </th>
-                  <th scope="col" className="pl-4 py-3 font-semibold">
-                    Dates
-                  </th>
-                  <th scope="col" className="pl-4 py-3 font-semibold">
-                    Status
-                  </th>
-                  <th scope="col" className="px-4 py-3 font-semibold">
-                    Actions
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {items &&
-                  items.map((item) => (
-                    <tr
-                      key={item.id}
-                      className="text-xs text-gray-800 border-gray-200 bg-white font-normal"
-                    >
-                      <td className="pl-3 py-3 border-b">
-                        <div className="ml-0">
-                          <p>{item.item.name}</p>
-                        </div>
-                      </td>
-                      <td className="px-4 py-3 border-b">
-                        <p>
-                          {`${new Date(item.created_at).toLocaleDateString(
-                            'en-US',
-                          )}`}
-                        </p>
-                      </td>
-                      <td className="px-4 py-3 border-b">
-                        {item.accepted ? (
-                          <span className="relative inline-block px-3 py-1 text-green-900 leading-tight">
-                            <span
-                              aria-hidden="true"
-                              className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
-                            ></span>
-                            <span className="relative">accepted</span>
-                          </span>
-                        ) : item.delivered ? (
-                          <span className="relative inline-block px-3 py-1 text-green-900 leading-tight">
-                            <span
-                              aria-hidden="true"
-                              className="absolute inset-0 bg-yellow-200 opacity-50 rounded-full"
-                            ></span>
-                            <span className="relative">delivered</span>
-                          </span>
-                        ) : item.created_at ? (
-                          <span className="relative inline-block px-3 py-1 text-blue-900 leading-tight">
-                            <span
-                              aria-hidden="true"
-                              className="absolute inset-0 bg-blue-300 opacity-50 rounded-full"
-                            ></span>
-                            <span className="relative">submitted</span>
-                          </span>
-                        ) : (
-                          <span className="relative inline-block px-3 py-1 text-blue-900 leading-tight">
-                            <span
-                              aria-hidden="true"
-                              className="absolute inset-0 bg-blue-300 opacity-50 rounded-full"
-                            ></span>
-                            <span className="relative">not accepted</span>
-                          </span>
-                        )}
-                      </td>
-                      <td className="px-4 py-3 border-b">
-                        <div className="flex flex-row">
-                          <a
-                            href="#"
-                            className="flex flex-row text-gray-800 mr-4"
-                            onClick={() => deleteItem(item.id)}
-                          >
-                            <FiTrash className="text-sm mr-1" /> Delete
-                          </a>
-                          <Link
-                            href={`/dashboard/items/${item.item.slug}/request/${item.id}/edit`}
-                          >
-                            <a>
-                              <div className="flex flex-row text-gray-800">
-                                <FiTool className="text-sm mr-1" />
-                                <span>Edit</span>
-                              </div>
-                            </a>
-                          </Link>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-              </tbody>
-            </table>
-          </div>
+      <div className="px-8 bg-white border border-gray-200 flex items-center justify-between">
+        <h2 className="text-base py-3 font-semibold text-gray-800 uppercase">
+          Your Requests
+        </h2>
+        <div className="text-gray-600 uppercase font-semibold text-sm">
+          Actions
         </div>
       </div>
-      <Pagination />
-    </div>
+      {items &&
+        items.map((item) => (
+          <div
+            key={item.id}
+            className="py-4 px-8 bg-white border border-gray-200"
+          >
+            <div className="flex justify-between">
+              <Link
+                href={`/dashboard/items/${item.item.slug}/request/${item.id}`}
+              >
+                <a>
+                  <p className="font-semibold text-gray-500 text-sm hover:underline w-full">
+                    {item?.item.name}
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    {dayjs(item.created_at).fromNow()}
+                  </p>
+                </a>
+              </Link>
+              <div className="text-sm">
+                {item.accepted === false ? (
+                  <div className="flex items-center">
+                    <FiXSquare className="text-red-500 mr-2" />
+                    Not yet accepted
+                  </div>
+                ) : (
+                  <div className="flex items-center">
+                    <FiCheckSquare className="text-green-500 mr-2" />
+                    Accepted
+                  </div>
+                )}
+              </div>
+              <div className="flex">
+                <Link
+                  href={`/dashboard/items/${item.item.slug}/request/${item.id}/edit`}
+                >
+                  <a className="flex items-center mr-3">
+                    <FiSettings className="mr-1" />
+                    Edit
+                  </a>
+                </Link>
+                <button
+                  className="flex items-center"
+                  onClick={() => deleteItem(item.id)}
+                >
+                  <FiTrash2 className="mr-1" />
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+    </>
   )
 }

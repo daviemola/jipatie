@@ -17,6 +17,9 @@ module.exports = {
         '6/7': '85.7142857%',
       },
     },
+    minHeight: {
+      '3/4': '75%',
+    },
   },
   variants: {
     extend: {},

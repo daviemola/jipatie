@@ -12,11 +12,10 @@ function EachItem({ item }) {
   const foundRequest = item.requests.find(
     (item) => item.requested_by === user?.id,
   )
-  console.log(foundRequest)
 
   return (
-    <section className="text-gray-600 bg-white w-full h-full py-10">
-      <div className="container px-5 py-10 mx-auto">
+    <section className="text-gray-600 body-font overflow-hidden min-h-3/4">
+      <div className="container px-3 py-6 mx-auto max-w-screen-xl mt-6">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <Image
             alt="ecommerce"
@@ -41,23 +40,23 @@ function EachItem({ item }) {
                 <IoMdStarOutline />
                 <span className="text-gray-600 ml-3">{item.condition}</span>
               </span>
-              <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s">
+              <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-300 space-x-2s">
                 <span className="mr-3">Color</span>
                 <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none bg-yellow-600"></button>
               </span>
             </div>
             <p className="leading-relaxed">{item.description}</p>
-            <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
+            <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-300 mb-5">
               <div className="flex ">
                 <span className="mr-2 text-md font-semibold">Est. value:</span>
                 {`Ksh ${item.value}`}
               </div>
-              <div className="flex ml-3 items-center border-l-2 border-gray-200 space-x-2s">
+              <div className="flex ml-3 items-center border-l-2 border-gray-300 space-x-2s">
                 <span className="mx-3 font-semibold">Size:</span>
                 {item.size}
               </div>
             </div>
-            <div className="flex mt-3 items-center pb-5 border-b-2 border-gray-100 mb-5">
+            <div className="flex mt-3 items-center pb-5 border-b-2 border-gray-300 mb-5">
               <div className="flex ">
                 <span className="mr-2 text-md font-semibold">Offered by:</span>
                 {`${item.user.username}`}

@@ -48,7 +48,7 @@ export async function getServerSideProps({ req, query: { page = 1 } }) {
   const total = await totalRes.json()
 
   const res = await fetch(
-    `${API_URL}/items?_sort=created_at:desc&_limit=${PER_PAGE}&_start=${start}`,
+    `${API_URL}/items?_sort=created_at:desc&_limit=${PER_PAGE}&_start=${start}&accepted=false`,
     {
       method: 'GET',
       headers: {
