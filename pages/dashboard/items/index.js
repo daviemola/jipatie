@@ -19,7 +19,7 @@ export default function items({ items, page, total }) {
         {items.length !== 0 &&
           items.map((item) => <EachItem key={item.id} item={item} />)}
       </Wrapper>
-      <Pagination page={page} total={total} />
+      <Pagination page={page} total={total} pageName={items} />
     </MainLayout>
   )
 }

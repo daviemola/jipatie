@@ -15,7 +15,7 @@ import { useRouter } from 'next/router'
 import dayjs from 'dayjs'
 import * as relativeTime from 'dayjs/plugin/relativeTime'
 
-export default function RequestPage({ items, token }) {
+export default function RequestPage({ items, token, page, total }) {
   dayjs.extend(relativeTime)
   dayjs.locale('en')
   const router = useRouter()
@@ -105,6 +105,7 @@ export default function RequestPage({ items, token }) {
             </div>
           </div>
         ))}
+      <Pagination page={page} total={total} pageName={'requests'} />
     </>
   )
 }

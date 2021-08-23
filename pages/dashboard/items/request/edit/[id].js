@@ -14,6 +14,9 @@ export default function RequestPage({ item, request, token }) {
   const [values, setValues] = useState({
     description: request.description,
     item: item.id,
+    phone_number: request.phone_number,
+    alternative_phone_no: request.alternative_phone_no,
+    location: request.location,
   })
 
   const router = useRouter()
@@ -109,6 +112,47 @@ export default function RequestPage({ item, request, token }) {
                   ></textarea>
                 </div>
               </div>
+              <div className="sm:flex sm:gap-2">
+                <div className="relative pt-3 sm:w-1/2">
+                  <label className="leading-7 text-sm text-gray-600 font-semibold">
+                    Phone Number*
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="+25412345678"
+                    name="phone_number"
+                    value={values.phone_number}
+                    onChange={handleInputChange}
+                    className="input-give"
+                  />
+                </div>
+                <div className="relative pt-3 sm:w-1/2">
+                  <label className="leading-7 text-sm text-gray-600 font-semibold">
+                    Alternative Phone Number*
+                  </label>
+                  <input
+                    name="alternative_phone_no"
+                    type="number"
+                    placeholder="+25412345678"
+                    value={values.alternative_phone_no}
+                    onChange={handleInputChange}
+                    className="input-give"
+                  />
+                </div>
+              </div>
+              <div className="relative pt-3">
+                <label className="leading-7 text-sm text-gray-600 font-semibold">
+                  Address*
+                </label>
+                <input
+                  name="location"
+                  type="text"
+                  placeholder="Suggest a meetup location"
+                  value={values.location}
+                  onChange={handleInputChange}
+                  className="input-give"
+                />
+              </div>
               <div className="py-2 m-3 w-full">
                 <button className="submit-btn" type="submit">
                   <FaSave className="mt-1 mr-2" />
@@ -141,15 +185,6 @@ export async function getServerSideProps({ req, params: { id } }) {
       Authorization: `Bearer ${token}`,
     },
   })
-
-  //   if (res.status === 404) {
-  //     return {
-  //       redirect: {
-  //         destination: '/dashboard',
-  //         permanent: false,
-  //       },
-  //     }
-  //   }
 
   const res = await fetch(`${API_URL}/items/${id}`, {
     method: 'GET',

@@ -7,7 +7,7 @@ import {
 
 function Footer() {
   return (
-    <footer className="text-gray-600 body-font bg-white mt-5 border-t border-gray-200 ">
+    <footer className="text-gray-600 body-font bg-white mt-5 border-t border-gray-200 inset-x-0 bottom-0">
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col max-w-screen-xl">
         <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
           <span className="ml-3 text-xl">JIPATIE</span>

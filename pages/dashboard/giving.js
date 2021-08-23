@@ -1,10 +1,12 @@
 import GivingPage from '@/components/dashboard/GivingPage'
 import { API_URL } from '@/config/index'
 import { parseCookies } from '@/helpers/index'
+import { DASH_PER_PAGE } from '@/config/index'
 import Head from 'next/head'
 import MainLayout from '../../components/layout/MainLayout'
+import Pagination from '@/components/layout/Pagination'
 
-export default function Givingpage({ items, token }) {
+export default function Givingpage({ items, token, page, total }) {
   return (
     <MainLayout>
       <Head>
@@ -15,7 +17,7 @@ export default function Givingpage({ items, token }) {
       <section className="text-gray-600 body-font overflow-hidden min-h-full">
         <div className="container px-3 py-6 mx-auto max-w-screen-xl">
           <div className="container mx-auto px-4 sm:px-8 max-w-3xl">
-            <GivingPage items={items} token={token} />
+            <GivingPage items={items} token={token} page={page} total={total} />
           </div>
         </div>
       </section>
@@ -35,28 +37,33 @@ export async function getServerSideProps({ req, query: { page = 1 } }) {
     }
   }
 
-  const start = +page === 1 ? 0 : (+page - 1) * PER_PAGE
+  const start = +page === 1 ? 0 : (+page - 1) * DASH_PER_PAGE
 
-  // // Fetch total/count
-  // const totalRes = await fetch(`${API_URL}/requests/count`, {
-  //   method: 'GET',
-  //   headers: {
-  //     Authorization: `Bearer ${token}`,
-  //   },
-  // })
-  // const total = await totalRes.json()
-
-  const res = await fetch(`${API_URL}/items/me`, {
+  // Fetch total/count
+  const totalRes = await fetch(`${API_URL}/items/countme`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
     },
   })
+  const total = await totalRes.json()
+
+  const res = await fetch(
+    `${API_URL}/items/me?_limit=${DASH_PER_PAGE}&_start=${start}`,
+    {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  )
   const items = await res.json()
   return {
     props: {
       items,
       token,
+      page: +page,
+      total,
     },
   }
 }

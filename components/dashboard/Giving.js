@@ -25,35 +25,34 @@ export default function Giving({ items }) {
             key={item.id}
             className="py-4 px-8 bg-white border border-gray-200 hover:bg-gray-50"
           >
-            <Link href={`#`}>
-              <a className="flex justify-between">
-                <div>
-                  <p className="font-semibold text-gray-500 text-sm">
+            <div className="flex justify-between">
+              <Link href={`/dashboard/items/${item.slug}`}>
+                <a>
+                  <p className="font-semibold text-gray-500 text-sm hover:underline">
                     {item.name}
                   </p>
                   <p className="text-xs text-gray-400 tracking-wide">
                     {dayjs(item.created_at).fromNow()}
                   </p>
-                </div>
-
-                <p className="text-sm  hidden sm:block">
-                  {item.category && item.category.name}
-                </p>
-                <div className="text-sm">
-                  {item.accepted === false ? (
-                    <div className="flex items-center">
-                      <FiCheckSquare className="text-green-500 mr-2" />
-                      Active
-                    </div>
-                  ) : (
-                    <div className="flex items-center">
-                      <FiXSquare className="text-red-500 mr-2" />
-                      Not Active
-                    </div>
-                  )}
-                </div>
-              </a>
-            </Link>
+                </a>
+              </Link>
+              <p className="text-sm  hidden sm:block">
+                {item.category && item.category.name}
+              </p>
+              <div className="text-sm">
+                {item.accepted === false ? (
+                  <div className="flex items-center">
+                    <FiCheckSquare className="text-green-500 mr-2" />
+                    Active
+                  </div>
+                ) : (
+                  <div className="flex items-center">
+                    <FiXSquare className="text-red-500 mr-2" />
+                    Not Active
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         ))}
     </>

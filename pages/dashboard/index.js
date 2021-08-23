@@ -37,13 +37,13 @@ export async function getServerSideProps({ req }) {
   }
 
   const [itemsRes, requestsRes] = await Promise.all([
-    fetch(`${API_URL}/items/me?_limit=3`, {
+    fetch(`${API_URL}/items/me?_limit=3&_start=0`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
       },
     }),
-    fetch(`${API_URL}/requests/me`, {
+    fetch(`${API_URL}/requests/me?_limit=3&_start=0`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,

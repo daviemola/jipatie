@@ -1,5 +1,6 @@
 import React from 'react'
 import Pagination from '../layout/Pagination'
+// import DashPagination from '../layout/DashPagination'
 import Link from 'next/link'
 import { FiTrash, FiCheckSquare, FiXSquare } from 'react-icons/fi'
 import { API_URL } from '@/config/index'
@@ -8,8 +9,7 @@ import { useRouter } from 'next/router'
 import dayjs from 'dayjs'
 import * as relativeTime from 'dayjs/plugin/relativeTime'
 
-export default function GivingPage({ items, token }) {
-  console.log(items)
+export default function GivingPage({ items, token, page, total }) {
   dayjs.extend(relativeTime)
   dayjs.locale('en')
   const router = useRouter()
@@ -90,6 +90,7 @@ export default function GivingPage({ items, token }) {
             </Link>
           </div>
         ))}
+      <Pagination page={page} total={total} pageName={'giving'} />
     </>
   )
 }
