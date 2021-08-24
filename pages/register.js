@@ -11,9 +11,12 @@ export default function RegisterPage() {
   const [password, setPassword] = useState('')
   const [password2, setPassword2] = useState('')
 
-  const { register, error } = useContext(AuthContext)
+  const { register, error, message } = useContext(AuthContext)
 
-  useEffect(() => error && toast.error(error))
+  useEffect(() => {
+    error && toast.error(error)
+    // message && toast.success(message, { duration: 5000 })
+  })
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -68,7 +71,14 @@ export default function RegisterPage() {
                     </div>
                   </div>
                 </div>
+
                 <div className="flex-auto px-4 sm:px-7 py-3">
+                  {message && (
+                    <p className="text-green-800 text-sm bg-green-200 p-2 mb-3 text-center">
+                      Success. Check your email for instructions.
+                    </p>
+                  )}
+
                   <form onSubmit={handleSubmit}>
                     <div className="relative w-full mb-3">
                       <label
