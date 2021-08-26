@@ -1,5 +1,8 @@
+import Benefits from '@/components/Index/Benefits'
+import FinalSection from '@/components/Index/FinalSection'
+import Uses from '@/components/Index/Uses'
+import Works from '@/components/Index/Works'
 import Head from 'next/head'
-import Image from 'next/image'
 import Hero from '../components/Index/Hero'
 import Layout from '../components/layout/Layout'
 
@@ -12,6 +15,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
+      <Uses />
+      <Works />
+      <Benefits />
+      <FinalSection />
     </Layout>
   )
 }

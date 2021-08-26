@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { NEXT_URL } from '@/config/index'
+import { getSession, signIn, signOut } from 'next-auth/client'
 
 const AuthContext = createContext()
 
@@ -126,6 +127,9 @@ export const AuthProvider = ({ children }) => {
     }
   }
 
+  //Google auth functionality
+  const googleAuth = async () => {}
+
   return (
     <AuthContext.Provider
       value={{
@@ -136,6 +140,7 @@ export const AuthProvider = ({ children }) => {
         logout,
         message,
         forgotpassword,
+        googleAuth,
         resetpassword,
       }}
     >

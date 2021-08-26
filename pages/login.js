@@ -4,12 +4,13 @@ import Link from 'next/link'
 import { useState, useEffect, useContext } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import AuthContext from '@/context/AuthContext'
+import { signIn } from 'next-auth/client'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const { login, error } = useContext(AuthContext)
+  const { login, error, googleAuth } = useContext(AuthContext)
 
   useEffect(() => error && toast.error(error))
 
@@ -115,6 +116,7 @@ export default function LoginPage() {
                     className="btn-login-register mb-4"
                     type="button"
                     style={{ transition: 'all .15s ease' }}
+                    onClick={() => signIn()}
                   >
                     <Image
                       alt="..."
