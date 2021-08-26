@@ -10,7 +10,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const { login, error, googleAuth } = useContext(AuthContext)
+  const { login, error, loading } = useContext(AuthContext)
 
   useEffect(() => error && toast.error(error))
 
@@ -105,7 +105,7 @@ export default function LoginPage() {
                         type="submit"
                         style={{ transition: 'all .15s ease' }}
                       >
-                        Sign In
+                        {loading ? `Signing you in.` : `Sign In`}
                       </button>
                     </div>
                   </form>

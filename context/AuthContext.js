@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { NEXT_URL } from '@/config/index'
-import { getSession, signIn, signOut } from 'next-auth/client'
+// import { getSession, signIn, signOut } from 'next-auth/client'
 
 const AuthContext = createContext()
 
@@ -9,6 +9,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   const [error, setError] = useState(null)
   const [message, setMessage] = useState(null)
+  const [loading, setLoading] = useState(false)
   const router = useRouter()
 
   useEffect(() => checkUserLoggedIn(), [])
@@ -39,6 +40,7 @@ export const AuthProvider = ({ children }) => {
 
   //login user
   const login = async ({ email: identifier, password }) => {
+    setLoading(true)
     const res = await fetch(`${NEXT_URL}/api/login`, {
       method: 'POST',
       headers: {
@@ -52,7 +54,9 @@ export const AuthProvider = ({ children }) => {
     if (res.ok) {
       setUser(data.user)
       router.push('/dashboard/items')
+      setLoading(false)
     } else {
+      setLoading(false)
       setError(data.message)
       setError(null)
     }
@@ -142,6 +146,7 @@ export const AuthProvider = ({ children }) => {
         forgotpassword,
         googleAuth,
         resetpassword,
+        loading,
       }}
     >
       {children}

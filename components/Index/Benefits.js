@@ -14,45 +14,39 @@ export default function Benefits() {
             <div className="bg-gray-100 rounded flex p-4 h-full items-center">
               <HiBadgeCheck className="text-yellow-700 text-3xl mr-2" />
               <span className="title-font font-medium">
-                Authentic Cliche Forage
+                Easier for donations
               </span>
             </div>
           </div>
           <div className="p-2 sm:w-1/2 w-full">
             <div className="bg-gray-100 rounded flex p-4 h-full items-center">
               <HiBadgeCheck className="text-yellow-700 text-3xl mr-2" />
-              <span className="title-font font-medium">
-                Kinfolk Chips Snackwave
-              </span>
+              <span className="title-font font-medium">More convinient</span>
+            </div>
+          </div>
+          <div className="p-2 sm:w-1/2 w-full">
+            <div className="bg-gray-100 rounded flex p-4 h-full items-center">
+              <HiBadgeCheck className="text-yellow-700 text-3xl mr-2" />
+              <span className="title-font font-medium">Increased control</span>
+            </div>
+          </div>
+          <div className="p-2 sm:w-1/2 w-full">
+            <div className="bg-gray-100 rounded flex p-4 h-full items-center">
+              <HiBadgeCheck className="text-yellow-700 text-3xl mr-2" />
+              <span className="title-font font-medium">More donated items</span>
+            </div>
+          </div>
+          <div className="p-2 sm:w-1/2 w-full">
+            <div className="bg-gray-100 rounded flex p-4 h-full items-center">
+              <HiBadgeCheck className="text-yellow-700 text-3xl mr-2" />
+              <span className="title-font font-medium">Support from us</span>
             </div>
           </div>
           <div className="p-2 sm:w-1/2 w-full">
             <div className="bg-gray-100 rounded flex p-4 h-full items-center">
               <HiBadgeCheck className="text-yellow-700 text-3xl mr-2" />
               <span className="title-font font-medium">
-                Coloring Book Ethical
-              </span>
-            </div>
-          </div>
-          <div className="p-2 sm:w-1/2 w-full">
-            <div className="bg-gray-100 rounded flex p-4 h-full items-center">
-              <HiBadgeCheck className="text-yellow-700 text-3xl mr-2" />
-              <span className="title-font font-medium">
-                Typewriter Polaroid Cray
-              </span>
-            </div>
-          </div>
-          <div className="p-2 sm:w-1/2 w-full">
-            <div className="bg-gray-100 rounded flex p-4 h-full items-center">
-              <HiBadgeCheck className="text-yellow-700 text-3xl mr-2" />
-              <span className="title-font font-medium">Pack Truffaut Blue</span>
-            </div>
-          </div>
-          <div className="p-2 sm:w-1/2 w-full">
-            <div className="bg-gray-100 rounded flex p-4 h-full items-center">
-              <HiBadgeCheck className="text-yellow-700 text-3xl mr-2" />
-              <span className="title-font font-medium">
-                The Catcher In The Rye
+                Solution to some issues
               </span>
             </div>
           </div>
