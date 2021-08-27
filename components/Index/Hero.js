@@ -13,9 +13,10 @@ function Hero() {
             to the needy
           </h1>
           <p className="md:mb-8 mb-2 leading-relaxed text-base md:text-lg min-w-min px-0 text-center lg:px-52">
-            Copper mug try-hard pitchfork pour-over freegan heirloom neutra air
-            plant cold-pressed tacos poke beard tote bag. Heirloom echo park
-            mlkshk tote bag selvage.
+            {`
+          "He that hath two coats, let him impart to him that hath none; and he that hath food, let him do likewise."
+          We try to make it easier to give items to those that need.
+              `}
           </p>
           <div className="flex justify-center">
             <Link href="/register">

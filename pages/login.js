@@ -105,7 +105,21 @@ export default function LoginPage() {
                         type="submit"
                         style={{ transition: 'all .15s ease' }}
                       >
-                        {loading ? `Signing you in.` : `Sign In`}
+                        {loading ? (
+                          <div className="flex items-center justify-center">
+                            <Image
+                              alt="..."
+                              className="w-full text-white m-0"
+                              src="/yellowloader.svg"
+                              width={20}
+                              height={20}
+                            />
+                            <div className="pr-2"></div>
+                            Loading
+                          </div>
+                        ) : (
+                          `Sign In`
+                        )}
                       </button>
                     </div>
                   </form>
@@ -113,10 +127,11 @@ export default function LoginPage() {
                     <small>OR</small>
                   </div>
                   <button
-                    className="btn-login-register mb-4"
+                    className="btn-login-register mb-4 disabled:opacity-50"
                     type="button"
                     style={{ transition: 'all .15s ease' }}
-                    onClick={() => signIn()}
+                    // onClick={() => signIn()}
+                    disabled
                   >
                     <Image
                       alt="..."
