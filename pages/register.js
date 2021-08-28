@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState, useEffect, useContext } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import AuthContext from '@/context/AuthContext'
+import GoogleLogin from 'react-google-login'
 
 export default function RegisterPage() {
   const [username, setUsername] = useState('')
@@ -11,7 +12,7 @@ export default function RegisterPage() {
   const [password, setPassword] = useState('')
   const [password2, setPassword2] = useState('')
 
-  const { register, error, message } = useContext(AuthContext)
+  const { register, error, message, googleAuth } = useContext(AuthContext)
 
   useEffect(() => {
     error && toast.error(error)
@@ -40,6 +41,12 @@ export default function RegisterPage() {
 
     register({ username, email, password })
   }
+
+  const responseGoogle = async (response) => {
+    const access_token = response?.accessToken
+    googleAuth({ access_token })
+  }
+
   return (
     <>
       <Head>
@@ -160,21 +167,31 @@ export default function RegisterPage() {
                     <small>OR</small>
                   </div>
 
-                  <button
-                    className="btn-login-register mb-8"
-                    type="button"
-                    style={{ transition: 'all .15s ease' }}
-                  >
-                    <Image
-                      alt="..."
-                      className="w-full"
-                      src="/google.svg"
-                      width={15}
-                      height={15}
-                    />
-                    <div className="pr-2"></div>
-                    Sign up with Google
-                  </button>
+                  <GoogleLogin
+                    clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}
+                    render={(renderProps) => (
+                      <button
+                        className="btn-login-register mb-4 disabled:opacity-50"
+                        type="button"
+                        style={{ transition: 'all .15s ease' }}
+                        onClick={renderProps.onClick}
+                      >
+                        <Image
+                          alt="..."
+                          className="w-full"
+                          src="/google.svg"
+                          width={15}
+                          height={15}
+                        />
+                        <div className="pr-2"></div>
+                        Register with Google
+                      </button>
+                    )}
+                    buttonText="Login"
+                    onSuccess={responseGoogle}
+                    onFailure={responseGoogle}
+                    cookiePolicy={'single_host_origin'}
+                  />
                 </div>
               </div>
             </div>

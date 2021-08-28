@@ -16,6 +16,7 @@ export const AuthProvider = ({ children }) => {
 
   //register user
   const register = async (user) => {
+    setLoading(true)
     const res = await fetch(`${NEXT_URL}/api/register`, {
       method: 'POST',
       headers: {
@@ -29,12 +30,14 @@ export const AuthProvider = ({ children }) => {
     if (res.ok) {
       setUser(null)
       setMessage('Check your email for further instructions. ')
+      setLoading(false)
       setTimeout(function () {
         router.push('/login')
       }, 6000)
     } else {
       setError(data.message)
       setError(null)
+      setLoading(false)
     }
   }
 
@@ -88,6 +91,7 @@ export const AuthProvider = ({ children }) => {
 
   //send email
   const forgotpassword = async ({ email }) => {
+    setLoading(true)
     const res = await fetch(`${NEXT_URL}/api/forgotpassword`, {
       method: 'POST',
       headers: {
@@ -101,17 +105,20 @@ export const AuthProvider = ({ children }) => {
     if (res.ok) {
       setUser(null)
       setMessage(data.message)
+      setLoading(false)
       setTimeout(function () {
         router.push('/login')
       }, 6000)
     } else {
       setError(data.message)
       setError(null)
+      setLoading(false)
     }
   }
 
   //Reset Password for a user
   const resetpassword = async ({ code, password, passwordConfirmation }) => {
+    setLoading(true)
     const res = await fetch(`${NEXT_URL}/api/resetpassword`, {
       method: 'POST',
       headers: {
@@ -124,15 +131,38 @@ export const AuthProvider = ({ children }) => {
 
     if (res.ok) {
       setUser(data.user)
+      setLoading(false)
       router.push('/dashboard/items')
     } else {
       setError(data.message)
+      setLoading(false)
       setError(null)
     }
   }
 
   //Google auth functionality
-  const googleAuth = async () => {}
+  const googleAuth = async ({ access_token }) => {
+    setLoading(true)
+    const res = await fetch(`${NEXT_URL}/api/googleauth`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ access_token }),
+    })
+
+    const data = await res.json()
+
+    if (res.ok) {
+      setUser(data.user)
+      setLoading(false)
+      router.push('/dashboard/items')
+    } else {
+      setError(data.message)
+      setLoading(false)
+      setError(null)
+    }
+  }
 
   return (
     <AuthContext.Provider
