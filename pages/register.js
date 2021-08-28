@@ -41,6 +41,7 @@ export default function RegisterPage() {
 
     register({ username, email, password })
   }
+  console.log(process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID)
 
   const responseGoogle = async (response) => {
     const access_token = response?.accessToken
