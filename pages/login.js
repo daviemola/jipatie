@@ -5,6 +5,7 @@ import { useState, useEffect, useContext } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import AuthContext from '@/context/AuthContext'
 import GoogleLogin from 'react-google-login'
+import Layout from '@/components/layout/Layout'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -64,7 +65,7 @@ export default function LoginPage() {
                       </label>
                       <input
                         type="email"
-                        className="input-styles"
+                        className="input-styles font-mono"
                         placeholder="Your Email address"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -81,7 +82,7 @@ export default function LoginPage() {
                       </label>
                       <input
                         type="password"
-                        className="input-styles"
+                        className="input-styles font-mono"
                         placeholder="Your Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}

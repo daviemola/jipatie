@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useContext } from 'react'
 import { FaBars, FaCaretDown, FaTimes } from 'react-icons/fa'
-import { BsBoxArrowInLeft, BsPersonSquare } from 'react-icons/bs'
+import { BiLogOut } from 'react-icons/bi'
 import { HiSun } from 'react-icons/hi'
 import Search from '../all-items/Search'
 import AuthContext from '@/context/AuthContext'
@@ -26,8 +26,8 @@ export default function Test() {
                 <Link href="/dashboard/items">
                   <a className="inline-flex items-center mb-2">
                     <Image src="/logo.png" width={45} height={45} alt="logo" />
-                    <span className=" pl-1 font-semibold text-yellow-300">
-                      JIPATIE
+                    <span className=" pl-1 font-bold text-white tracking-widest">
+                      jipatie
                     </span>
                   </a>
                 </Link>
@@ -134,12 +134,12 @@ export default function Test() {
         </div>
 
         {isMenuSmOpen && (
-          <div className="sm:hidden bg-gray-600 dark:bg-gray-800">
-            <div className="pt-2 pb-1 space-y-1">
+          <div className="sm:hidden bg-gray-600 dark:bg-gray-800 pl-2">
+            <div className="pt-2 space-y-1">
               <div>
                 <Link href="/dashboard">
                   <a
-                    className="block py-2 pl-3 pr-4 text-base font-semibold text-yellow-50 transition duration-150 ease-in-out border-l-4 border-yellow-400 dark:border-yellow-300 dark:text-yellow-200 bg-gray-600 dark:bg-yellow-800 focus:outline-none focus:text-yellow-800 focus:bg-gray-500 focus:border-yellow-700"
+                    className="block pl-3 pr-4 text-base font-normal text-white transition duration-150 ease-in-out dark:border-yellow-300 dark:text-yellow-200 bg-gray-600 dark:bg-yellow-800 focus:outline-none focus:text-gray-100"
                     href="#"
                   >
                     Dashboard
@@ -147,11 +147,11 @@ export default function Test() {
                 </Link>
               </div>
             </div>
-            <div className="pt-1 pb-3 space-y-1">
-              <div>
+            <div className="pt-1 space-y-1">
+              <div className="text-gray-50">
                 <Link href="/dashboard/items">
                   <a
-                    className="block py-2 pl-3 pr-4 text-base font-semibold text-yellow-50 transition duration-150 ease-in-out dark:border-yellow-300 dark:text-yellow-200 bg-gray-600 dark:bg-yellow-800 focus:outline-none focus:text-yellow-800 focus:bg-gray-500 focus:border-yellow-700"
+                    className="block py-2 pl-3 pr-4 text-base font-normal transition duration-150 ease-in-out dark:border-yellow-300 dark:text-yellow-200 bg-gray-600 dark:bg-yellow-800 focus:outline-none focus:text-gray-100"
                     href="#"
                   >
                     All Items
@@ -159,38 +159,47 @@ export default function Test() {
                 </Link>
               </div>
             </div>
-            <div className="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
-              <div className="flex items-center px-4">
-                <div>
-                  <div className="text-base font-semibold text-gray-50 dark:text-gray-200">
-                    {user && user.username}
-                  </div>
-                  <div className="text-sm font-semibold text-gray-50 dark:text-gray-400">
-                    {user && user.email}
-                  </div>
-                </div>
-              </div>
-              <div className="mt-3 space-y-1">
-                <div>
+            <div className="pt-1 space-y-1">
+              <div className="text-gray-50">
+                <Link href="/give">
                   <a
-                    className="block py-2 pl-3 pr-4 text-base font-semibold text-gray-50 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-200 hover:text-white hover:bg-gray-600 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                    className="pl-3 pr-4 text-base font-normal transition duration-150 ease-in-out dark:border-yellow-300 dark:text-yellow-200 bg-gray-600 dark:bg-yellow-800 focus:outline-none focus:text-gray-100"
                     href="#"
                   >
-                    <span className="flex flex-row">
-                      <BsPersonSquare className="pr-2 text-2xl" />
-                      Your Profile
-                    </span>
+                    Give Item
+                  </a>
+                </Link>
+              </div>
+            </div>
+            <div className="pt-4 pb-1 text-gray-50 dark:border-gray-600">
+              <div className="flex items-center px-3">
+                <div>
+                  <div className="text-sm m-0 p-0 font-normal text-gray-50 dark:text-gray-200">
+                    {user && user.username}
+                  </div>
+                  <span className="text-xs m-0 p-0 font-normal text-gray-50 dark:text-gray-400">
+                    {user && user.email}
+                  </span>
+                </div>
+              </div>
+              <div className="mt-2 space-y-1">
+                <div>
+                  <a
+                    className="block py-2 pl-2 pr-4 text-base font-normal text-gray-50 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-20 focus:outline-none"
+                    href="#"
+                  >
+                    <span className="flex flex-row">Your Profile</span>
                   </a>
                 </div>
 
                 <button
                   onClick={() => logout()}
-                  className="block w-full py-2 pl-3 pr-4 text-base font-semibold text-left text-gray-50 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-200 hover:text-white hover:bg-gray-600 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                  className="block w-full pb-4 pl-2 pr-2 text-base font-normal text-left text-gray-50 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-20 focus:outline-none"
                 >
-                  <span className="flex flex-row">
-                    <BsBoxArrowInLeft className="pr-2 text-2xl" />
-                    Log Out
-                  </span>
+                  <div className="flex items-center">
+                    <BiLogOut className="mr-2" />
+                    <span className="flex flex-row">Log Out</span>
+                  </div>
                 </button>
               </div>
             </div>
