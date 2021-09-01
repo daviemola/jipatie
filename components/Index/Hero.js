@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 function Hero() {
@@ -19,7 +18,7 @@ function Hero() {
               `}
           </p>
           <div className="flex justify-center">
-            <Link href="/register">
+            <Link href="/account/register">
               <a className="btn-yellow text-base">Start Giving</a>
             </Link>
             <button className="btn-gray text-base ml-4">Know More</button>

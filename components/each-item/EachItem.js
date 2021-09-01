@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaHeart, FaPenAlt, FaPencilAlt } from 'react-icons/fa'
+import { FaPencilAlt } from 'react-icons/fa'
 import { HiLocationMarker } from 'react-icons/hi'
 import { IoIosStar, IoMdStarHalf, IoMdStarOutline } from 'react-icons/io'
 import AuthContext from '@/context/AuthContext'

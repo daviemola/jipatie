@@ -49,6 +49,16 @@ export default function Test() {
                   </a>
                 </Link>
               </div>
+              <div className="hidden space-x-8 sm:-my-px sm:ml-3 sm:flex">
+                <Link href="/dashboard/institutions">
+                  <a
+                    className="inline-flex items-center px-1 pt-1 text-sm font-semibold leading-5 text-white transition duration-150 ease-in-out dark:border-yellow-300 dark:text-gray-200 focus:border-indigo-700"
+                    href="#"
+                  >
+                    Homes
+                  </a>
+                </Link>
+              </div>
               <div className="hidden space-x-8 sm:-my-px sm:ml-3 sm:flex sm:pt-5">
                 <Search />
               </div>
@@ -139,7 +149,7 @@ export default function Test() {
               <div>
                 <Link href="/dashboard">
                   <a
-                    className="block pl-3 pr-4 text-base font-normal text-white transition duration-150 ease-in-out dark:border-yellow-300 dark:text-yellow-200 bg-gray-600 dark:bg-yellow-800 focus:outline-none focus:text-gray-100"
+                    className="block pl-3 pr-4 text-base font-semibold text-white transition duration-150 ease-in-out dark:border-yellow-300 dark:text-yellow-200 bg-gray-600 dark:bg-yellow-800 focus:outline-none focus:text-gray-100"
                     href="#"
                   >
                     Dashboard
@@ -151,7 +161,7 @@ export default function Test() {
               <div className="text-gray-50">
                 <Link href="/dashboard/items">
                   <a
-                    className="block py-2 pl-3 pr-4 text-base font-normal transition duration-150 ease-in-out dark:border-yellow-300 dark:text-yellow-200 bg-gray-600 dark:bg-yellow-800 focus:outline-none focus:text-gray-100"
+                    className="block py-2 pl-3 pr-4 text-base font-semibold transition duration-150 ease-in-out dark:border-yellow-300 dark:text-yellow-200 bg-gray-600 dark:bg-yellow-800 focus:outline-none focus:text-gray-100"
                     href="#"
                   >
                     All Items
@@ -161,9 +171,9 @@ export default function Test() {
             </div>
             <div className="pt-1 space-y-1">
               <div className="text-gray-50">
-                <Link href="/give">
+                <Link href="/dashboard/give">
                   <a
-                    className="pl-3 pr-4 text-base font-normal transition duration-150 ease-in-out dark:border-yellow-300 dark:text-yellow-200 bg-gray-600 dark:bg-yellow-800 focus:outline-none focus:text-gray-100"
+                    className="pl-3 pr-4 text-base font-semibold transition duration-150 ease-in-out dark:border-yellow-300 dark:text-yellow-200 bg-gray-600 dark:bg-yellow-800 focus:outline-none focus:text-gray-100"
                     href="#"
                   >
                     Give Item
@@ -171,30 +181,27 @@ export default function Test() {
                 </Link>
               </div>
             </div>
-            <div className="pt-4 pb-1 text-gray-50 dark:border-gray-600">
+            <div className="pt-4 pb-1 text-gray-100 dark:border-gray-600">
               <div className="flex items-center px-3">
                 <div>
-                  <div className="text-sm m-0 p-0 font-normal text-gray-50 dark:text-gray-200">
+                  <div className="text-sm m-0 p-0 font-normal text-gray-100 dark:text-gray-200">
                     {user && user.username}
                   </div>
-                  <span className="text-xs m-0 p-0 font-normal text-gray-50 dark:text-gray-400">
+                  <span className="text-xs m-0 p-0 font-normal text-gray-100 dark:text-gray-400">
                     {user && user.email}
                   </span>
                 </div>
               </div>
               <div className="mt-2 space-y-1">
-                <div>
-                  <a
-                    className="block py-2 pl-2 pr-4 text-base font-normal text-gray-50 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-20 focus:outline-none"
-                    href="#"
-                  >
+                <Link href="/profile">
+                  <a className="block py-2 pl-2 pr-4 text-base font-semibold text-gray-50 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-20 focus:outline-none">
                     <span className="flex flex-row">Your Profile</span>
                   </a>
-                </div>
+                </Link>
 
                 <button
                   onClick={() => logout()}
-                  className="block w-full pb-4 pl-2 pr-2 text-base font-normal text-left text-gray-50 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-20 focus:outline-none"
+                  className="block w-full pb-4 pl-2 pr-2 text-base font-semibold text-left text-gray-50 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-20 focus:outline-none"
                 >
                   <div className="flex items-center">
                     <BiLogOut className="mr-2" />

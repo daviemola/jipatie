@@ -1,9 +1,9 @@
 export default function Wrapper({ children, title }) {
   return (
-    <section className="text-gray-600 body-font overflow-hidden">
+    <section className="text-gray-600 h-screen overflow-hidden">
       <div className="container px-3 py-6 mx-auto max-w-screen-xl">
         <div className="container mx-auto px-4 sm:px-8 max-w-3xl">
-          <h1 className="text-2xl py-2 mb-3 font-semibold text-gray-700">
+          <h1 className="sm:text-xl text-lg md:text-xl py-2 mb-3 tracking-wide uppercase font-semibold text-gray-600">
             {title}
           </h1>
           {children}

@@ -5,7 +5,6 @@ import { useState, useEffect, useContext } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import AuthContext from '@/context/AuthContext'
 import GoogleLogin from 'react-google-login'
-import Layout from '@/components/layout/Layout'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -46,7 +45,7 @@ export default function LoginPage() {
                       </div>
                     </div>
                     <div className="w-1/2 text-right">
-                      <Link href="/register">
+                      <Link href="/account/register">
                         <a className="text-gray-600 font-base mr-0 hover:underline">
                           <small>Create an account</small>
                         </a>
@@ -99,7 +98,7 @@ export default function LoginPage() {
                           Stay logged in
                         </span>
                       </label>
-                      <Link href="/forgotpassword">
+                      <Link href="/account/forgotpassword">
                         <a className="text-xs text-gray-500 pt-3 hover:underline">
                           Forgot password?
                         </a>

@@ -48,7 +48,7 @@ export default function Giving({ items }) {
                 ) : (
                   <div className="flex items-center">
                     <FiXSquare className="text-red-500 mr-2" />
-                    Not Active
+                    Inactive
                   </div>
                 )}
               </div>

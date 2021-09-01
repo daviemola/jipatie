@@ -5,7 +5,6 @@ import { useState, useEffect, useContext } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import AuthContext from '@/context/AuthContext'
 import GoogleLogin from 'react-google-login'
-import Layout from '@/components/layout/Layout'
 
 export default function RegisterPage() {
   const [username, setUsername] = useState('')
@@ -73,7 +72,7 @@ export default function RegisterPage() {
                       </div>
                     </div>
                     <div className="w-1/2 text-right">
-                      <Link href="/login">
+                      <Link href="/account/login">
                         <a className="text-gray-600 font-semibold hover:underline mr-0 sm:mr-4">
                           <small>Log in here?</small>
                         </a>

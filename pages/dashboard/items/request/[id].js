@@ -90,7 +90,7 @@ export default function RequestPage({ item, token }) {
           <p className="my-2 text-sm tracking-wider font-normal text-gray-500">{`By ${item.user.username}`}</p>
           <p>{item.description}</p>
           <div className="pt-2 pb-6">
-            <Link href="">
+            <Link href={`/dashboard/items/${item.slug}`}>
               <a className="text-gray-600 text-base underline">
                 View Posted Item
               </a>
