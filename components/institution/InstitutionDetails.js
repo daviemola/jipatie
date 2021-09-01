@@ -30,6 +30,7 @@ export default function InstitutionDetails({ institution }) {
             </h1>
             <p className="text-gray-500 text-sm flex items-center my-3">
               <IoMdPin className="mr-2 text-yellow-600 text-lg" />
+              {/* <IoMdPin className="mr-2 text-yellow-600 text-lg" /> */}
               {institution.institution_address}
             </p>
             <div className="flex item-center flex-col">
