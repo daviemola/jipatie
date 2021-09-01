@@ -5,7 +5,7 @@ import { IoIosPerson, IoMdPin } from 'react-icons/io'
 export default function EachInstution({ institution }) {
   // console.log(institution)
   return (
-    <Link href={'#'}>
+    <Link href={`/institutions/${institution.id}`}>
       <a className="flex items-center sm:border border-b border-gray-300 sm:border-gray-200 dark:bg-gray-800 sm:p-2">
         <div className=" sm:block hidden">
           <Image
