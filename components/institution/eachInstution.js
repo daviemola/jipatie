@@ -11,7 +11,11 @@ export default function EachInstution({ institution }) {
           <Image
             alt="mountain"
             className="sm:object-cover object-fill border-2 border-gray-300 sm:w-1/4 p-0"
-            src="/400x400.png"
+            src={
+              institution?.profile_image
+                ? institution?.profile_image.formats.small.url
+                : '/420x260.png'
+            }
             width={150}
             height={150}
           />

@@ -50,7 +50,7 @@ export default function Test() {
                 </Link>
               </div>
               <div className="hidden space-x-8 sm:-my-px sm:ml-3 sm:flex">
-                <Link href="/dashboard/institutions">
+                <Link href="/institutions">
                   <a
                     className="inline-flex items-center px-1 pt-1 text-sm font-semibold leading-5 text-white transition duration-150 ease-in-out dark:border-yellow-300 dark:text-gray-200 focus:border-indigo-700"
                     href="#"
