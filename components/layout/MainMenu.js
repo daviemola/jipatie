@@ -10,8 +10,6 @@ function MainMenu() {
   const [menuOpen, setMenuOpen] = React.useState(false)
   const { user, logout } = useContext(AuthContext)
 
-  // const router = useRouter()
-
   return (
     <header className="text-white body-font bg-gray-700">
       <div className="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center max-w-screen-xl">
@@ -51,25 +49,25 @@ function MainMenu() {
             </li>
             <li className="nav-item">
               <Link href="/dashboard/items">
-                <a className="px-3 py-2 flex items-center hover:opacity-75 hover:text-yellow-500">
+                <a className="px-3 py-2 flex items-center hover:opacity-75 hover:text-emerald-500">
                   View Items
                 </a>
               </Link>
             </li>
             <li className="nav-item">
               <Link href="/dashboard">
-                <a className="px-3 py-2 flex items-center hover:opacity-75 hover:text-yellow-500">
+                <a className="px-3 py-2 flex items-center hover:opacity-75 hover:text-emerald-500">
                   Dashboard
                 </a>
               </Link>
             </li>
             <li className="nav-item flex flex-row  md:border-l md:border-gray-400">
-              <p className="px-3 py-2 text-yellow-300">{`Hello ${
+              <p className="px-3 py-2 text-emerald-300">{`Hello ${
                 user &&
                 user.username.charAt(0).toUpperCase() + user.username.slice(1)
               }`}</p>
               <button
-                className="px-3 py-1 flex items-center hover:text-yellow-600"
+                className="px-3 py-1 flex items-center hover:text-emerald-600"
                 onClick={() => logout()}
               >
                 <HiLogout className="text-3xl py-2" />

@@ -147,10 +147,10 @@ export default function AddItemPage({ token, item }) {
                         onChange={handleInputChange}
                       >
                         <option>Select Item Color</option>
-                        <option value="green">Green</option>
+                        <option value="emerald">emerald</option>
                         <option value="black">Black</option>
                         <option value="blue">Blue</option>
-                        <option value="yellow">Yellow</option>
+                        <option value="emerald">emerald</option>
                         <option value="red">Red</option>
                         <option value="white">White</option>
                         <option value="multi">Multi</option>

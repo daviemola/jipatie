@@ -34,7 +34,7 @@ export default function ReqDetailsRequestor({ request, item }) {
           {request.accepted === true && item.accepted === true && (
             <>
               <div className="flex items-center my-2 font-normal text-lg">
-                <FiCheckCircle className="mr-4 text-green-600" />
+                <FiCheckCircle className="mr-4 text-emerald-600" />
                 <p>Item request has been accepted</p>
               </div>
               {request.delivered === false || item.delivered === false ? (
@@ -44,7 +44,7 @@ export default function ReqDetailsRequestor({ request, item }) {
                 </div>
               ) : (
                 <div className="flex items-center my-2 font-normal text-lg">
-                  <FiCheckCircle className="mr-4 text-green-600" />
+                  <FiCheckCircle className="mr-4 text-emerald-600" />
                   <p>Item request has been delivered</p>
                 </div>
               )}
@@ -58,20 +58,20 @@ export default function ReqDetailsRequestor({ request, item }) {
           )}
           {request.accepted === false && item.accepted === false && (
             <div className="flex items-center my-2 font-normal text-lg">
-              <FiClock className="mr-4 text-yellow-600" />
+              <FiClock className="mr-4 text-emerald-600" />
               <p>Item request is pending. Kindly wait.</p>
             </div>
           )}
           {request.accepted === true && item.accepted === false && (
             <div className="flex items-center my-2 font-normal text-lg">
-              <FiClock className="mr-4 text-yellow-600" />
+              <FiClock className="mr-4 text-emerald-600" />
               <p>Item request is pending. Kindly wait.</p>
             </div>
           )}
           {(request.accepted === true && item.accepted === true) ||
             (request.delivered === true && item.delivered === true && (
               <div className="flex items-center my-2 font-normal text-lg">
-                <FiCheckCircle className="mr-4 text-green-600" />
+                <FiCheckCircle className="mr-4 text-emerald-600" />
                 <p>Item request has been delivered</p>
               </div>
             ))}
@@ -79,7 +79,7 @@ export default function ReqDetailsRequestor({ request, item }) {
         <div className="md:mx-6 md:px-4 md:py-1 mt-4 border-t-2 border-gray-200">
           <div className="w-full mt-7">
             <Link href="#">
-              <a className=" text-gray-600 font-semibold bg-yellow-400 py-3 w-full px-5 mr-2 rounded-sm">
+              <a className=" text-gray-600 font-semibold bg-emerald-400 py-3 w-full px-5 mr-2 rounded-sm">
                 Change Request
               </a>
             </Link>
@@ -94,7 +94,7 @@ export default function ReqDetailsRequestor({ request, item }) {
       </div>
       <div className="text-right lg:w-1/2 md:w-2/3 mx-auto my-3">
         <Link href="/dashboard/items">
-          <a className="mr-3 text-yellow-60">Search for items</a>
+          <a className="mr-3 text-emerald-60">Search for items</a>
         </Link>
       </div>
     </>

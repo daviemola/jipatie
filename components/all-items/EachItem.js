@@ -4,10 +4,10 @@ import { IoIosStar, IoMdStarHalf, IoMdStarOutline } from 'react-icons/io'
 
 function EachItem({ item }) {
   return (
-    <div className="xl:w-1/4 md:w-1/2 lg:w-1/4 p-3">
+    <div className="md:w-1/2 lg:w-1/4 p-3">
       <Link href={`/dashboard/items/${item.slug}`}>
         <a>
-          <div className="border bg-white border-gray-200 rounded-sm md:border-white lg:border-gray-200 hover:shadow-sm">
+          <div className="border bg-white border-gray-200 rounded-sm md:border-white lg:border-gray-200 hover:shadow-sm dark:bg-gray-800 dark:border-gray-700">
             <Image
               alt="ecommerce"
               className="object-cover object-center w-full h-full block"
@@ -16,13 +16,13 @@ function EachItem({ item }) {
               width={420}
             />
             <div className="py-2 px-4">
-              <h3 className="tracking-widest text-gray-500 text-xs uppercase font-normal">
+              <h3 className="tracking-widest text-gray-500 text-xs uppercase font-normal dark:text-gray-100">
                 {item.category ? item.category.name : 'general'}
               </h3>
-              <h2 className="text-base text-gray-700 font-semibold mb-1">
+              <h2 className="text-base text-gray-700 font-semibold mb-1 dark:text-gray-400">
                 {item.name}
               </h2>
-              <div className="flex mb-2 text-yellow-700">
+              <div className="flex mb-2 text-emerald-700 dark:text-emerald-400">
                 <IoIosStar />
                 <IoIosStar />
                 <IoIosStar />

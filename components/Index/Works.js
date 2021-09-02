@@ -15,7 +15,7 @@ export default function Works() {
               <div className="flex flex-col items-center mt-4">
                 <FaListUl className="font-medium text-4xl text-gray-900 " />
               </div>
-              <p className="leading-relaxed mt-8 uppercase font-semibold text-yellow-700">
+              <p className="leading-relaxed mt-8 uppercase font-semibold text-emerald-700">
                 The Homes
               </p>
               <p className="text-base mt-5 mb-8">
@@ -29,7 +29,7 @@ export default function Works() {
               <div className="flex flex-col items-center mt-4">
                 <FaBullseye className="font-medium text-4xl text-gray-900 " />
               </div>
-              <p className="leading-relaxed mt-8 uppercase font-semibold text-yellow-700">
+              <p className="leading-relaxed mt-8 uppercase font-semibold text-emerald-700">
                 Post Item
               </p>
               <p className="text-base mt-5 mb-8">
@@ -43,7 +43,7 @@ export default function Works() {
               <div className="flex flex-col items-center mt-4">
                 <FaRegHandshake className="font-medium text-4xl text-gray-900 " />
               </div>
-              <p className="leading-relaxed mt-8 uppercase font-semibold text-yellow-700">
+              <p className="leading-relaxed mt-8 uppercase font-semibold text-emerald-700">
                 agreement
               </p>
               <p className="text-base mt-5 mb-8">
@@ -57,7 +57,7 @@ export default function Works() {
               <div className="flex flex-col items-center mt-4">
                 <FaCaravan className="font-medium text-4xl text-gray-900 " />
               </div>
-              <p className="leading-relaxed mt-8 uppercase font-semibold text-yellow-700">
+              <p className="leading-relaxed mt-8 uppercase font-semibold text-emerald-700">
                 Delivery
               </p>
               <p className="text-base mt-5 mb-8">

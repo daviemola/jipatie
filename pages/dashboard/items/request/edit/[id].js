@@ -193,8 +193,6 @@ export async function getServerSideProps({ req, params: { id } }) {
     },
   })
 
-  console.log(res.json())
-
   const item = await res.json()
   const request = await reqs.json()
 

@@ -1,9 +1,19 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
+    colors: {
+      // Build your palette here
+      emerald: colors.emerald,
+      gray: colors.blueGray,
+      transparent: 'transparent',
+      white: '#fff',
+      blue: colors.sky,
+      red: colors.red,
+    },
     extend: {
       fontFamily: {
         sans: ["'Inter'", ...defaultTheme.fontFamily.sans],
@@ -21,6 +31,11 @@ module.exports = {
       '3/4': '75%',
       '9/10': '90%',
       '10/10': '100%',
+    },
+    height: {
+      '4/5': '75vh',
+      '10': '2.5rem',
+      '20': '5rem',
     },
   },
   variants: {

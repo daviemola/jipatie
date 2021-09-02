@@ -5,7 +5,6 @@ import * as relativeTime from 'dayjs/plugin/relativeTime'
 export default function ItemRequests({ request }) {
   dayjs.extend(relativeTime)
 
-  // console.log(request)
   return (
     <div>
       {request?.map((req) => (

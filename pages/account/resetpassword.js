@@ -89,7 +89,7 @@ export default function LoginPage() {
                     </div>
                     <div className="text-center mt-6">
                       <button
-                        className="btn-yellow-forms"
+                        className="btn-emerald-forms"
                         type="submit"
                         style={{ transition: 'all .15s ease' }}
                       >

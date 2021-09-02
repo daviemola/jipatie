@@ -1,4 +1,4 @@
-import Wrapper from '@/components/dashboard/Wrapper'
+import Wrapper from '@/components/all-items/Wrapper'
 import Head from 'next/head'
 import MainLayout from '../../components/layout/MainLayout'
 import { parseCookies } from '@/helpers/index'
@@ -6,7 +6,6 @@ import { API_URL, DASH_PER_PAGE } from '@/config/index'
 import EachInstution from '@/components/institution/eachInstution'
 
 export default function Institutions({ institutions, page, total }) {
-  // console.log(institutions)
   return (
     <MainLayout>
       <Head>
@@ -15,11 +14,8 @@ export default function Institutions({ institutions, page, total }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Wrapper title="Institutions & Homes">
-        <hr className="border-gray-300 mb-2 sm:hidden block"></hr>
         {institutions?.map((inst) => (
-          <div key={inst.id} className="grid grid-cols-1 border-gray-200">
-            <EachInstution institution={inst} />
-          </div>
+          <EachInstution institution={inst} key={inst.id} />
         ))}
       </Wrapper>
     </MainLayout>

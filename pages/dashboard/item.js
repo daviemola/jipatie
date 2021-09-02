@@ -36,7 +36,7 @@ function item() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    className="w-4 h-4 text-yellow-500"
+                    className="w-4 h-4 text-emerald-500"
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -47,7 +47,7 @@ function item() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    className="w-4 h-4 text-yellow-500"
+                    className="w-4 h-4 text-emerald-500"
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -58,7 +58,7 @@ function item() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    className="w-4 h-4 text-yellow-500"
+                    className="w-4 h-4 text-emerald-500"
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -69,7 +69,7 @@ function item() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    className="w-4 h-4 text-yellow-500"
+                    className="w-4 h-4 text-emerald-500"
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -80,7 +80,7 @@ function item() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    className="w-4 h-4 text-yellow-500"
+                    className="w-4 h-4 text-emerald-500"
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -139,12 +139,12 @@ function item() {
                   <span className="mr-3">Color</span>
                   <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
                   <button className="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
-                  <button className="border-2 border-gray-300 ml-1 bg-yellow-500 rounded-full w-6 h-6 focus:outline-none"></button>
+                  <button className="border-2 border-gray-300 ml-1 bg-emerald-500 rounded-full w-6 h-6 focus:outline-none"></button>
                 </div>
                 <div className="flex ml-6 items-center">
                   <span className="mr-3">Size</span>
                   <div className="relative">
-                    <select className="rounded-sm border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-200 focus:border-yellow-500 text-base pl-3 pr-10">
+                    <select className="rounded-sm border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-500 text-base pl-3 pr-10">
                       <option>SM</option>
                       <option>M</option>
                       <option>L</option>
@@ -170,7 +170,7 @@ function item() {
                 <span className="title-font font-medium text-2xl text-gray-900">
                   $58.00
                 </span>
-                <button className="flex ml-auto text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded-sm">
+                <button className="flex ml-auto text-white bg-emerald-500 border-0 py-2 px-6 focus:outline-none hover:bg-emerald-600 rounded-sm">
                   Button
                 </button>
                 <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">

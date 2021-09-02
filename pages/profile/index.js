@@ -6,7 +6,6 @@ import AuthContext from '@/context/AuthContext'
 
 export default function Dashboard({}) {
   const { user, logout } = useContext(AuthContext)
-  console.log(user)
 
   return (
     <MainLayout>

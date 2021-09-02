@@ -83,7 +83,7 @@ export default function RegisterPage() {
 
                 <div className="flex-auto px-4 sm:px-7 py-3">
                   {message && (
-                    <p className="text-green-800 text-sm bg-green-200 p-2 mb-3 text-center">
+                    <p className="text-emerald-800 text-sm bg-emerald-200 p-2 mb-3 text-center">
                       Success. Check your email for instructions.
                     </p>
                   )}
@@ -156,7 +156,7 @@ export default function RegisterPage() {
                     </div>
                     <div className="text-center mt-6">
                       <button
-                        className="btn-yellow-forms"
+                        className="btn-emerald-forms"
                         type="submit"
                         style={{ transition: 'all .15s ease' }}
                       >
@@ -183,7 +183,7 @@ export default function RegisterPage() {
                             <Image
                               alt="..."
                               className="w-full text-white m-0"
-                              src="/yellowloader.svg"
+                              src="/emeraldloader.svg"
                               width={20}
                               height={20}
                             />

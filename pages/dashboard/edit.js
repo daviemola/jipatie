@@ -107,7 +107,7 @@ function edit() {
                       <option value="volvo">Greed</option>
                       <option value="saab">Black</option>
                       <option value="saab">Blue</option>
-                      <option value="opel">Yellow</option>
+                      <option value="opel">emerald</option>
                       <option value="audi">Red</option>
                     </select>
                   </label>

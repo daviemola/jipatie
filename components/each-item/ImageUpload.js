@@ -68,7 +68,7 @@ export default function ImageUpload({ item, token }) {
       <div className="flex flex-wrap">
         <div className="w-1/2 pr-2">
           <form onSubmit={handleSubmit}>
-            <label className="w-64 flex flex-col items-center px-4 py-6 bg-gray-100 rounded-sm uppercase border cursor-pointer hover:bg-gray-200 text-yellow-600 ease-linear transition-all duration-150">
+            <label className="w-64 flex flex-col items-center px-4 py-6 bg-gray-100 rounded-sm uppercase border cursor-pointer hover:bg-gray-200 text-emerald-600 ease-linear transition-all duration-150">
               <FaCloudUploadAlt className="" />
               <span className="mt-2 text-base leading-normal">
                 Select an image

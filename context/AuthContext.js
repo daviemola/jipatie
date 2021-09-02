@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }) => {
 
     if (res.ok) {
       setUser(data.user)
-      router.push('/dashboard/items')
+      router.push('/institutions')
       setLoading(false)
     } else {
       setLoading(false)

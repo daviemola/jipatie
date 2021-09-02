@@ -15,7 +15,7 @@ export default function Uses() {
           </p>
           <div className="my-3">
             <Link href="/">
-              <a className="flex items-center text-yellow-700">
+              <a className="flex items-center text-emerald-700">
                 See how it works
                 <HiArrowRight className="ml-2" />
               </a>
@@ -33,7 +33,7 @@ export default function Uses() {
           </p>
           <div className="my-3">
             <Link href="/">
-              <a className="flex items-center text-yellow-700">
+              <a className="flex items-center text-emerald-700">
                 Explore the benefits
                 <HiArrowRight className="ml-2" />
               </a>

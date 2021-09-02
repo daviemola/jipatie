@@ -3,14 +3,13 @@ import Link from 'next/link'
 import { IoMdPin } from 'react-icons/io'
 
 export default function InstitutionDetails({ institution }) {
-  //   console.log(institution)
   return (
     <section className="text-gray-600 body-font overflow-hidden min-h-3/4">
       <div className="container px-3 py-6 mx-auto max-w-screen-xl mt-6">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <Image
             alt="ecommerce"
-            className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded-sm"
+            className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded-md"
             src={
               institution?.profile_image
                 ? institution?.profile_image.formats.medium.url
@@ -29,20 +28,20 @@ export default function InstitutionDetails({ institution }) {
               {institution.institution_name}
             </h1>
             <p className="text-gray-500 text-sm flex items-center my-3">
-              <IoMdPin className="mr-2 text-yellow-600 text-lg" />
-              {/* <IoMdPin className="mr-2 text-yellow-600 text-lg" /> */}
+              <IoMdPin className="mr-2 text-emerald-600 text-lg" />
+              {/* <IoMdPin className="mr-2 text-emerald-600 text-lg" /> */}
               {institution.institution_address}
             </p>
             <div className="flex item-center flex-col">
               <Link href="/dashboard/give">
                 <a className="btn-give-item sm:w-3/5 w-full uppercase">
                   <div className="flex item-center justify-center">
-                    Give this home item
+                    Give an item
                   </div>
                 </a>
               </Link>
               <Link href="/dashboard/items">
-                <a className="underline font-normal mb-4">View all items</a>
+                <a className="underline font-normal mb-4">View items</a>
               </Link>
             </div>
             <hr className="border-t border-gray-300 my-3"></hr>
@@ -50,7 +49,7 @@ export default function InstitutionDetails({ institution }) {
               <Image
                 src="/000000.png"
                 alt="owner-img"
-                className="rounded-xl"
+                className="rounded-md"
                 width={75}
                 height={75}
               />

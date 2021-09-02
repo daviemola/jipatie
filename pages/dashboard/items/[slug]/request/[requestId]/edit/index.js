@@ -149,7 +149,7 @@ export default function RequestPage({ item, request, token }) {
                 </a>
               </Link>
               <button
-                className="text-gray-600 font-semibold bg-yellow-400 py-3 px-5 rounded-sm"
+                className="text-gray-600 font-semibold bg-emerald-400 py-3 px-5 rounded-sm"
                 type="submit"
               >
                 Submit Request

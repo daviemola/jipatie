@@ -32,7 +32,7 @@ function EachItem({ item }) {
               {item.name}
             </h1>
             <div className="flex mb-4">
-              <span className="flex items-center text-yellow-700 text-xl">
+              <span className="flex items-center text-emerald-700 text-xl">
                 <IoIosStar />
                 <IoIosStar />
                 <IoIosStar />
@@ -42,7 +42,7 @@ function EachItem({ item }) {
               </span>
               <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-300 space-x-2s">
                 <span className="mr-3">Color</span>
-                <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none bg-yellow-600"></button>
+                <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none bg-emerald-600"></button>
               </span>
             </div>
             <p className="leading-relaxed">{item.description}</p>
@@ -64,7 +64,7 @@ function EachItem({ item }) {
             </div>
             <div className="flex">
               <span className="title-font font-medium text-md text-gray-600 flex flex-row">
-                <span className="mr-2 text-yellow-900 text-2xl">
+                <span className="mr-2 text-emerald-900 text-2xl">
                   <HiLocationMarker />
                 </span>
                 {item.location}
@@ -77,7 +77,7 @@ function EachItem({ item }) {
                   >
                     Request submitted
                   </button>
-                  <button className="rounded-full w-10 h-10 bg-yellow-300 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                  <button className="rounded-full w-10 h-10 bg-emerald-300 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                     <FaPencilAlt />
                   </button>
                 </div>
@@ -97,14 +97,14 @@ function EachItem({ item }) {
                     </a>
                   </Link>
                   <Link href={`/dashboard/items/edit/${item.slug}`}>
-                    <a className="rounded-full w-10 h-10 bg-yellow-300 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                    <a className="rounded-full w-10 h-10 bg-emerald-300 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                       <FaPencilAlt />
                     </a>
                   </Link>
                 </div>
               ) : (
                 <Link href={`/dashboard/items/request/${item.slug}`}>
-                  <a className="uppercase flex ml-auto text-gray-600 font-semibold bg-yellow-400 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-300 rounded-sm">
+                  <a className="uppercase flex ml-auto text-gray-600 font-semibold bg-emerald-400 border-0 py-2 px-6 focus:outline-none hover:bg-emerald-300 rounded-sm">
                     Send request
                   </a>
                 </Link>

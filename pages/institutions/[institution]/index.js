@@ -29,8 +29,6 @@ export async function getServerSideProps({ query: { institution }, req }) {
     }
   }
 
-  console.log(institution)
-
   const res = await fetch(`${API_URL}/institutions/${institution}`, {
     method: 'GET',
     headers: {

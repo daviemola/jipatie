@@ -80,7 +80,7 @@ export default function RequestPage({ items, token, page, total }) {
                   </div>
                 ) : (
                   <div className="flex items-center">
-                    <FiCheckSquare className="text-green-500 mr-2" />
+                    <FiCheckSquare className="text-emerald-500 mr-2" />
                     Accepted
                   </div>
                 )}

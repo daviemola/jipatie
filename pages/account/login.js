@@ -106,7 +106,7 @@ export default function LoginPage() {
                     </div>
                     <div className="text-center mt-6">
                       <button
-                        className="btn-yellow-forms"
+                        className="btn-emerald-forms"
                         type="submit"
                         style={{ transition: 'all .15s ease' }}
                       >
@@ -115,7 +115,7 @@ export default function LoginPage() {
                             <Image
                               alt="..."
                               className="w-full text-white m-0"
-                              src="/yellowloader.svg"
+                              src="/emeraldloader.svg"
                               width={20}
                               height={20}
                             />

@@ -66,7 +66,7 @@ export default function GivingPage({ items, token, page, total }) {
                 <div className="text-sm">
                   {item.accepted === false ? (
                     <div className="flex items-center">
-                      <FiCheckSquare className="text-green-500 mr-2" />
+                      <FiCheckSquare className="text-emerald-500 mr-2" />
                       Active
                     </div>
                   ) : (

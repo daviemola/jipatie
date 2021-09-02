@@ -15,9 +15,6 @@ export default function RequestPage({ item, request, token }) {
   const [enabledAccept, setEnabledAccept] = useState(request.accepted)
   const [enabledDelivered, setEnabledDelivered] = useState(request.delivered)
 
-  console.log(request)
-  console.log(item)
-
   // const [itemAccept, setItemAccept] = useState(item.accepted)
   // const [itemDelivered, setItemDelivered] = useState(item.delivered)
 
@@ -108,7 +105,7 @@ export default function RequestPage({ item, request, token }) {
               ) : (
                 <div className="md:mx-6 md:px-4 md:py-3 md:my-4 m-4 font-semibold  text-gray-600">
                   <div className="flex items-center">
-                    <FiAlertTriangle className="text-yellow-600 text-6xl mr-3" />
+                    <FiAlertTriangle className="text-emerald-600 text-6xl mr-3" />
                     <h2>
                       If you want to accept this request you must not accept any
                       other request.
@@ -135,8 +132,8 @@ export default function RequestPage({ item, request, token }) {
                       <div
                         onClick={() => setEnabledAccept(!enabledAccept)}
                         className={`${
-                          enabledAccept ? 'bg-yellow-500' : 'bg-gray-200'
-                        } relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500`}
+                          enabledAccept ? 'bg-emerald-500' : 'bg-gray-200'
+                        } relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500`}
                       >
                         <span
                           className={`${
@@ -163,8 +160,8 @@ export default function RequestPage({ item, request, token }) {
                     <div
                       onClick={() => setEnabledAccept(!enabledAccept)}
                       className={`${
-                        enabledAccept ? 'bg-yellow-500' : 'bg-gray-200'
-                      } relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500`}
+                        enabledAccept ? 'bg-emerald-500' : 'bg-gray-200'
+                      } relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500`}
                     >
                       <span
                         className={`${
@@ -196,8 +193,8 @@ export default function RequestPage({ item, request, token }) {
                     <div
                       onClick={() => setEnabledDelivered(!enabledDelivered)}
                       className={`${
-                        enabledDelivered ? 'bg-yellow-500' : 'bg-gray-200'
-                      } relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500`}
+                        enabledDelivered ? 'bg-emerald-500' : 'bg-gray-200'
+                      } relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500`}
                     >
                       <span
                         className={`${
@@ -220,7 +217,7 @@ export default function RequestPage({ item, request, token }) {
                       </a>
                     </Link>
                     <button
-                      className="text-gray-600 font-semibold bg-yellow-400 py-3 px-5 rounded-sm"
+                      className="text-gray-600 font-semibold bg-emerald-400 py-3 px-5 rounded-sm"
                       type="submit"
                     >
                       Confirm Changes
@@ -236,7 +233,7 @@ export default function RequestPage({ item, request, token }) {
                     </a>
                   </Link>
                   <button
-                    className="text-gray-600 font-semibold bg-yellow-400 py-3 px-5 rounded-sm"
+                    className="text-gray-600 font-semibold bg-emerald-400 py-3 px-5 rounded-sm"
                     type="submit"
                   >
                     Confirm Changes

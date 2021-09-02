@@ -126,7 +126,7 @@ function register() {
                 </div>
                 <div className="text-center mt-6">
                   <button
-                    className="btn-yellow-forms"
+                    className="btn-emerald-forms"
                     type="button"
                     style={{ transition: 'all .15s ease' }}
                   >

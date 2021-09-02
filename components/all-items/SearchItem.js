@@ -21,7 +21,7 @@ export default function EachItem({ item }) {
           <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
             {item.name}
           </h2>
-          <div className="flex mb-4 text-yellow-700">
+          <div className="flex mb-4 text-emerald-700">
             <IoIosStar />
             <IoIosStar />
             <IoIosStar />

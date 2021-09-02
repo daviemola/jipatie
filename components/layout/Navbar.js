@@ -33,7 +33,7 @@ export default function Test() {
               <HiSun />
             </button>
             <Link href="account/register">
-              <a className="ml-2 px-2 py-1 text-yellow-300 text-sm border border-yellow-300 rounded-sm">
+              <a className="ml-2 px-2 py-1 text-emerald-300 text-sm border border-emerald-300 rounded-sm">
                 Register
               </a>
             </Link>
@@ -91,7 +91,7 @@ export default function Test() {
             <div>
               <Link href="/dashboard">
                 <a
-                  className="block py-2 pl-3 pr-4 text-base font-semibold text-yellow-50 transition duration-150 ease-in-out border-l-4 border-yellow-400 dark:border-yellow-300 dark:text-yellow-200 bg-gray-600 dark:bg-yellow-800 focus:outline-none focus:text-yellow-800 focus:bg-gray-500 focus:border-yellow-700"
+                  className="block py-2 pl-3 pr-4 text-base font-semibold text-emerald-50 transition duration-150 ease-in-out border-l-4 border-emerald-400 dark:border-emerald-300 dark:text-emerald-200 bg-gray-600 dark:bg-emerald-800 focus:outline-none focus:text-emerald-800 focus:bg-gray-500 focus:border-emerald-700"
                   href="#"
                 >
                   Dashboard
@@ -103,7 +103,7 @@ export default function Test() {
             <div>
               <Link href="/dashboard/items">
                 <a
-                  className="block py-2 pl-3 pr-4 text-base font-semibold text-yellow-50 transition duration-150 ease-in-out dark:border-yellow-300 dark:text-yellow-200 bg-gray-600 dark:bg-yellow-800 focus:outline-none focus:text-yellow-800 focus:bg-gray-500 focus:border-yellow-700"
+                  className="block py-2 pl-3 pr-4 text-base font-semibold text-emerald-50 transition duration-150 ease-in-out dark:border-emerald-300 dark:text-emerald-200 bg-gray-600 dark:bg-emerald-800 focus:outline-none focus:text-emerald-800 focus:bg-gray-500 focus:border-emerald-700"
                   href="#"
                 >
                   All Items

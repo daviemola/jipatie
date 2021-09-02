@@ -3,10 +3,11 @@ import 'tailwindcss/tailwind.css'
 import ProgressBar from '@badrap/bar-of-progress'
 import Router from 'next/router'
 import { AuthProvider } from '@/context/AuthContext'
+import { ThemeProvider } from 'next-themes'
 
 const progress = new ProgressBar({
   size: 2,
-  color: '#fbbf24',
+  color: '#059669',
   className: 'bar-of-progress',
   delay: 100,
 })
@@ -18,7 +19,9 @@ Router.events.on('routeChangeError', progress.finish)
 function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>
-      <Component {...pageProps} />
+      <ThemeProvider enableSystem={true} attribute="class">
+        <Component {...pageProps} />
+      </ThemeProvider>
     </AuthProvider>
   )
 }

@@ -145,10 +145,10 @@ export default function AddItemPage({ token }) {
                         onChange={handleInputChange}
                       >
                         <option>Select Item Color</option>
-                        <option value="green">Green</option>
+                        <option value="emerald">emerald</option>
                         <option value="black">Black</option>
                         <option value="blue">Blue</option>
-                        <option value="yellow">Yellow</option>
+                        <option value="emerald">emerald</option>
                         <option value="red">Red</option>
                         <option value="white">White</option>
                         <option value="multi">Multi</option>
@@ -267,7 +267,7 @@ export default function AddItemPage({ token }) {
                     </a>
                   </Link>
                   <button
-                    className="text-gray-600 font-semibold bg-yellow-400 py-3 px-5 rounded-sm"
+                    className="text-gray-600 font-semibold bg-emerald-400 py-3 px-5 rounded-sm"
                     type="submit"
                   >
                     Submit this Item

@@ -19,7 +19,7 @@ function Hero() {
           </p>
           <div className="flex justify-center">
             <Link href="/account/register">
-              <a className="btn-yellow text-base">Start Giving</a>
+              <a className="btn-emerald text-base">Start Giving</a>
             </Link>
             <button className="btn-gray text-base ml-4">Know More</button>
           </div>

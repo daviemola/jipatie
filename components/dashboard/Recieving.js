@@ -48,7 +48,7 @@ export default function Recieving({ requests }) {
                     </div>
                   ) : (
                     <div className="flex items-center">
-                      <FiCheckSquare className="text-green-500 mr-2" />
+                      <FiCheckSquare className="text-emerald-500 mr-2" />
                       Accepted
                     </div>
                   )}

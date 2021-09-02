@@ -13,7 +13,7 @@ export default function FinalSection() {
           </div>
           <div className="pt-1 relative mx-auto text-gray-600">
             <input
-              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:ring-yellow-200 focus:bg-transparent focus:border-yellow-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:ring-emerald-200 focus:bg-transparent focus:border-emerald-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               name="search"
               placeholder="Enter your email"
             />

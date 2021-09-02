@@ -3,11 +3,11 @@ import MainNav from './MainNav'
 
 const MainLayout = ({ children }) => {
   return (
-    <main className="bg-gray-100">
+    <>
       <MainNav />
-      {children}
+      <main className="bg-white dark:bg-gray-800">{children}</main>
       <Footer />
-    </main>
+    </>
   )
 }
 
