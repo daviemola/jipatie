@@ -10,12 +10,12 @@ export default function Recieving({ requests }) {
 
   return (
     <>
-      <div className="px-8 bg-white border border-gray-200 flex items-center justify-between mt-6">
-        <h2 className="text-base py-3 font-semibold text-gray-800 uppercase">
+      <div className="px-8 bg-white border border-gray-200 flex items-center justify-between mt-6 dark:border-gray-700 dark:bg-gray-800">
+        <h2 className="text-base py-3 font-semibold text-gray-800 dark:text-gray-200 uppercase">
           Your requests
         </h2>
         <Link href="/dashboard/requests">
-          <a className="text-gray-600 uppercase text-sm font-semibold underline">
+          <a className="text-sm font-semibold underline text-emerald-600">
             View all
           </a>
         </Link>
@@ -24,12 +24,12 @@ export default function Recieving({ requests }) {
         requests.map((item) => (
           <div
             key={item.id}
-            className="py-4 px-8 bg-white border border-gray-200 hover:bg-gray-50"
+            className="py-4 px-8 bg-white border border-gray-200 hover:bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
           >
             <Link href={`#`}>
               <a className="flex justify-between">
                 <div>
-                  <p className="font-semibold text-gray-500 text-sm">
+                  <p className="font-semibold text-gray-500 text-sm dark:text-gray-400">
                     {item?.item.name}
                   </p>
                   <p className="text-xs text-gray-400 tracking-wide">
@@ -37,13 +37,13 @@ export default function Recieving({ requests }) {
                   </p>
                 </div>
 
-                <p className="text-sm  hidden sm:block">
+                <p className="text-sm hidden sm:block dark:text-gray-400">
                   {item.item.location && item.item.location}
                 </p>
-                <div className="text-sm">
+                <div className="text-sm dark:text-gray-400">
                   {item.accepted === false ? (
                     <div className="flex items-center">
-                      <FiXSquare className="text-red-500 mr-2" />
+                      <FiXSquare className="text-red-500 mr-2 text-sm" />
                       Not yet accepted
                     </div>
                   ) : (

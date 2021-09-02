@@ -28,7 +28,7 @@ export default function Search() {
           type="submit"
           className="absolute right-0 top-0 mt-4 mr-4 flex flex-col items-center"
         >
-          <FaSearch className="text-emerald-600 dark:text-gray-400" />
+          <FaSearch className="text-emerald-600 dark:text-emerald-400" />
         </button>
       </form>
     </div>

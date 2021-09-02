@@ -7,6 +7,8 @@ import { HiMoon, HiSun } from 'react-icons/hi'
 import Search from '../all-items/Search'
 import AuthContext from '@/context/AuthContext'
 import { useTheme } from 'next-themes'
+import { Menu, Transition } from '@headlessui/react'
+import { BsFillPersonFill, BsPersonLinesFill } from 'react-icons/bs'
 
 export default function Test() {
   const { systemTheme, theme, setTheme } = useTheme()
@@ -110,52 +112,81 @@ export default function Test() {
             <div className="hidden sm:flex sm:items-center sm:ml-6">
               {renderThemeChanger()}
               <div className="relative ml-3">
-                <div>
-                  <span className="inline-flex rounded-md">
-                    <button
-                      onClick={toggleMenu}
-                      type="button"
-                      className="inline-flex items-center px-3 py-2 text-sm font-semibold leading-4 text-gray-700 transition duration-150 ease-in-out border border-transparent rounded-sm dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-600 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-700 active:bg-gray-200"
-                    >
-                      {user && user.username}
-                      <FaCaretDown className="ml-2" />
-                    </button>
-                  </span>
-                </div>
-                {isMenuOpen && (
+                <Menu as="div" className="relative inline-block text-left">
                   <div>
-                    <div
-                      className="fixed inset-0 z-40"
-                      style={{ display: 'none' }}
-                    ></div>
-
-                    <div
-                      x-show="isOpen"
-                      className="absolute right-0 z-50 w-48 mt-2 origin-top-right rounded-md shadow-lg"
-                    >
-                      <div className="py-1 bg-white rounded-md dark:bg-gray-700 ring-1 ring-black ring-opacity-5">
-                        <div className="block px-4 py-2 text-xs text-gray-400">
-                          Manage Account
-                        </div>
-                        <div>
-                          <Link href="#">
-                            <a className="block px-4 py-2 text-sm leading-5 text-gray-500 transition duration-150 ease-in-out dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100">
-                              Profile
-                            </a>
-                          </Link>
-                        </div>
-                        <div className="border-t border-gray-100 dark:border-gray-600"></div>
-
+                    <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium dark:text-white text-gray-700 bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                      <span className="inline-flex rounded-md">
                         <button
-                          onClick={() => logout()}
-                          className="block w-full px-4 py-2 text-sm leading-5 text-left text-gray-500 transition duration-150 ease-in-out dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100"
+                          onClick={toggleMenu}
+                          type="button"
+                          className="inline-flex items-center px-3 py-2 text-sm font-semibold leading-4 text-gray-700 transition duration-150 ease-in-out border border-transparent rounded-sm dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-600 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-700 active:bg-gray-200"
                         >
-                          Log Out
+                          {user && user.username}
+                          <FaCaretDown className="ml-2" />
                         </button>
-                      </div>
-                    </div>
+                      </span>
+                    </Menu.Button>
                   </div>
-                )}
+                  <Transition
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white dark:bg-gray-800 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <div className="px-1 py-1 ">
+                        <Menu.Item>
+                          <div className="dark:bg-gray-800 dark:text-white text-gray-400 text-sm pt-2 pb-1 px-2">
+                            <p>Manage profile</p>
+                          </div>
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link href={`/profile`}>
+                              <a>
+                                <button
+                                  className={`${
+                                    active
+                                      ? 'dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-400'
+                                      : 'text-gray-200'
+                                  } group flex rounded-md items-center w-full px-2 py-2 text-sm text-gray-700 dark:text-gray-400`}
+                                >
+                                  {active ? (
+                                    <BsPersonLinesFill className="text-gray-600 dark:text-gray-400 mr-2" />
+                                  ) : (
+                                    <BsPersonLinesFill className="text-gray-600 dark:text-gray-400 mr-2" />
+                                  )}
+                                  Profile
+                                </button>
+                              </a>
+                            </Link>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button
+                              onClick={() => logout()}
+                              className={`${
+                                active
+                                  ? 'dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-400'
+                                  : 'text-gray-200'
+                              } group flex rounded-md items-center w-full px-2 py-2 text-sm text-gray-700 dark:text-gray-400`}
+                            >
+                              {active ? (
+                                <BiLogOut className="text-gray-600 dark:text-gray-400 mr-2" />
+                              ) : (
+                                <BiLogOut className="text-gray-600 dark:text-gray-400 mr-2" />
+                              )}
+                              Log Out
+                            </button>
+                          )}
+                        </Menu.Item>
+                      </div>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
               </div>
             </div>
 
