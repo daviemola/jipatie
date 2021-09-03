@@ -64,11 +64,11 @@ export default function AddItemPage({ token }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Toaster position="top-center" reverseOrder={false} />
-      <section className="text-gray-600 body-font relative">
-        <div className="container px-5 py-5 mx-auto bg-white">
+      <section className="text-gray-600 body-font relative bg-white dark:bg-gray-800 dark:text-white">
+        <div className="container px-5 py-5 mx-auto">
           <div className="lg:w-1/2 md:w-2/3 mx-auto sm:px-10">
             <div className="flex flex-col w-full mb-3">
-              <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">
+              <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-800 dark:text-white">
                 Give an Item
               </h1>
             </div>
@@ -78,7 +78,7 @@ export default function AddItemPage({ token }) {
                   <div className="relative">
                     <label
                       htmlFor="name"
-                      className="leading-7 text-sm text-gray-600 font-semibold"
+                      className="leading-7 text-sm text-gray-600 dark:text-white font-semibold"
                     >
                       Item Name*
                     </label>
@@ -93,7 +93,7 @@ export default function AddItemPage({ token }) {
                 </div>
                 <div className="p-2 w-1/2">
                   <div className="relative">
-                    <label className="leading-7 text-sm text-gray-600 font-semibold">
+                    <label className="leading-7 text-sm text-gray-600 dark:text-white font-semibold">
                       Estimated Item Value*
                     </label>
                     <input
@@ -111,13 +111,13 @@ export default function AddItemPage({ token }) {
                   <div className="relative">
                     <label
                       htmlFor="name"
-                      className="leading-7 text-sm text-gray-600 font-semibold"
+                      className="leading-7 text-sm text-gray-600 dark:text-white font-semibold"
                     >
                       <span>Item Size*</span>
                       <select
                         name="size"
                         form=""
-                        className="form-select block w-full input-give p-2"
+                        className="form-select block w-full input-give p-2 dark:text-gray-400"
                         value={values.size}
                         onChange={handleInputChange}
                       >
@@ -134,13 +134,13 @@ export default function AddItemPage({ token }) {
                   <div className="relative">
                     <label
                       htmlFor="name"
-                      className="leading-7 text-sm text-gray-600 font-semibold"
+                      className="leading-7 text-sm text-gray-600 dark:text-white font-semibold"
                     >
                       <span>Item Color*</span>
                       <select
                         name="color"
                         form=""
-                        className="form-select block w-full input-give p-2"
+                        className="form-select block w-full input-give p-2 dark:text-gray-400"
                         value={values.color}
                         onChange={handleInputChange}
                       >
@@ -161,7 +161,7 @@ export default function AddItemPage({ token }) {
                   <div className="relative">
                     <label
                       htmlFor="email"
-                      className="leading-7 text-sm text-gray-600 font-semibold"
+                      className="leading-7 text-sm text-gray-600 dark:text-white font-semibold"
                     >
                       Out of 10 condition*
                     </label>
@@ -178,14 +178,14 @@ export default function AddItemPage({ token }) {
                   <div className="relative">
                     <label
                       htmlFor="name"
-                      className="leading-7 text-sm text-gray-600 font-semibold"
+                      className="leading-7 text-sm text-gray-600 dark:text-white font-semibold"
                     >
                       <span>Item Condition*</span>
                       <select
                         name="condition"
                         id="cars"
                         form=""
-                        className="form-select block w-full input-give p-2"
+                        className="form-select block w-full input-give p-2 dark:text-gray-400"
                         value={values.condition}
                         onChange={handleInputChange}
                       >
@@ -203,7 +203,7 @@ export default function AddItemPage({ token }) {
                   <div className="relative">
                     <label
                       htmlFor="name"
-                      className="leading-7 text-sm text-gray-600 font-semibold"
+                      className="leading-7 text-sm text-gray-600 dark:text-white font-semibold"
                     >
                       Item Location*
                     </label>
@@ -220,14 +220,14 @@ export default function AddItemPage({ token }) {
                   <div className="relative">
                     <label
                       htmlFor="name"
-                      className="leading-7 text-sm text-gray-600 font-semibold"
+                      className="leading-7 text-sm text-gray-600 dark:text-white font-semibold"
                     >
                       <span>Item Category*</span>
                       <select
                         name="category"
                         id="cars"
                         form=""
-                        className="form-select block w-full input-give p-2"
+                        className="form-select block w-full input-give p-2 dark:text-gray-400"
                         value={values.category}
                         onChange={handleInputChange}
                       >
@@ -246,7 +246,7 @@ export default function AddItemPage({ token }) {
                   <div className="relative">
                     <label
                       htmlFor="message"
-                      className="leading-7 text-sm text-gray-600 font-semibold"
+                      className="leading-7 text-sm text-gray-600 dark:text-white font-semibold"
                     >
                       Item Description*
                     </label>
@@ -262,12 +262,12 @@ export default function AddItemPage({ token }) {
                 </div>
                 <div className="w-full mt-5 p-2">
                   <Link href="#">
-                    <a className="text-gray-600 border border-gray-200 py-3 w-full px-5 mr-2 rounded-sm">
+                    <a className="text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700 py-3 w-full px-5 mr-2 rounded-sm">
                       Cancel
                     </a>
                   </Link>
                   <button
-                    className="text-gray-600 font-semibold bg-emerald-400 py-3 px-5 rounded-sm"
+                    className="text-gray-600 dark:text-white font-semibold bg-emerald-400 dark:bg-emerald-700 py-3 px-5 rounded-sm"
                     type="submit"
                   >
                     Submit this Item
@@ -288,7 +288,7 @@ export async function getServerSideProps({ req }) {
   if (!token) {
     return {
       redirect: {
-        destination: '/login',
+        destination: '/account/login',
         permanent: false,
       },
     }

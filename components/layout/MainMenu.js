@@ -11,7 +11,7 @@ function MainMenu() {
   const { user, logout } = useContext(AuthContext)
 
   return (
-    <header className="text-white body-font bg-gray-700">
+    <header className="text-white body-font bg-gray-800">
       <div className="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center max-w-screen-xl">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
           <Link href="/">

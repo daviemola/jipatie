@@ -43,7 +43,7 @@ export default function GivingPage({ items, token, page, total }) {
     <>
       <Toaster />
       <div className="px-8 bg-white border border-gray-200 flex items-center justify-between dark:bg-gray-800 dark:border-gray-700">
-        <h2 className="text-base py-3 font-semibold text-gray-800 dark:text-gray-200 uppercase">
+        <h2 className="text-base py-3 font-semibold text-gray-800 dark:text-white uppercase">
           Your Items
         </h2>
       </div>
@@ -56,7 +56,7 @@ export default function GivingPage({ items, token, page, total }) {
             <div className="flex justify-between">
               <Link href={`#`}>
                 <a className="dark:text-gray-400">
-                  <p className="font-semibold text-gray-500 text-sm dark:text-gray-200 hover:underline">
+                  <p className="font-semibold text-gray-500 text-sm dark:text-white hover:underline">
                     {item.name}
                   </p>
                   <p className="text-xs text-gray-400 tracking-wide">
@@ -81,7 +81,7 @@ export default function GivingPage({ items, token, page, total }) {
                 )}
                 <Menu as="div" className="relative inline-block text-left">
                   <div>
-                    <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium dark:text-gray-200 text-gray-700 bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                    <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium dark:text-white text-gray-700 bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                       <FiMoreHorizontal
                         className="w-5 h-5 ml-2 -mr-1 text-violet-200 hover:text-violet-100"
                         aria-hidden="true"
@@ -105,7 +105,7 @@ export default function GivingPage({ items, token, page, total }) {
                                 active
                                   ? 'dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-400'
                                   : 'text-gray-200'
-                              } group flex rounded-md items-center w-full px-2 py-2 text-sm text-gray-700 dark:text-gray-200`}
+                              } group flex rounded-md items-center w-full px-2 py-2 text-sm text-gray-700 dark:text-white`}
                             >
                               {active ? (
                                 <FiPenTool className="text-gray-700 dark:text-gray-400  mr-2" />
@@ -124,7 +124,7 @@ export default function GivingPage({ items, token, page, total }) {
                                 active
                                   ? 'dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-400'
                                   : 'text-gray-200'
-                              } group flex rounded-md items-center w-full px-2 py-2 text-sm text-gray-700 dark:text-gray-200`}
+                              } group flex rounded-md items-center w-full px-2 py-2 text-sm text-gray-700 dark:text-white`}
                             >
                               {active ? (
                                 <FiTrash className="text-gray-700 dark:text-gray-400  mr-2" />

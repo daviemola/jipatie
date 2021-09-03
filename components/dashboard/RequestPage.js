@@ -46,7 +46,7 @@ export default function RequestPage({ items, token, page, total }) {
     <>
       <Toaster />
       <div className="px-8 bg-white border border-gray-200 flex items-center justify-between dark:bg-gray-800 dark:border-gray-700">
-        <h2 className="text-base py-3 font-semibold text-gray-800 uppercase dark:text-gray-200">
+        <h2 className="text-base py-3 font-semibold text-gray-800 uppercase dark:text-white">
           Your Requests
         </h2>
         <div className="text-gray-600 dark:text-gray-400 uppercase font-semibold text-sm">
@@ -64,7 +64,7 @@ export default function RequestPage({ items, token, page, total }) {
                 href={`/dashboard/items/${item.item.slug}/request/${item.id}`}
               >
                 <a>
-                  <p className="font-semibold text-gray-500 text-sm hover:underline w-full dark:text-gray-300 dark:hover:text-gray-200">
+                  <p className="font-semibold text-gray-500 text-sm hover:underline w-full dark:text-white dark:hover:text-gray-200">
                     {item?.item.name}
                   </p>
                   <p className="text-xs text-gray-400">

@@ -10,7 +10,7 @@ export default function Giving({ items }) {
   return (
     <>
       <div className="px-8 bg-white border border-gray-200 flex items-center justify-between dark:bg-gray-800 dark:border-gray-700">
-        <h2 className="text-base py-3 font-semibold dark:text-gray-300 text-gray-800 uppercase">
+        <h2 className="text-base py-3 font-semibold dark:text-white text-gray-800 uppercase">
           Your Items
         </h2>
         <Link href="/dashboard/giving">
@@ -28,7 +28,7 @@ export default function Giving({ items }) {
             <div className="flex justify-between">
               <Link href={`/dashboard/items/${item.slug}`}>
                 <a>
-                  <p className="font-semibold text-gray-500 text-sm hover:underline dark:text-gray-200">
+                  <p className="font-semibold text-gray-500 text-sm hover:underline dark:text-white">
                     {item.name}
                   </p>
                   <p className="text-xs text-gray-400 tracking-wide">

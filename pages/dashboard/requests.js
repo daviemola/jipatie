@@ -26,7 +26,7 @@ export async function getServerSideProps({ req, query: { page = 1 } }) {
   if (!token) {
     return {
       redirect: {
-        destination: '/login',
+        destination: 'account/login',
         permanent: false,
       },
     }

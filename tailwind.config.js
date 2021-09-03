@@ -8,7 +8,7 @@ module.exports = {
     colors: {
       // Build your palette here
       emerald: colors.emerald,
-      gray: colors.blueGray,
+      gray: colors.coolGray,
       transparent: 'transparent',
       white: '#fff',
       blue: colors.sky,

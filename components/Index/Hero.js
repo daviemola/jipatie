@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 function Hero() {
   return (
-    <section className="text-white bg-gray-600 min-h-10/10 sm:min-h-3/4 md:min-h-9/10">
+    <section className="text-white bg-gray-800 min-h-10/10 sm:min-h-3/4 md:min-h-9/10">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center max-w-screen-xl">
-        <div className="flex flex-col items-center sm:pt-44 pt-20 pb-14 sm:pb-6">
+        <div className="flex flex-col items-center justify-center pt-40">
           <h1 className="md:text-4xl text-2xl uppercase text-center mb-4 font-semibold">
             A platform for giving items
             <br className="md:hidden lg:inline-block" />

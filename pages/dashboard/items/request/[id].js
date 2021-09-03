@@ -85,25 +85,30 @@ export default function RequestPage({ item, token }) {
       </Head>
       <Toaster position="top-center" reverseOrder={false} />
       <Wrapper title="Submit a request">
-        <div className="px-10 py-8 border border-gray-300 bg-white">
-          <h1 className="mb-2 font-semibold text-gray-700 uppercase text-lg ">{`${item.name}`}</h1>
-          <p className="my-2 text-sm tracking-wider font-normal text-gray-500">{`By ${item.user.username}`}</p>
-          <p>{item.description}</p>
+        <div className="px-10 py-8 border border-gray-300 bg-white dark:border-gray-700 dark:bg-gray-800">
+          <h1 className="mb-2 font-semibold text-gray-700 uppercase text-lg dark:text-white">{`${item.name}`}</h1>
+          <p className="my-2 text-sm tracking-wider font-normal text-gray-500 dark:text-gray-400">{`By ${item.user.username}`}</p>
+          <p className="text-gray-600 font-light dark:text-white">
+            {item.description}
+          </p>
           <div className="pt-2 pb-6">
             <Link href={`/dashboard/items/${item.slug}`}>
-              <a className="text-gray-600 text-base underline">
+              <a className="text-emerald-600 text-base underline dark:text-emerald-400">
                 View Posted Item
               </a>
             </Link>
           </div>
 
           {/* <div className="pt-5 font-semibold uppercase">Submit a request</div> */}
-          <form onSubmit={handleSubmit} className="border-t-2 border-gray-300">
+          <form
+            onSubmit={handleSubmit}
+            className="border-t-2 border-gray-300 dark:border-gray-700"
+          >
             <div className="pt-3 w-full">
               <div className="relative pt-3">
                 <label
                   htmlFor="message"
-                  className="leading-7 text-sm text-gray-600 font-semibold"
+                  className="leading-7 text-sm text-gray-600 dark:text-gray-300 font-semibold"
                 >
                   Reasons for wanting the items.*
                 </label>
@@ -119,7 +124,7 @@ export default function RequestPage({ item, token }) {
               </div>
               <div className="sm:flex sm:gap-2">
                 <div className="relative pt-3 sm:w-1/2">
-                  <label className="leading-7 text-sm text-gray-600 font-semibold">
+                  <label className="leading-7 text-sm text-gray-600 dark:text-gray-300 font-semibold">
                     Phone Number*
                   </label>
                   <input
@@ -132,7 +137,7 @@ export default function RequestPage({ item, token }) {
                   />
                 </div>
                 <div className="relative pt-3 sm:w-1/2">
-                  <label className="leading-7 text-sm text-gray-600 font-semibold">
+                  <label className="leading-7 text-sm text-gray-600 dark:text-gray-300 font-semibold">
                     Alternative Phone Number*
                   </label>
                   <input
@@ -146,7 +151,7 @@ export default function RequestPage({ item, token }) {
                 </div>
               </div>
               <div className="relative pt-3">
-                <label className="leading-7 text-sm text-gray-600 font-semibold">
+                <label className="leading-7 text-sm text-gray-600 dark:text-gray-300 font-semibold">
                   Address*
                 </label>
                 <input
@@ -159,18 +164,18 @@ export default function RequestPage({ item, token }) {
                 />
               </div>
             </div>
-            <div className="py-2">
+            <div className="py-2 dark:text-gray-300">
               N/B: Once submitted, wait for the item owner to accept. You will
               be notified.
             </div>
             <div className="w-full mt-7">
               <Link href="#">
-                <a className="text-gray-600 border border-gray-200 py-3 w-full px-5 mr-2 rounded-sm">
+                <a className="text-gray-600 dark:text-gray-300 border border-gray-200 py-3 w-full px-5 mr-2 rounded-sm">
                   Cancel
                 </a>
               </Link>
               <button
-                className="text-gray-600 font-semibold bg-emerald-400 py-3 px-5 rounded-sm"
+                className="text-gray-600 dark:text-gray-300 font-semibold bg-emerald-400 py-3 px-5 rounded-sm"
                 type="submit"
               >
                 Submit Request
@@ -189,7 +194,7 @@ export async function getServerSideProps({ req, params: { id } }) {
   if (!token) {
     return {
       redirect: {
-        destination: '/login',
+        destination: 'account/login',
         permanent: false,
       },
     }

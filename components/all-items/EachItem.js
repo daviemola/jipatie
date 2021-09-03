@@ -16,7 +16,7 @@ function EachItem({ item }) {
               width={420}
             />
             <div className="py-2 px-4">
-              <h3 className="tracking-widest text-gray-500 text-xs uppercase font-normal dark:text-gray-100">
+              <h3 className="tracking-widest text-gray-500 text-xs uppercase font-normal dark:text-white">
                 {item.category ? item.category.name : 'general'}
               </h3>
               <h2 className="text-base text-gray-700 font-semibold mb-1 dark:text-gray-400">

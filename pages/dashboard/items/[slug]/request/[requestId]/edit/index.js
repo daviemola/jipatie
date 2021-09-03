@@ -69,24 +69,26 @@ export default function RequestPage({ item, request, token }) {
       </Head>
       <Toaster position="top-center" reverseOrder={false} />
       <Wrapper title="Edit Request">
-        <div className="px-10 py-10 border-2 border-gray-200 bg-white">
-          <h1 className="mb-2 font-semibold text-gray-700 text-lg ">{`${item.name}`}</h1>
-          <p className="my-2 tracking-wide text-xs font-semibold text-gray-500">{`${item.user.username}`}</p>
-          <p className="text-base text-gray-600">{item.description}</p>
+        <div className="px-10 py-10 border-2 border-gray-200 bg-white dark:text-white dark:bg-gray-800 dark:border-gray-700">
+          <h1 className="mb-2 font-semibold text-gray-700 dark:text-white text-lg ">{`${item.name}`}</h1>
+          <p className="my-2 text-xs font-semibold text-gray-400 ">{`By ${item.user.username}`}</p>
+          <p className="text-base text-gray-600 font-light dark dark:text-white">
+            {item.description}
+          </p>
           <Link href="">
-            <a className="text-gray-600 text-base underline mt-3">
+            <a className="text-base underline mt-3 text-emerald-600 dark:to-emerald-400">
               View Posted Item
             </a>
           </Link>
           <form
             onSubmit={handleSubmit}
-            className="border-t-2 border-gray-300 mt-8 pt-6"
+            className="border-t-2 border-gray-300 mt-8 pt-6 dark:border-gray-700"
           >
             <div className="py-3 w-full">
               <div className="relative">
                 <label
                   htmlFor="message"
-                  className="leading-7 text-sm text-gray-600 font-semibold"
+                  className="leading-7 text-sm text-gray-600 font-semibold dark:text-gray-300"
                 >
                   Reasons for wanting the items.*
                 </label>
@@ -102,7 +104,7 @@ export default function RequestPage({ item, request, token }) {
               </div>
               <div className="sm:flex sm:gap-2">
                 <div className="relative pt-3 sm:w-1/2">
-                  <label className="leading-7 text-sm text-gray-600 font-semibold">
+                  <label className="leading-7 text-sm text-gray-600 dark:text-gray-300 font-semibold">
                     Phone Number*
                   </label>
                   <input
@@ -115,7 +117,7 @@ export default function RequestPage({ item, request, token }) {
                   />
                 </div>
                 <div className="relative pt-3 sm:w-1/2">
-                  <label className="leading-7 text-sm text-gray-600 font-semibold">
+                  <label className="leading-7 text-sm text-gray-600 dark:text-gray-300 font-semibold">
                     Alternative Phone Number*
                   </label>
                   <input
@@ -129,7 +131,7 @@ export default function RequestPage({ item, request, token }) {
                 </div>
               </div>
               <div className="relative pt-3">
-                <label className="leading-7 text-sm text-gray-600 font-semibold">
+                <label className="leading-7 text-sm text-gray-600 dark:text-gray-300 font-semibold">
                   Address*
                 </label>
                 <input
@@ -144,12 +146,12 @@ export default function RequestPage({ item, request, token }) {
             </div>
             <div className="w-full mt-7">
               <Link href="#">
-                <a className="text-gray-600 border border-gray-200 py-3 w-full px-5 mr-2 rounded-sm">
+                <a className="text-gray-600 border border-gray-200 py-3 w-full px-5 mr-2 rounded-sm dark:text-gray-400 dark:border-gray-700">
                   Cancel
                 </a>
               </Link>
               <button
-                className="text-gray-600 font-semibold bg-emerald-400 py-3 px-5 rounded-sm"
+                className="text-white font-semibold bg-emerald-600 py-3 px-5 rounded-sm"
                 type="submit"
               >
                 Submit Request
@@ -168,7 +170,7 @@ export async function getServerSideProps({ req, params: { slug, requestId } }) {
   if (!token) {
     return {
       redirect: {
-        destination: '/login',
+        destination: 'account/login',
         permanent: false,
       },
     }

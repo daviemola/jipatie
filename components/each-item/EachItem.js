@@ -28,7 +28,7 @@ function EachItem({ item }) {
             <h2 className="text-sm text-gray-500 tracking-widest uppercase font-medium dark:text-gray-400">
               {item.category ? item.category.name : 'general'}
             </h2>
-            <h1 className="text-gray-700 text-2xl font-semibold mb-1 dark:text-gray-200">
+            <h1 className="text-gray-700 text-2xl font-semibold mb-1 dark:text-white">
               {item.name}
             </h1>
             <div className="flex mb-4">
@@ -38,7 +38,7 @@ function EachItem({ item }) {
                 <IoIosStar />
                 <IoMdStarHalf />
                 <IoMdStarOutline />
-                <span className="text-gray-600 ml-3 dark:text-gray-300">
+                <span className="text-gray-600 ml-3 dark:text-white">
                   {item.condition}
                 </span>
               </span>
@@ -47,18 +47,18 @@ function EachItem({ item }) {
                 <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none bg-emerald-600"></button>
               </span>
             </div>
-            <p className="leading-relaxed dark:text-gray-100">
+            <p className="leading-relaxed dark:text-white">
               {item.description}
             </p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-300 mb-5 dark:border-gray-700 dark:text-gray-400">
               <div className="flex ">
-                <span className="mr-2 text-md font-semibold dark:text-gray-300">
+                <span className="mr-2 text-md font-semibold dark:text-white">
                   Est. value:
                 </span>
                 {`Ksh ${item.value}`}
               </div>
               <div className="flex ml-3 items-center border-l border-gray-500 dark:border-gray-700 space-x-2s">
-                <span className="mx-3 font-semibold  dark:text-gray-300">
+                <span className="mx-3 font-semibold  dark:text-white">
                   Size:
                 </span>
                 {item.size}
@@ -66,14 +66,14 @@ function EachItem({ item }) {
             </div>
             <div className="flex mt-3 items-center pb-5 border-b-2 border-gray-300 mb-5 dark:border-gray-700">
               <div className="flex dark:text-gray-400">
-                <span className="mr-2 text-md font-semibold  dark:text-gray-300">
+                <span className="mr-2 text-md font-semibold  dark:text-white">
                   Offered by:
                 </span>
                 {`${item.user.username}`}
               </div>
             </div>
             <div className="flex">
-              <span className="title-font font-medium text-md text-gray-600 flex flex-row dark:text-gray-100">
+              <span className="title-font font-medium text-md text-gray-600 flex flex-row dark:text-white">
                 <span className="mr-2 text-emerald-800 dark:text-emerald-500 text-2xl">
                   <HiLocationMarker />
                 </span>

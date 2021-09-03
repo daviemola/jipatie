@@ -27,7 +27,7 @@ export default function Test() {
       return (
         <button
           onClick={() => setTheme('light')}
-          className="p-2 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-500 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-700 active:bg-gray-100"
+          className="p-2 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-white dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-500 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-700 active:bg-gray-100"
         >
           <HiSun />
         </button>
@@ -36,7 +36,7 @@ export default function Test() {
       return (
         <button
           onClick={() => setTheme('dark')}
-          className="p-2 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-500 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-700 active:bg-gray-100"
+          className="p-2 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-white dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-500 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-700 active:bg-gray-100"
         >
           <HiMoon />
         </button>
@@ -79,7 +79,7 @@ export default function Test() {
               </div>
               <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex ">
                 <Link href="/dashboard">
-                  <a className="inline-flex items-center px-1 pt-1 text-sm font-semibold leading-5 text-gray-500 transition duration-150 ease-in-out dark:border-emerald-300 dark:text-gray-200 focus:border-indigo-700">
+                  <a className="inline-flex items-center px-1 pt-1 text-sm font-semibold leading-5 text-gray-500 transition duration-150 ease-in-out dark:border-emerald-300 dark:text-white focus:border-indigo-700">
                     Dashboard
                   </a>
                 </Link>
@@ -87,7 +87,7 @@ export default function Test() {
               <div className="hidden space-x-8 sm:-my-px sm:ml-3 sm:flex">
                 <Link href="/dashboard/items">
                   <a
-                    className="inline-flex items-center px-1 pt-1 text-sm font-semibold leading-5 text-gray-500 transition duration-150 ease-in-out dark:border-emerald-300 dark:text-gray-200 focus:border-indigo-700"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-semibold leading-5 text-gray-500 transition duration-150 ease-in-out dark:border-emerald-300 dark:text-white focus:border-indigo-700"
                     href="#"
                   >
                     All Items
@@ -97,7 +97,7 @@ export default function Test() {
               <div className="hidden space-x-8 sm:-my-px sm:ml-3 sm:flex">
                 <Link href="/institutions">
                   <a
-                    className="inline-flex items-center px-1 pt-1 text-sm font-semibold leading-5 text-gray-500 transition duration-150 ease-in-out dark:border-emerald-300 dark:text-gray-200 focus:border-indigo-700"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-semibold leading-5 text-gray-500 transition duration-150 ease-in-out dark:border-emerald-300 dark:text-white focus:border-indigo-700"
                     href="#"
                   >
                     Homes
@@ -119,7 +119,7 @@ export default function Test() {
                         <button
                           onClick={toggleMenu}
                           type="button"
-                          className="inline-flex items-center px-3 py-2 text-sm font-semibold leading-4 text-gray-700 transition duration-150 ease-in-out border border-transparent rounded-sm dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-600 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-700 active:bg-gray-200"
+                          className="inline-flex items-center px-3 py-2 text-sm font-semibold leading-4 text-gray-700 transition duration-150 ease-in-out border border-transparent rounded-sm dark:text-white dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-600 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-700 active:bg-gray-200"
                         >
                           {user && user.username}
                           <FaCaretDown className="ml-2" />
@@ -149,9 +149,9 @@ export default function Test() {
                                 <button
                                   className={`${
                                     active
-                                      ? 'dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-400'
+                                      ? 'dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-400 '
                                       : 'text-gray-200'
-                                  } group flex rounded-md items-center w-full px-2 py-2 text-sm text-gray-700 dark:text-gray-400`}
+                                  } group flex rounded-md items-center w-full px-2 py-2 text-sm text-gray-700 dark:text-gray-400 hover:bg-gray-700 hover:text-gray-50`}
                                 >
                                   {active ? (
                                     <BsPersonLinesFill className="text-gray-600 dark:text-gray-400 mr-2" />
@@ -194,7 +194,7 @@ export default function Test() {
               {renderThemeChanger()}
               <button
                 onClick={toggleSmMenu}
-                className="inline-flex items-center justify-center p-2 bg-gray-200 hover:bg-gray-200 dark:bg-gray-800 transition duration-150 ease-in-out rounded-md active:bg-gray-200 dark:active:bg-gray-700 dark:text-gray-200 hover:text-gray-500 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-700"
+                className="inline-flex items-center justify-center p-2 bg-gray-200 hover:bg-gray-200 dark:bg-gray-800 transition duration-150 ease-in-out rounded-md active:bg-gray-200 dark:active:bg-gray-700 dark:text-white hover:text-gray-500 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-700"
               >
                 {isMenuSmOpen ? (
                   <FaTimes className="text-gray-500 dark:text-white text-2xl" />
@@ -212,7 +212,7 @@ export default function Test() {
               <div>
                 <Link href="/dashboard">
                   <a
-                    className="block pl-3 pr-4 text-base font-semibold text-gray-600 transition duration-150 ease-in-out dark:text-gray-300 focus:outline-none focus:text-gray-100"
+                    className="block pl-3 pr-4 text-base font-semibold text-gray-600 transition duration-150 ease-in-out dark:text-white focus:outline-none focus:text-gray-100"
                     href="#"
                   >
                     Dashboard
@@ -224,7 +224,7 @@ export default function Test() {
               <div className="text-gray-50">
                 <Link href="/dashboard/items">
                   <a
-                    className="block py-2 pl-3 pr-4 text-base font-semibold text-gray-600 transition duration-150 ease-in-out dark:text-gray-300 focus:outline-none focus:text-gray-100"
+                    className="block py-2 pl-3 pr-4 text-base font-semibold text-gray-600 transition duration-150 ease-in-out dark:text-white focus:outline-none focus:text-gray-100"
                     href="#"
                   >
                     All Items
@@ -236,7 +236,7 @@ export default function Test() {
               <div className="text-gray-50">
                 <Link href="/dashboard/give">
                   <a
-                    className="pl-3 pr-4 text-base font-semibold transition text-gray-600 duration-150 ease-in-out dark:text-gray-300 focus:outline-none focus:text-gray-100"
+                    className="pl-3 pr-4 text-base font-semibold transition text-gray-600 duration-150 ease-in-out dark:text-white focus:outline-none focus:text-gray-100"
                     href="#"
                   >
                     Give Item
@@ -247,7 +247,7 @@ export default function Test() {
             <div className="pt-4 pb-1 text-gray-100 dark:border-gray-600">
               <div className="flex items-center px-3">
                 <div>
-                  <div className="text-sm m-0 p-0 font-normal text-gray-600 dark:text-gray-200">
+                  <div className="text-sm m-0 p-0 font-normal text-gray-600 dark:text-white">
                     {user && user.username}
                   </div>
                   <span className="text-xs m-0 p-0 font-normal text-gray-600 dark:text-gray-400">

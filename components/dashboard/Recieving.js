@@ -11,7 +11,7 @@ export default function Recieving({ requests }) {
   return (
     <>
       <div className="px-8 bg-white border border-gray-200 flex items-center justify-between mt-6 dark:border-gray-700 dark:bg-gray-800">
-        <h2 className="text-base py-3 font-semibold text-gray-800 dark:text-gray-200 uppercase">
+        <h2 className="text-base py-3 font-semibold text-gray-800 dark:text-white uppercase">
           Your requests
         </h2>
         <Link href="/dashboard/requests">

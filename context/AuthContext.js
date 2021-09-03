@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
       setMessage('Check your email for further instructions. ')
       setLoading(false)
       setTimeout(function () {
-        router.push('/login')
+        router.push('/account/login')
       }, 6000)
     } else {
       setError(data.message)
@@ -107,7 +107,7 @@ export const AuthProvider = ({ children }) => {
       setMessage(data.message)
       setLoading(false)
       setTimeout(function () {
-        router.push('/login')
+        router.push('account/login')
       }, 6000)
     } else {
       setError(data.message)

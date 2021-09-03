@@ -24,7 +24,7 @@ export default function EachInstution({ institution }) {
           <div id="body" className=" sm:ml-5 sm:w-3/4 py-3">
             <h4
               id="name"
-              className="text-sm sm:text-md font-semibold mb-2 uppercase pr-2 dark:text-gray-300"
+              className="text-sm sm:text-md font-semibold mb-2 uppercase pr-2 dark:text-white"
             >
               {institution.institution_name}
             </h4>
@@ -32,7 +32,7 @@ export default function EachInstution({ institution }) {
               <IoIosPerson className="mr-2 text-emerald-600 text-xl" />
               {institution.head_of_institution}
             </p>
-            <p className="text-gray-500 text-sm flex items-center dark:text-gray-300">
+            <p className="text-gray-500 text-sm flex items-center dark:text-white">
               <IoMdPin className="mr-2 text-emerald-600 text-lg" />
               {institution.institution_address}
             </p>

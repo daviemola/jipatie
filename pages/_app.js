@@ -18,11 +18,11 @@ Router.events.on('routeChangeError', progress.finish)
 
 function MyApp({ Component, pageProps }) {
   return (
-    <AuthProvider>
-      <ThemeProvider enableSystem={true} attribute="class">
+    <ThemeProvider enableSystem={true} attribute="class">
+      <AuthProvider>
         <Component {...pageProps} />
-      </ThemeProvider>
-    </AuthProvider>
+      </AuthProvider>
+    </ThemeProvider>
   )
 }
 
