@@ -11,16 +11,14 @@ export default function InstitutionDetails({ institution }) {
 
       <div className="md:flex space-x-16 mx-auto max-w-5xl sm:px-6 lg:px-8 px-4 pt-10">
         <div className="md:w-8/12">
-          <div className="">
-            <h1 className="text-gray-700 dark:text-white text-xl uppercase font-semibold">
-              {institution.institution_name}
-            </h1>
-            <div className="items-center flex pt-3 pb-5">
-              <IoMdPin className="mr-2 text-emerald-600 text-xl dark:to-emerald-400" />
-              <h3 className="dark:text-gray-400">
-                {institution.institution_address}
-              </h3>
-            </div>
+          <h1 className="text-gray-700 dark:text-white text-xl uppercase font-semibold">
+            {institution.institution_name}
+          </h1>
+          <div className="items-center flex pb-3">
+            <IoMdPin className="mr-2 text-emerald-600 text-xl dark:to-emerald-400" />
+            <h3 className="dark:text-gray-400">
+              {institution.institution_address}
+            </h3>
           </div>
 
           {/*  Image of the Home */}
@@ -60,7 +58,7 @@ export default function InstitutionDetails({ institution }) {
             </div>
 
             <div className="mt-8 pt-2 border-t border-gray-300 dark:border-gray-700">
-              <p className="text-lg my-6 font-semibold text-gray-600 dark:text-white">
+              <p className="text-xl my-6 font-semibold text-gray-600 dark:text-white">
                 About this home
               </p>
               <p className="text-gray-600 dark:text-gray-400">
@@ -68,7 +66,7 @@ export default function InstitutionDetails({ institution }) {
               </p>
             </div>
             <div className="mt-8 pt-2 border-t border-gray-300 dark:border-gray-700">
-              <p className="text-lg my-6 font-semibold text-gray-600 dark:text-white">
+              <p className="text-xl my-6 font-semibold text-gray-600 dark:text-white">
                 What to Give?
               </p>
               <p className="text-gray-600 dark:text-gray-400">
@@ -76,7 +74,7 @@ export default function InstitutionDetails({ institution }) {
               </p>
             </div>
             <div className="mt-8 pt-2 border-t border-gray-300 dark:border-gray-700">
-              <p className="text-lg my-6 font-semibold text-gray-600 dark:text-white">
+              <p className="text-xl my-6 font-semibold text-gray-600 dark:text-white">
                 Rules When Visiting
               </p>
               <p className="text-gray-600 dark:text-gray-400">
@@ -84,7 +82,7 @@ export default function InstitutionDetails({ institution }) {
               </p>
             </div>
             <div className="mt-8 pt-2 border-t border-gray-300 dark:border-gray-700">
-              <p className="text-lg my-6 font-semibold text-gray-600 dark:text-white">
+              <p className="text-xl my-6 font-semibold text-gray-600 dark:text-white">
                 Health and safety guidelines
               </p>
               <p className="text-gray-600 dark:text-gray-400">

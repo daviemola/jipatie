@@ -36,11 +36,11 @@ footer {
 }
 
 .btn-emerald-forms {
-  @apply bg-gray-600 text-emerald-400 text-sm font-normal px-6 py-3 rounded-sm hover:bg-gray-700 shadow-sm outline-none focus:outline-none mr-1 mb-1 w-full;
+  @apply dark:bg-emerald-600 text-white bg-emerald-600 text-sm font-normal px-6 py-3 rounded-sm hover:bg-emerald-700 dark:hover:bg-emerald-700 shadow-sm outline-none focus:outline-none mr-1 mb-1 w-full;
 }
 
 .input-styles {
-  @apply border bg-gray-100 border-gray-300 px-3 py-3 placeholder-gray-400 text-gray-800 rounded-sm text-xs focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent w-full;
+  @apply border bg-gray-100 border-gray-300 px-3 py-3 placeholder-gray-400 focus:bg-gray-900 text-gray-800 dark:bg-gray-900 dark:border-gray-700 dark:text-white rounded-sm text-xs focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent w-full;
 }
 
 .btn-login-register {
