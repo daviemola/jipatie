@@ -23,7 +23,7 @@ export async function getServerSideProps({ query: { slug }, req }) {
   if (!token) {
     return {
       redirect: {
-        destination: '/login',
+        destination: '/account/login',
         permanent: false,
       },
     }

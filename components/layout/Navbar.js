@@ -37,7 +37,7 @@ export default function Test() {
             {/* <button className="p-2 text-white transition duration-150 ease-in-out bg-gray-600 border border-transparent rounded-md dark:text-white dark:bg-gray-800 hover:bg-gray-500 dark:hover:bg-gray-700 hover:text-white focus:outline-none focus:bg-gray-500 dark:focus:bg-gray-700 active:bg-gray-50">
               <HiSun />
             </button> */}
-            <Link href="account/register">
+            <Link href="/account/register">
               <a className="mr-8 px-2 py-1 text-white text-sm">Login</a>
             </Link>
             <Link href="account/login">

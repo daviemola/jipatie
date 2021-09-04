@@ -8,7 +8,7 @@ import Search from '../all-items/Search'
 import AuthContext from '@/context/AuthContext'
 import { useTheme } from 'next-themes'
 import { Menu, Transition } from '@headlessui/react'
-import { BsFillPersonFill, BsPersonLinesFill } from 'react-icons/bs'
+import { BsPersonLinesFill } from 'react-icons/bs'
 
 export default function Test() {
   const { systemTheme, theme, setTheme } = useTheme()
@@ -113,20 +113,13 @@ export default function Test() {
               {renderThemeChanger()}
               <div className="relative ml-3">
                 <Menu as="div" className="relative inline-block text-left">
-                  <div>
-                    <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium dark:text-white text-gray-700 bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-                      <span className="inline-flex rounded-md">
-                        <button
-                          onClick={toggleMenu}
-                          type="button"
-                          className="inline-flex items-center px-3 py-2 text-sm font-semibold leading-4 text-gray-700 transition duration-150 ease-in-out border border-transparent rounded-sm dark:text-white dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-600 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-700 active:bg-gray-200"
-                        >
-                          {user && user.username}
-                          <FaCaretDown className="ml-2" />
-                        </button>
-                      </span>
-                    </Menu.Button>
-                  </div>
+                  <Menu.Button
+                    onClick={toggleMenu}
+                    className="inline-flex justify-center items-center w-full px-3 py-2 text-sm font-medium dark:text-white text-gray-700 bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                  >
+                    <div>{user && user.username}</div>
+                    <FaCaretDown className="ml-2" />
+                  </Menu.Button>
                   <Transition
                     enter="transition ease-out duration-100"
                     enterFrom="transform opacity-0 scale-95"
@@ -151,7 +144,7 @@ export default function Test() {
                                     active
                                       ? 'dark:bg-gray-700 bg-gray-200 dark:text-white text-gray-400 '
                                       : 'text-gray-200'
-                                  } group flex rounded-md items-center w-full px-2 py-2 text-sm text-gray-700 dark:text-gray-400 hover:bg-gray-700 hover:text-gray-50`}
+                                  } group flex rounded-md items-center w-full px-2 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50`}
                                 >
                                   {active ? (
                                     <BsPersonLinesFill className="text-gray-600 dark:text-gray-400 mr-2" />
@@ -194,7 +187,7 @@ export default function Test() {
               {renderThemeChanger()}
               <button
                 onClick={toggleSmMenu}
-                className="inline-flex items-center justify-center p-2 bg-gray-200 hover:bg-gray-200 dark:bg-gray-800 transition duration-150 ease-in-out rounded-md active:bg-gray-200 dark:active:bg-gray-700 dark:text-white hover:text-gray-500 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-700"
+                className="inline-flex items-center justify-center p-2 bg-white hover:bg-gray-200 dark:bg-gray-800 transition duration-150 ease-in-out rounded-md active:bg-gray-200 dark:active:bg-gray-700 dark:text-white hover:text-gray-500 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-700"
               >
                 {isMenuSmOpen ? (
                   <FaTimes className="text-gray-500 dark:text-white text-2xl" />
