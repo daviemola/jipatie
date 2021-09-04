@@ -98,7 +98,7 @@ export default function InstitutionDetails({ institution }) {
 
         <div className="md:w-4/12">
           <div className=" top-24 sticky self-start">
-            <div className="pt-6 px-6 py-3 border border-gray-300 dark:bg-gray-800 bg-white shadow-md rounded-md dark:border-gray-700 flex items-center mb-6">
+            <div className="pt-6 px-6 py-3 border border-gray-300 dark:bg-gray-800 bg-white shadow-md rounded-md dark:border-gray-700 mb-6">
               <div>
                 <h4 className="text-md font-semibold">
                   {institution.institution_name}
