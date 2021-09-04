@@ -183,7 +183,7 @@ export default function RegisterPage() {
                             <Image
                               alt="..."
                               className="w-full text-white m-0"
-                              src="/emeraldloader.svg"
+                              src="/loaderwhite.svg"
                               width={20}
                               height={20}
                             />
