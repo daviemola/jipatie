@@ -49,11 +49,11 @@ export default function LoginPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Toaster />
-      <section className="absolute w-full h-full sm:bg-gray-100 font-medium text-sm sm:mt-0 mt-20 dark:bg-gray-900">
+      <section className="absolute w-full h-full bg-gray-100 font-medium text-sm pt-24 dark:bg-gray-900">
         <div className="sm:container mx-auto px-4 h-full">
-          <div className="sm:flex content-center items-center justify-center h-full">
+          <div className="sm:flex content-center items-center justify-center">
             <div className="w-full sm:w-8/12 md:w-7/12 lg:w-5/12 xl:w-2/7 sm:px-4">
-              <div className="relative sm:flex flex-col min-w-0 break-words w-full mb-6 shadow-lg sm:rounded-sm bg-white sm:border sm:border-gray-300 sm:py-4 dark:bg-gray-800 dark:border-gray-700">
+              <div className="relative sm:flex flex-col min-w-0 break-words w-full mb-6 pt-5 sm:rounded-sm bg-white border border-gray-300 sm:py-4 dark:bg-gray-800 dark:border-gray-700">
                 <div className="rounded-t mb-0 px-4 sm:px-7">
                   <div className="flex flex-wrap my-4">
                     <div className="w-1/2">

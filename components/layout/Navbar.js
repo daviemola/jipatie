@@ -37,48 +37,20 @@ export default function Test() {
             {/* <button className="p-2 text-white transition duration-150 ease-in-out bg-gray-600 border border-transparent rounded-md dark:text-white dark:bg-gray-800 hover:bg-gray-500 dark:hover:bg-gray-700 hover:text-white focus:outline-none focus:bg-gray-500 dark:focus:bg-gray-700 active:bg-gray-50">
               <HiSun />
             </button> */}
-            <Link href="/account/register">
+            <Link href="/account/login">
               <a className="mr-8 px-2 py-1 text-white text-sm">Login</a>
             </Link>
-            <Link href="account/login">
+            <Link href="/account/register">
               <a className="ml-2 px-2 py-1 text-emerald-300 text-sm border border-emerald-300 rounded-sm">
                 Register
               </a>
             </Link>
-
-            <div className="relative ml-3">
-              {isMenuOpen && (
-                <div>
-                  <div
-                    className="fixed inset-0 z-40"
-                    style={{ display: 'none' }}
-                  ></div>
-
-                  <div
-                    x-show="isOpen"
-                    className="absolute right-0 z-50 w-48 mt-2 origin-top-right rounded-md shadow-lg"
-                  >
-                    <div className="py-1 bg-white rounded-md dark:bg-gray-700 ring-1 ring-black ring-opacity-5">
-                      <div className="block px-4 py-2 text-xs text-gray-400"></div>
-                      <div>
-                        <Link href="/account/login">
-                          <a className="block px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100">
-                            Login
-                          </a>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
           </div>
 
           <div className="flex items-center -mr-2 sm:hidden">
             {/* <button className="p-2 text-white transition duration-150 ease-in-out bg-gray-600 border border-transparent rounded-md dark:text-white dark:bg-gray-800 hover:bg-gray-500 dark:hover:bg-gray-700 hover:text-white focus:outline-none focus:bg-gray-500 dark:focus:bg-gray-700 active:bg-gray-600">
               <HiSun />
             </button> */}
-
             <button
               onClick={toggleSmMenu}
               className="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md dark:text-white hover:text-gray-500 hover:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-600 dark:focus:bg-gray-700 focus:text-gray-500"
@@ -94,47 +66,29 @@ export default function Test() {
       </div>
 
       {isMenuSmOpen && (
-        <div className="sm:hidden bg-gray-600 dark:bg-gray-800">
-          <div className="pt-2 pb-1 space-y-1">
+        <div className="sm:hidden bg-gray-800 dark:bg-gray-800 border-b border-gray-700">
+          <div className="pt-2 pb-1 pl-3 space-y-1">
             <div>
-              <Link href="/dashboard">
+              <Link href="/account/register">
                 <a
-                  className="block py-2 pl-3 pr-4 text-base font-semibold text-emerald-50 transition duration-150 ease-in-out border-l-4 border-emerald-400 dark:border-emerald-300 dark:text-emerald-200 bg-gray-600 dark:bg-emerald-800 focus:outline-none focus:text-emerald-800 focus:bg-gray-500 focus:border-emerald-700"
+                  className="block py-2 pl-3 pr-4 text-base font-semibold text-white transition duration-150 ease-in-out bg-gray-800 dark:bg-gray-800 focus:outline-none focus:text-gray-800 focus:bg-gray-800 focus:border-gray-700"
                   href="#"
                 >
-                  Dashboard
+                  Register
                 </a>
               </Link>
             </div>
           </div>
-          <div className="pt-1 pb-3 space-y-1">
+          <div className="pt-1 pb-3 pl-3 space-y-1">
             <div>
-              <Link href="/dashboard/items">
+              <Link href="/account/login">
                 <a
-                  className="block py-2 pl-3 pr-4 text-base font-semibold text-emerald-50 transition duration-150 ease-in-out dark:border-emerald-300 dark:text-emerald-200 bg-gray-600 dark:bg-emerald-800 focus:outline-none focus:text-emerald-800 focus:bg-gray-500 focus:border-emerald-700"
+                  className="block py-2 pl-3 pr-4 text-base font-semibold text-white transition duration-150 ease-in-out dark:text-gray-50 bg-gray-800 dark:bg-gray-800 focus:outline-none focus:text-gray-50 focus:bg-gray-700 focus:border-gray-700"
                   href="#"
                 >
-                  All Items
+                  Login
                 </a>
               </Link>
-            </div>
-          </div>
-          <div className="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
-            <div className="flex items-center px-4">
-              <div>Register</div>
-            </div>
-            <div className="mt-3 space-y-1">
-              <div>
-                <a
-                  className="block py-2 pl-3 pr-4 text-base font-semibold text-gray-50 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-white hover:text-white hover:bg-gray-600 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
-                  href="#"
-                >
-                  <span className="flex flex-row">
-                    <BsPersonSquare className="pr-2 text-2xl" />
-                    Login
-                  </span>
-                </a>
-              </div>
             </div>
           </div>
         </div>
