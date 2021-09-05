@@ -5,6 +5,7 @@ import { useState, useEffect, useContext } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import AuthContext from '@/context/AuthContext'
 import GoogleLogin from 'react-google-login'
+import { FiAlertCircle } from 'react-icons/fi'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -12,7 +13,22 @@ export default function LoginPage() {
 
   const { login, error, loading, googleAuth } = useContext(AuthContext)
 
-  useEffect(() => error && toast.error(error))
+  useEffect(
+    () =>
+      error &&
+      toast.custom((t) => (
+        <div
+          className={`${
+            t.visible ? 'animate-enter' : 'animate-leave'
+          } max-w-md bg-white shadow-lg rounded-lg pointer-events-auto`}
+        >
+          <div className="bg-red-400 text-white py-3 px-3 border-red-400 rounded-sm flex items-center">
+            <FiAlertCircle className="mr-3" />
+            <p className="text-sm font-medium">{error}</p>
+          </div>
+        </div>
+      )),
+  )
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -91,7 +107,7 @@ export default function LoginPage() {
                         className="input-styles font-mono"
                         placeholder="Your Password"
                         value={password}
-                        autoComplete="given-name"
+                        autoComplete="new password"
                         onChange={(e) => setPassword(e.target.value)}
                         style={{ transition: 'all .15s ease' }}
                       />

@@ -11,13 +11,13 @@ footer {
   text-align: center;
 }
 
-input:-webkit-autofill,
+/* input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0px 1000px #373e4a inset !important;
   -webkit-text-fill-color: white !important;
-}
+} */
 
 .submit-btn {
   @apply flex mx-auto text-gray-100 bg-gray-500 border-0 py-2 px-8 focus:outline-none hover:bg-gray-600 rounded-sm font-normal text-lg;
@@ -48,15 +48,9 @@ input:-webkit-autofill:active {
 }
 
 .input-styles {
-  @apply border bg-gray-100 border-gray-300 px-3 py-3 placeholder-gray-400 text-fill-gray-200 shadow-fill-gray-900 dark:focus:bg-gray-900 text-gray-800 dark:bg-gray-900 dark:border-gray-700 dark:text-white rounded-sm text-xs focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent w-full;
+  @apply border bg-gray-100 border-gray-300 px-3 py-3 placeholder-gray-400 focus:bg-gray-100 focus:text-gray-800 text-fill-gray-900 dark:text-fill-gray-100 shadow-fill-gray-100 dark:shadow-fill-gray-900 dark:focus:bg-gray-900 text-gray-800 dark:bg-gray-900 dark:border-gray-700 dark:text-white rounded-sm text-xs focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent w-full;
 }
 
 .btn-login-register {
-  @apply text-gray-900 rounded-sm text-sm outline-none w-full px-6 py-3 bg-blue-300 focus:outline-none mr-1 mb-1 border border-gray-200 hover:bg-blue-400 inline-flex items-center font-normal justify-center;
-}
-
-.bg-register {
-  background-image: url('/public/registerbg.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
+  @apply text-gray-900 dark:bg-gray-600 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 rounded-sm text-sm outline-none w-full px-6 py-3 bg-gray-200 border-gray-300 hover:shadow-md focus:outline-none mr-1 mb-1 border inline-flex items-center font-normal justify-center;
 }
