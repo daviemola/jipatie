@@ -11,6 +11,14 @@ footer {
   text-align: center;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #373e4a inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
 .submit-btn {
   @apply flex mx-auto text-gray-100 bg-gray-500 border-0 py-2 px-8 focus:outline-none hover:bg-gray-600 rounded-sm font-normal text-lg;
 }
@@ -40,7 +48,7 @@ footer {
 }
 
 .input-styles {
-  @apply border bg-gray-100 border-gray-300 px-3 py-3 placeholder-gray-400 focus:bg-gray-900 text-gray-800 dark:bg-gray-900 dark:border-gray-700 dark:text-white rounded-sm text-xs focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent w-full;
+  @apply border bg-gray-100 border-gray-300 px-3 py-3 placeholder-gray-400 text-fill-gray-200 shadow-fill-gray-900 dark:focus:bg-gray-900 text-gray-800 dark:bg-gray-900 dark:border-gray-700 dark:text-white rounded-sm text-xs focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent w-full;
 }
 
 .btn-login-register {

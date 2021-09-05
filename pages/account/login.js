@@ -16,6 +16,7 @@ export default function LoginPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (!e.isTrusted) return
     login({ email, password })
   }
 
@@ -56,7 +57,10 @@ export default function LoginPage() {
                   </div>
                 </div>
                 <div className="flex-auto px-4 sm:px-7 py-3">
-                  <form onSubmit={handleSubmit}>
+                  <form
+                    onSubmit={handleSubmit}
+                    // autoComplete="off"
+                  >
                     <div className="relative w-full mb-3">
                       <label
                         className="block text-gray-600 mb-2 dark:text-gray-200"
@@ -69,6 +73,7 @@ export default function LoginPage() {
                         className="input-styles font-mono"
                         placeholder="Your Email address"
                         value={email}
+                        autoComplete="given-name"
                         onChange={(e) => setEmail(e.target.value)}
                         style={{ transition: 'all .15s ease' }}
                       />
@@ -86,6 +91,7 @@ export default function LoginPage() {
                         className="input-styles font-mono"
                         placeholder="Your Password"
                         value={password}
+                        autoComplete="given-name"
                         onChange={(e) => setPassword(e.target.value)}
                         style={{ transition: 'all .15s ease' }}
                       />

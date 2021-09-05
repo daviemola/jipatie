@@ -37,5 +37,16 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-autofill'),
+    require('tailwindcss-text-fill'),
+    require('tailwindcss-shadow-fill'),
+  ],
+  variants: {
+    extend: {
+      borderColor: ['autofill', 'dark'],
+      shadowFill: ['dark'],
+      textFill: ['dark'],
+    },
+  },
 }

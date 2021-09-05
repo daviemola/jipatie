@@ -26,16 +26,16 @@ export default function LoginPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Toaster />
-      <section className="absolute w-full h-full sm:bg-gray-100 font-medium text-sm sm:mt-0 mt-20">
+      <section className="absolute w-full h-full sm:bg-gray-100 font-medium text-sm sm:mt-0 mt-20 dark:bg-gray-900">
         <div className="sm:container mx-auto px-4 h-full">
           <div className="sm:flex content-center items-center justify-center h-full">
             <div className="w-full sm:w-8/12 md:w-7/12 lg:w-5/12 xl:w-2/7 sm:px-4">
-              <div className="relative sm:flex flex-col min-w-0 break-words w-full mb-6 sm:rounded-sm bg-white sm:border sm:border-gray-300 sm:py-4">
+              <div className="relative sm:flex flex-col min-w-0 break-words w-full mb-6 sm:rounded-sm bg-white sm:border sm:border-gray-300 sm:py-4 dark:border-gray-700 dark:bg-gray-800">
                 <div className="rounded-t mb-0 px-4 sm:px-7">
                   <div className="flex flex-wrap my-t mb-2">
                     <div className="w-1/2">
                       <div className="ml-0 text-xl">
-                        <h2 className="text-gray-600 font-semibold">
+                        <h2 className="text-gray-600 font-semibold dark:text-white">
                           Forgot Password
                         </h2>
                       </div>
@@ -46,7 +46,7 @@ export default function LoginPage() {
                   <form onSubmit={handleSubmit}>
                     <div className="relative w-full mb-3">
                       <label
-                        className="block text-gray-600 mb-2"
+                        className="block text-gray-600 mb-2 dark:text-gray-200"
                         htmlFor="grid-password"
                       >
                         Email
