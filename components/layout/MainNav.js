@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useContext, useEffect } from 'react'
-import { FaBars, FaCaretDown, FaTimes } from 'react-icons/fa'
+import { FaCaretDown } from 'react-icons/fa'
 import { BiLogOut } from 'react-icons/bi'
 import { HiMoon, HiSun } from 'react-icons/hi'
 import Search from '../all-items/Search'
@@ -9,6 +9,7 @@ import AuthContext from '@/context/AuthContext'
 import { useTheme } from 'next-themes'
 import { Menu, Transition } from '@headlessui/react'
 import { BsPersonLinesFill } from 'react-icons/bs'
+import { FiMenu, FiX } from 'react-icons/fi'
 
 export default function Test() {
   const { systemTheme, theme, setTheme } = useTheme()
@@ -53,10 +54,10 @@ export default function Test() {
   const toggleSmMenu = () => showSmMenu(!isMenuSmOpen)
 
   return (
-    <div className="sm:py-10">
+    <div className="sm:py-8">
       <nav className="bg-white shadow-sm border-b border-gray-100 dark:border-gray-700 dark:bg-gray-800 sm:fixed sm:inset-x-0 sm:top-0 sm:z-30">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="flex justify-between h-20">
+          <div className="flex justify-between h-16">
             <div className="flex">
               <div className="flex items-center flex-shrink-0 pt-3 ">
                 <Link href="/dashboard/items">
@@ -79,7 +80,7 @@ export default function Test() {
               </div>
               <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex ">
                 <Link href="/dashboard">
-                  <a className="inline-flex items-center px-1 pt-1 text-sm font-semibold leading-5 text-gray-500 transition duration-150 ease-in-out dark:border-emerald-300 dark:text-white focus:border-indigo-700">
+                  <a className="inline-flex items-center px-1 pt-1 text-sm leading-5 text-gray-500 transition duration-150 ease-in-out dark:border-emerald-300 dark:text-white focus:border-indigo-700">
                     Dashboard
                   </a>
                 </Link>
@@ -87,7 +88,7 @@ export default function Test() {
               <div className="hidden space-x-8 sm:-my-px sm:ml-3 sm:flex">
                 <Link href="/dashboard/items">
                   <a
-                    className="inline-flex items-center px-1 pt-1 text-sm font-semibold leading-5 text-gray-500 transition duration-150 ease-in-out dark:border-emerald-300 dark:text-white focus:border-indigo-700"
+                    className="inline-flex items-center px-1 pt-1 text-sm leading-5 text-gray-500 transition duration-150 ease-in-out dark:border-emerald-300 dark:text-white focus:border-indigo-700"
                     href="#"
                   >
                     All Items
@@ -97,15 +98,17 @@ export default function Test() {
               <div className="hidden space-x-8 sm:-my-px sm:ml-3 sm:flex">
                 <Link href="/institutions">
                   <a
-                    className="inline-flex items-center px-1 pt-1 text-sm font-semibold leading-5 text-gray-500 transition duration-150 ease-in-out dark:border-emerald-300 dark:text-white focus:border-indigo-700"
+                    className="inline-flex items-center px-1 pt-1 text-sm leading-5 text-gray-500 transition duration-150 ease-in-out dark:border-emerald-300 dark:text-white focus:border-indigo-700"
                     href="#"
                   >
                     Homes
                   </a>
                 </Link>
               </div>
-              <div className="hidden space-x-8 sm:-my-px sm:ml-3 sm:flex sm:pt-5">
-                <Search />
+              <div className="hidden space-x-8 sm:-my-px sm:ml-3 sm:flex sm:pt-0">
+                <div className="inline-flex items-center px-1 pt-1 ">
+                  <Search />
+                </div>
               </div>
             </div>
 
@@ -190,9 +193,9 @@ export default function Test() {
                 className="inline-flex items-center justify-center p-2 bg-white hover:bg-gray-200 dark:bg-gray-800 transition duration-150 ease-in-out rounded-md active:bg-gray-200 dark:active:bg-gray-700 dark:text-white hover:text-gray-500 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-700"
               >
                 {isMenuSmOpen ? (
-                  <FaTimes className="text-gray-500 dark:text-white text-2xl" />
+                  <FiX className="text-gray-500 dark:text-white text-2xl" />
                 ) : (
-                  <FaBars className="text-gray-500 dark:text-white text-2xl" />
+                  <FiMenu className="text-gray-500 dark:text-white text-2xl" />
                 )}
               </button>
             </div>

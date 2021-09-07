@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { BsFillHouseFill } from 'react-icons/bs'
 import { HiArrowRight } from 'react-icons/hi'
 import { IoMdPin } from 'react-icons/io'
 
@@ -11,10 +10,10 @@ export default function InstitutionDetails({ institution }) {
 
       <div className="md:flex space-x-16 mx-auto max-w-5xl sm:px-6 lg:px-8 px-4 pt-10">
         <div className="md:w-8/12">
-          <h1 className="text-gray-700 dark:text-white text-xl uppercase font-semibold">
+          <h1 className="text-gray-700 dark:text-white text-3xl font-semibold pt-2 pb-1">
             {institution.institution_name}
           </h1>
-          <div className="items-center flex pb-3">
+          <div className="items-center flex pb-6">
             <IoMdPin className="mr-2 text-emerald-600 text-xl dark:to-emerald-400" />
             <h3 className="dark:text-gray-400">
               {institution.institution_address}
@@ -107,26 +106,22 @@ export default function InstitutionDetails({ institution }) {
                     : 'normal'}
                 </h6>
                 <div className="items-center flex">
-                  <IoMdPin className="mr-2 mb-3 text-xl text-emerald-600 dark:text-emerald-400" />
+                  <IoMdPin className="mr-2 text-xl text-emerald-600 dark:text-emerald-400" />
                   <h3 className="dark:text-gray-200 text-sm">
                     {institution.institution_address}
                   </h3>
                 </div>
                 <div className=" text-center pt-5 pb-6 ">
-                  <Link href="/">
+                  <Link href={`/institutions/${institution.id}/give-item`}>
                     <a>
-                      <button
-                        className="bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 hover:bg-emerald-800 text-white font-semibold p-2 rounded-md w-full"
-                        id="login"
-                        type="submit"
-                      >
-                        <span>Give Item</span>
+                      <button className="bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-800 hover:bg-emerald-800 text-white font-semibold p-2 rounded-md w-full">
+                        Give Item
                       </button>
                     </a>
                   </Link>
                 </div>
                 <div className="text-center pb-3">
-                  <Link href="/">
+                  <Link href={`/institutions/${institution.id}/items`}>
                     <a className="px-2 py-2 underline text-emerald-700 dark:text-emerald-400">
                       View Items
                     </a>

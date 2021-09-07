@@ -18,7 +18,6 @@ export default function RegisterPage() {
 
   useEffect(() => {
     error && toast.error(error)
-    // message && toast.success(message, { duration: 5000 })
   })
 
   const handleSubmit = (e) => {

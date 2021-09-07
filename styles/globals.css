@@ -32,7 +32,7 @@ input:-webkit-autofill:active {
 }
 
 .input-give {
-  @apply w-full bg-gray-100 dark:text-white placeholder-gray-500 dark:bg-gray-800 dark:placeholder-gray-500 bg-opacity-50 rounded-sm border focus:ring-0 focus:outline-none dark:focus:border-emerald-500 focus:border-emerald-600 border-gray-300 dark:border-gray-700  focus:bg-white  text-base text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out;
+  @apply w-full bg-gray-100 dark:text-white placeholder-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 bg-opacity-50 rounded-md text-sm border focus:ring-0 focus:outline-none dark:focus:border-emerald-500 focus:border-emerald-600 border-gray-300 focus:bg-white text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out;
 }
 
 .btn-gray {

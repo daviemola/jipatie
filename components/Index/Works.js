@@ -9,7 +9,7 @@ export default function Works() {
             How it all works?
           </h1>
         </div>
-        <div className="container flex flex-wrap -m-4 text-center justify-center">
+        <div className="containerzzz flex flex-wrap -m-4 text-center justify-center">
           <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
             <div className="border-2 border-gray-300 bg-gray-100 px-4 py-6 rounded-lg dark:border-gray-500 dark:bg-gray-700">
               <div className="flex flex-col items-center mt-4">

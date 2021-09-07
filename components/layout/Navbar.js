@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { BsPersonSquare } from 'react-icons/bs'
 import { HiSun } from 'react-icons/hi'
+import { FiMenu, FiX } from 'react-icons/fi'
 
 export default function Test() {
   const [isMenuOpen, showMenu] = useState(false)
@@ -56,9 +57,9 @@ export default function Test() {
               className="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md dark:text-white hover:text-gray-500 hover:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-600 dark:focus:bg-gray-700 focus:text-gray-500"
             >
               {isMenuSmOpen ? (
-                <FaTimes className="text-white text-2xl" />
+                <FiX className="text-white text-2xl" />
               ) : (
-                <FaBars className="text-white text-2xl" />
+                <FiMenu className="text-white text-2xl" />
               )}
             </button>
           </div>

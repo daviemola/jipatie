@@ -4,98 +4,63 @@ import { IoMdPin } from 'react-icons/io'
 
 export default function InstitutionDetails({ institution }) {
   return (
-    <section className="bg-gray-100 min-h-75/100 dark:bg-gray-900">
-      <div className="md:grid md:grid-cols-3 gap-4 mx-auto max-w-5xl sm:px-6 lg:px-8 px-4 pt-10">
-        <div className="col-span-3">
-          <h1 className="text-gray-700 dark:text-white text-2xl uppercase font-semibold">
-            {institution.institution_name}
-          </h1>
-          <div className="items-center flex pt-3 pb-5">
-            <IoMdPin className="mr-2 text-emerald-600 text-xl dark:to-emerald-400" />
-            <h3 className="dark:text-gray-400">
-              {institution.institution_address}
-            </h3>
+    <section className="text-gray-400 bg-gray-900 body-font overflow-hidden">
+      <div className="container px-5 md:py-24 py-12 mx-auto">
+        <div className="sm:w-4/5 mx-auto flex sm:flex-row flex-wrap flex-col">
+          <div className="md:w-1/2 w-full">
+            <Image
+              alt={item.name}
+              className="object-cover object-center rounded-sm md:w-full sm:w-full md:h-auto h-64"
+              src={item.photo ? item.photo.formats.medium.url : '/420x260.png'}
+              width={500}
+              height={500}
+            />
           </div>
-        </div>
-        <div className="col-span-2">
-          <Image
-            alt="ecommerce"
-            className="lg:h-auto h-64 object-cover object-center rounded-md"
-            src={
-              institution?.profile_image
-                ? institution?.profile_image.formats.medium.url
-                : '/420x260.png'
-            }
-            width={600}
-            height={350}
-          />
-
-          {/* Contents After Image */}
-
-          <div className="mt-8 mb-10 border-t border-gray-300 dark:border-gray-700">
-            <div className="flex items-center pt-8">
-              <Image
-                alt="ecommerce"
-                className="lg:h-auto h-64 object-cover object-center rounded-md"
-                src={'/420x260.png'}
-                width={90}
-                height={95}
-              />
-              <div className="pl-4">
-                <p className="text-md font-semibold text-gray-600 dark:text-white">
-                  Meet the person in charge.
-                </p>
-                <p className="text-gray-500 text-sm flex items-center mb-2 dark:text-gray-400">
-                  {institution.head_of_institution}
-                </p>
-              </div>
-              <hr className="border-b border-gray-700 my-3"></hr>
+          <div className="md:w-1/2 w-full lg:pr-10 md:py-6 mb-6 md:mb-0">
+            <h2 className="text-sm title-font text-gray-500 tracking-widest">
+              BRAND NAME
+            </h2>
+            <h1 className="text-white text-3xl title-font font-medium mb-4">
+              Animated Night Hill Illustrations
+            </h1>
+            <div className="flex mb-4">
+              <a className="flex-grow text-indigo-400 border-b-2 border-indigo-500 py-2 text-lg px-1">
+                Description
+              </a>
+              <a className="flex-grow border-b-2 border-gray-800 py-2 text-lg px-1">
+                Reviews
+              </a>
+              <a className="flex-grow border-b-2 border-gray-800 py-2 text-lg px-1">
+                Details
+              </a>
             </div>
-
-            <div className="mt-8 pt-2 border-t border-gray-300 dark:border-gray-700">
-              <p className="text-lg my-6 font-semibold text-gray-600 dark:text-white">
-                About this home
-              </p>
-              <p className="text-gray-600 dark:text-gray-400">
-                {institution.about_institution}
-              </p>
+            <p className="leading-relaxed mb-4">
+              Fam locavore kickstarter distillery. Mixtape chillwave tumeric
+              sriracha taximy chia microdosing tilde DIY. XOXO fam iligo
+              juiceramps cornhole raw denim forage brooklyn. Everyday carry +1
+              seitan poutine tumeric. Gastropub blue bottle austin listicle
+              pour-over, neutra jean.
+            </p>
+            <div className="flex border-t border-gray-800 py-2">
+              <span className="text-gray-500">Color</span>
+              <span className="ml-auto text-white">Blue</span>
             </div>
-          </div>
-        </div>
-
-        {/* Mini Sticky Card */}
-
-        <div className="">
-          <div className="pt-6 px-6 py-3 border border-gray-300 dark:bg-gray-800 bg-white rounded-md dark:border-gray-700 flex items-center md:sticky">
-            <div>
-              <h4 className="text-md font-semibold">
-                {institution.institution_name}
-              </h4>
-              <h6 className="text-sm text-gray-600 font-medium mt-3 pb-4 uppercase dark:text-gray-400">
-                {institution.institution_type
-                  ? `For ${institution.institution_type}`
-                  : 'normal'}
-              </h6>
-              <div className="items-center flex">
-                <IoMdPin className="mr-2 mb-3 text-xl text-emerald-600 dark:text-emerald-400" />
-                <h3 className="dark:text-gray-200 text-sm">
-                  {institution.institution_address}
-                </h3>
-              </div>
-              <div className=" text-center pt-5 pb-6 ">
-                <Link href="/">
-                  <a className="btn-give-item w-full uppercase px-20">
-                    Give Item
-                  </a>
-                </Link>
-              </div>
-              <div className="text-center pb-3">
-                <Link href="/">
-                  <a className="px-2 py-2 underline text-emerald-700 dark:text-emerald-400">
-                    View Items
-                  </a>
-                </Link>
-              </div>
+            <div className="flex border-t border-gray-800 py-2">
+              <span className="text-gray-500">Size</span>
+              <span className="ml-auto text-white">Medium</span>
+            </div>
+            <div className="flex border-t border-b mb-6 border-gray-800 py-2">
+              <span className="text-gray-500">Quantity</span>
+              <span className="ml-auto text-white">4</span>
+            </div>
+            <div className="flex">
+              <span className="title-font font-medium text-2xl text-white">
+                $58.00
+              </span>
+              <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                Button
+              </button>
+              <button className="rounded-full w-10 h-10 bg-gray-800 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4"></button>
             </div>
           </div>
         </div>
