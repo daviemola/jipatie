@@ -13,7 +13,7 @@ function EachItem({ item }) {
 
   return (
     <section className="text-gray-400 dark:bg-gray-900 bg-gray-100 body-font overflow-hidden">
-      <div className="container px-5 md:pb-24 pb-12 pt-6 mx-auto max-w-6xl ">
+      <div className="container px-5 md:pb-24 pb-12 pt-12 mx-auto max-w-6xl ">
         <div className="mb-6 text-center md:px-8">
           <h1 className="md:text-2xl lg:text-3xl text-xl text-gray-800 font-semibold dark:text-white">
             {`Offered to ${item.institution.institution_name}`}{' '}
